@@ -22,15 +22,9 @@ void cLoadScene::Init()
 	//이미지는 여기서 추가시킨다. 순서대로 이름, 경로, 이미지 갯수
 	Load("TitleBg", "./Image/DImage/BackGround/title_background.bmp");
 	Load("InGameBg", "./Image/DImage/BackGround/mini_background.bmp");
-	Load("Game_Logo", "./Image/DImage/Ui/game_logo.bmp");
 	//Load("Player", "./Image/Player/(%d).bmp", 2);
 	Load("OH", "./Image/OH.bmp");
 	Load("InGameBG", "./Image/BackGround/BackGround.bmp");
-
-	//Button
-	Load("Start_Nomal", "./Image/DImage/Ui/start_Nomal.bmp");
-	Load("Start_OnCursor", "./Image/DImage/Ui/start_OnCursor.bmp");
-	Load("Start_Click", "./Image/DImage/Ui/start_Click.bmp");
 
 	Load("Exit_Nomal", "./Image/DImage/Ui/Exit_Nomal.bmp");
 	Load("Exit_OnCursor", "./Image/DImage/Ui/Exit_OnCursor.bmp");
@@ -40,6 +34,14 @@ void cLoadScene::Init()
 	Load("Option_OnCursor", "./Image/DImage/Ui/option_button(1).bmp");
 	Load("Option_Click", "./Image/DImage/Ui/option_button(2).bmp");
 
+	Load("money_icon", "./Image/DImage/2.Home/have_money.bmp");
+	Load("notice_Nomal", "./Image/DImage/2.Home/notice_icon(0).bmp");
+	Load("notice_OnCursor", "./Image/DImage/2.Home/notice_icon(1).bmp");
+	Load("notice_Click", "./Image/DImage/2.Home/notice_icon(2).bmp");
+
+	Load("info_Nomal", "./Image/DImage/2.Home/store_Information_button(0).bmp");
+	Load("info_OnCursor", "./Image/DImage/2.Home/store_Information_button(1).bmp");
+	Load("info_Click", "./Image/DImage/2.Home/store_Information_button(2).bmp");
 
 	m_MaxLoad = m_Load.size();
 }

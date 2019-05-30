@@ -9,8 +9,12 @@ private:
 	Point Pos;
 	bool b_Move;
 
-	cButton * m_Button;
+	cButton * m_Exit_Button;
 	cButton * m_option_button;
+	cButton * m_info_button;
+	cButton * m_notice_button;
+
+
 
 public:
 	cIngameScene();
