@@ -32,7 +32,7 @@ void cTitleScene::Update()
 {
 	if (m_StartButton->Update()) {
 		DEBUG_LOG("Click");
-		SCENE->ChangeScene("InGame");	DEBUG_LOG("dsf");
+		SCENE->ChangeScene("InGame");
 	}
 	if (m_ExitButton->Update()) {
 		DEBUG_LOG("Click");

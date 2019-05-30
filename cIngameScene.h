@@ -14,7 +14,10 @@ private:
 	cButton * m_info_button;
 	cButton * m_notice_button;
 
+	//알림창 버튼
+	cButton * m_notice_exit_btn;
 
+	bool bNotice_Click;
 
 public:
 	cIngameScene();
