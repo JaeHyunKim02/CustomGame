@@ -27,7 +27,7 @@ void cButton::Init()
 
 
 	//중점이 가운데
-	SetRect(&m_rt, 
+  	SetRect(&m_rt, 
 		m_Pos.x - m_Nomal->m_info->bmWidth / 2,
 		m_Pos.y - m_Nomal->m_info->bmHeight / 2,
 		m_Pos.x + m_Nomal->m_info->bmWidth / 2,

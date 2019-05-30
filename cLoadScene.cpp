@@ -34,6 +34,15 @@ void cLoadScene::Init()
 	Load("Option_OnCursor", "./Image/DImage/Ui/option_button(1).bmp");
 	Load("Option_Click", "./Image/DImage/Ui/option_button(2).bmp");
 
+	Load("money_icon", "./Image/DImage/2.Home/have_money.bmp");
+	Load("notice_Nomal", "./Image/DImage/2.Home/notice_icon(0).bmp");
+	Load("notice_OnCursor", "./Image/DImage/2.Home/notice_icon(1).bmp");
+	Load("notice_Click", "./Image/DImage/2.Home/notice_icon(2).bmp");
+
+	Load("info_Nomal", "./Image/DImage/2.Home/store_Information_button(0).bmp");
+	Load("info_OnCursor", "./Image/DImage/2.Home/store_Information_button(1).bmp");
+	Load("info_Click", "./Image/DImage/2.Home/store_Information_button(2).bmp");
+
 	m_MaxLoad = m_Load.size();
 }
 
