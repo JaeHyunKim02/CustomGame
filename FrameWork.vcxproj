@@ -160,6 +160,7 @@
     <ClInclude Include="cSingleTexture.h" />
     <ClInclude Include="cTexture.h" />
     <ClInclude Include="cTitleScene.h" />
+    <ClInclude Include="cWindow.h" />
     <ClInclude Include="FrameWork.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="singleton.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="cSingleTexture.cpp" />
     <ClCompile Include="cTexture.cpp" />
     <ClCompile Include="cTitleScene.cpp" />
+    <ClCompile Include="cWindow.cpp" />
     <ClCompile Include="FrameWork.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

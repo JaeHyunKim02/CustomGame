@@ -49,13 +49,10 @@ bool cButton::Update()
 		b_OnCursor = true;
 		if (INPUT->MouseLPress()) {
 			b_Click = true;
-
-
 		}
 		else {
 			b_Click = false;
 		}
-
 	}
 	else
 		b_OnCursor = false;

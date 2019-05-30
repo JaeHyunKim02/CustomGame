@@ -47,13 +47,15 @@ void cLoadScene::Init()
 	Load("info_OnCursor", "./Image/DImage/2.Home/store_Information_button(1).bmp");
 	Load("info_Click", "./Image/DImage/2.Home/store_Information_button(2).bmp");
 
-	Load("newsExit_Nomal", "./Image/DImage/Ui/newsExit_Nomal.bmp");
-	Load("newsExit_OnCursor", "./Image/DImage/Ui/newsExit_OnCursor.bmp");
-	Load("newsExit_Click", "./Image/DImage/Ui/newsExit_Click.bmp");
+	
 	//window
-	Load("News", "./Image/DImage/Ui/news.bmp");
-	Load("notice_exit", "./Image/DImage/Ui/news.bmp");
-
+	Load("notice_Wnd", "./Image/DImage/Ui/notice.bmp");
+	Load("storeInfo_Wnd", "./Image/DImage/Ui/notice.bmp");
+	Load("option_Wnd", "./Image/DImage/Ui/notice.bmp");
+	//window button
+	Load("wndExit_Nomal", "./Image/DImage/Ui/WndExit_Nomal.bmp");
+	Load("wndExit_OnCursor", "./Image/DImage/Ui/WndExit_OnCursor.bmp");
+	Load("wndExit_Click", "./Image/DImage/Ui/WndExit_Click.bmp"); 
 	m_MaxLoad = m_Load.size();
 }
 
