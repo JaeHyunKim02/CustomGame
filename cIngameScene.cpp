@@ -18,6 +18,8 @@ void cIngameScene::Init()
 	Pos.y = 0;
 	b_Move = false;
 
+	bgmActive = true;
+
 	//프레임 , 애니메이션을 위한 것이다.
 	m_PlayerFrame = new cFrame;
 
@@ -61,6 +63,17 @@ void cIngameScene::Update()
 	}
 	if (m_option_button->Update()) {
 		DEBUG_LOG("OPTION Click");
+		
+			if (bgmActive == true)
+			{
+				PlaySound(NULL, NULL, SND_PURGE);
+				bgmActive = false;
+			}
+			else if(bgmActive == false)
+			{
+				PlaySound(TEXT("./Sound/BGM.wav"), NULL, SND_ASYNC|SND_LOOP);
+				bgmActive = true;
+			}
 	}
 
 }

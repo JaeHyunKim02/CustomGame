@@ -8,6 +8,7 @@ private:
 	cFrame * m_PlayerFrame;
 	Point Pos;
 	bool b_Move;
+	bool bgmActive;
 
 	cButton * m_Exit_Button;
 	cButton * m_option_button;
