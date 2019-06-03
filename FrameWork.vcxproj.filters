@@ -41,6 +41,9 @@
     <Filter Include="Scene\Ingame">
       <UniqueIdentifier>{98e744b6-1ee1-4667-9dc8-07aa68d4a3d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Window">
+      <UniqueIdentifier>{9d95e667-447c-4b61-8c96-26bf4b841d6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -89,6 +92,9 @@
     <ClInclude Include="cButton.h">
       <Filter>Manager\Button</Filter>
     </ClInclude>
+    <ClInclude Include="cWindow.h">
+      <Filter>Scene\Window</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cInputManager.cpp">
@@ -129,6 +135,9 @@
     <ClCompile Include="cFontManager.cpp" />
     <ClCompile Include="cButton.cpp">
       <Filter>Manager\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="cWindow.cpp">
+      <Filter>Scene\Window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

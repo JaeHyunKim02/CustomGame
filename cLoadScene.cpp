@@ -24,7 +24,11 @@ void cLoadScene::Init()
 	Load("InGameBg", "./Image/DImage/BackGround/mini_background.bmp");
 	//Load("Player", "./Image/Player/(%d).bmp", 2);
 	Load("OH", "./Image/OH.bmp");
-	Load("InGameBG", "./Image/BackGround/BackGround.bmp");
+	Load("Game_Logo", "./Image/DImage/Ui/game_logo.bmp");
+	//button
+	Load("Start_Nomal", "./Image/DImage/Ui/Start_Nomal.bmp");
+	Load("Start_OnCursor", "./Image/DImage/Ui/Start_OnCursor.bmp");
+	Load("Start_Click", "./Image/DImage/Ui/Start_Click.bmp");
 
 	Load("Exit_Nomal", "./Image/DImage/Ui/Exit_Nomal.bmp");
 	Load("Exit_OnCursor", "./Image/DImage/Ui/Exit_OnCursor.bmp");
@@ -43,6 +47,15 @@ void cLoadScene::Init()
 	Load("info_OnCursor", "./Image/DImage/2.Home/store_Information_button(1).bmp");
 	Load("info_Click", "./Image/DImage/2.Home/store_Information_button(2).bmp");
 
+	
+	//window
+	Load("notice_Wnd", "./Image/DImage/Ui/notice.bmp");
+	Load("storeInfo_Wnd", "./Image/DImage/Ui/notice.bmp");
+	Load("option_Wnd", "./Image/DImage/Ui/notice.bmp");
+	//window button
+	Load("wndExit_Nomal", "./Image/DImage/Ui/WndExit_Nomal.bmp");
+	Load("wndExit_OnCursor", "./Image/DImage/Ui/WndExit_OnCursor.bmp");
+	Load("wndExit_Click", "./Image/DImage/Ui/WndExit_Click.bmp"); 
 	m_MaxLoad = m_Load.size();
 }
 
