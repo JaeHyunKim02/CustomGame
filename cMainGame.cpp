@@ -34,6 +34,7 @@ void cMainGame::Init(HWND hWnd)
 	SCENE->AddScene("Load", new cLoadScene);
 	SCENE->AddScene("Title", new cTitleScene);
 	SCENE->AddScene("InGame", new cIngameScene);
+	SCENE->AddScene("MainGame", new MainGame);
 	
 	
 	//처음으로 보여줄 씬으로 바꾼다

@@ -95,6 +95,9 @@
     <ClInclude Include="cWindow.h">
       <Filter>Scene\Window</Filter>
     </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>Scene\Ingame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cInputManager.cpp">
@@ -138,6 +141,9 @@
     </ClCompile>
     <ClCompile Include="cWindow.cpp">
       <Filter>Scene\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>Scene\Ingame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

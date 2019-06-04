@@ -25,7 +25,6 @@ void cButton::Init()
 	//	m_Pos.x + m_Nomal->m_info->bmWidth,
 	//	m_Pos.x + m_Nomal->m_info->bmHeight);
 
-
 	//중점이 가운데
   	SetRect(&m_rt, 
 		m_Pos.x - m_Nomal->m_info->bmWidth / 2,
@@ -34,6 +33,15 @@ void cButton::Init()
 		m_Pos.y + m_Nomal->m_info->bmHeight / 2);
 }
 
+bool cButton::isOver() {
+	POINT pt;
+	GetCursorPos(&pt);
+	ScreenToClient(g_hWnd, &pt);
+	if (PtInRect(&m_rt, pt)) 
+		return true;
+	else
+		return false;
+}
 bool cButton::Update()
 {
 	POINT pt;
@@ -41,11 +49,13 @@ bool cButton::Update()
 	ScreenToClient(g_hWnd, &pt);
 
 	if (b_Click) {
-		if (INPUT->MouseLUp())
+		if (INPUT->MouseLUp() && isOver())
 			return true;
+		else
+			b_Click = false;
 	}
 
-	if (PtInRect(&m_rt, pt)) {
+	if (isOver()) {
 		b_OnCursor = true;
 		if (INPUT->MouseLPress()) {
 			b_Click = true;
@@ -58,8 +68,17 @@ bool cButton::Update()
 		b_OnCursor = false;
 
 	return false;
-}
-
+}/*
+bool cButton::isClickDown(int x, int y)
+{
+	if (isOver)
+	{
+		stateBtn = ON;
+		return true;
+	}
+	stateBtn = OFF;
+	return false;
+}*/
 void cButton::Render()
 {
 	if (b_Click) {

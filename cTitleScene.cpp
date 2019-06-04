@@ -2,11 +2,7 @@
 #include "cTitleScene.h"
 #include"cButton.h"
 
-#include <windows.h>
-#include <mmsystem.h>  // mciSendString()
-#include <conio.h>
-
-#pragma comment (lib, "winmm.lib") //MCI
+#include <windows.h> 
 cTitleScene::cTitleScene()
 {
 }
@@ -50,6 +46,7 @@ void cTitleScene::Render()
 	//IMAGE->Render(이미지, 좌표, true = 이미지의 중심을 중앙으로 설정, 제거할 컬러키);
 	IMAGE->Render(IMAGE->FindImage("TitleBg"), m_TitleBgPos, false);
 	IMAGE->Render(IMAGE->FindImage("Game_Logo"), m_TitleBgPos, false);
+
 	m_StartButton->Render();
 	m_ExitButton->Render();
 	m_option_button->Render();

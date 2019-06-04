@@ -25,7 +25,7 @@ void cLoadScene::Init()
 	//Load("Player", "./Image/Player/(%d).bmp", 2);
 	Load("OH", "./Image/OH.bmp");
 	Load("Game_Logo", "./Image/DImage/Ui/game_logo.bmp");
-	//button
+	//button		title	
 	Load("Start_Nomal", "./Image/DImage/Ui/Start_Nomal.bmp");
 	Load("Start_OnCursor", "./Image/DImage/Ui/Start_OnCursor.bmp");
 	Load("Start_Click", "./Image/DImage/Ui/Start_Click.bmp");
@@ -34,28 +34,33 @@ void cLoadScene::Init()
 	Load("Exit_OnCursor", "./Image/DImage/Ui/Exit_OnCursor.bmp");
 	Load("Exit_Click", "./Image/DImage/Ui/Exit_Click.bmp");
 
-	Load("Option_Nomal", "./Image/DImage/Ui/option_button(0).bmp");
-	Load("Option_OnCursor", "./Image/DImage/Ui/option_button(1).bmp");
-	Load("Option_Click", "./Image/DImage/Ui/option_button(2).bmp");
-
+	Load("Option_Nomal", "./Image/DImage/Ui/Option_button(0).bmp");
+	Load("Option_OnCursor", "./Image/DImage/Ui/Option_button(1).bmp");
+	Load("Option_Click", "./Image/DImage/Ui/Option_button(2).bmp");
+	//				ingame
 	Load("money_icon", "./Image/DImage/2.Home/have_money.bmp");
-	Load("notice_Nomal", "./Image/DImage/2.Home/notice_icon(0).bmp");
-	Load("notice_OnCursor", "./Image/DImage/2.Home/notice_icon(1).bmp");
-	Load("notice_Click", "./Image/DImage/2.Home/notice_icon(2).bmp");
 
-	Load("info_Nomal", "./Image/DImage/2.Home/store_Information_button(0).bmp");
-	Load("info_OnCursor", "./Image/DImage/2.Home/store_Information_button(1).bmp");
-	Load("info_Click", "./Image/DImage/2.Home/store_Information_button(2).bmp");
+	Load("Making_Nomal", "./Image/DImage/2.Home/Making_button(0).bmp");
+	Load("Making_OnCursor", "./Image/DImage/2.Home/Making_button(1).bmp");
+	Load("Making_Click", "./Image/DImage/2.Home/Making_button(2).bmp");
 
-	
+	Load("Info_Nomal", "./Image/DImage/2.Home/Store_Information_button(0).bmp");
+	Load("Info_OnCursor", "./Image/DImage/2.Home/Store_Information_button(1).bmp");
+	Load("Info_Click", "./Image/DImage/2.Home/Store_Information_button(2).bmp");
+
 	//window
-	Load("notice_Wnd", "./Image/DImage/Ui/notice.bmp");
-	Load("storeInfo_Wnd", "./Image/DImage/Ui/notice.bmp");
-	Load("option_Wnd", "./Image/DImage/Ui/notice.bmp");
-	//window button
-	Load("wndExit_Nomal", "./Image/DImage/Ui/WndExit_Nomal.bmp");
-	Load("wndExit_OnCursor", "./Image/DImage/Ui/WndExit_OnCursor.bmp");
-	Load("wndExit_Click", "./Image/DImage/Ui/WndExit_Click.bmp"); 
+	Load("Order_Wnd", "./Image/DImage/Ui/Notice.bmp");
+	Load("StoreInfo_Wnd", "./Image/DImage/Ui/Notice.bmp");
+	Load("Option_Wnd", "./Image/DImage/Ui/Notice.bmp");
+	//exit window button
+	Load("WndExit_Nomal", "./Image/DImage/Ui/WndExit_Nomal.bmp");
+	Load("WndExit_OnCursor", "./Image/DImage/Ui/WndExit_OnCursor.bmp");
+	Load("WndExit_Click", "./Image/DImage/Ui/WndExit_Click.bmp"); 
+	//making window button
+	Load("Making_Nomal", "./Image/DImage/2.Home/Making_button(0).bmp");
+	Load("Making_OnCursor", "./Image/DImage/2.Home/Making_button(1).bmp");
+	Load("Making_Click", "./Image/DImage/2.Home/Making_button(2).bmp");
+
 	m_MaxLoad = m_Load.size();
 }
 

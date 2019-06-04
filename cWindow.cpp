@@ -1,33 +1,73 @@
 #include "stdafx.h"
 #include "cWindow.h"
 #include"cButton.h"
-cWindow::cWindow(int x, int y, const string & key, int btn_x, int btn_y, const string & btn_key)
+
+cWindow::cWindow(int x, int y, const string & key, const string & btn_key, int WndState)
 {
+	
 	m_Window = IMAGE->FindImage(key);
 	m_Pos.x = x;
 	m_Pos.y = y;
-	m_exitBtn = new cButton(btn_x, btn_y, btn_key);
+	m_exitBtn = new cButton(500, 230, btn_key);
 }
 
 cWindow::~cWindow()
 {
-	SAFE_DELETE(m_exitBtn);
+	
 }
 
 void cWindow::Init()
 {
 	m_exitBtn->Init();
+	//order창 제작버튼
+	m_Making_button = new cButton(320, 480, "Making");
+	m_Making_button->Init();
 }
 
 bool cWindow::Update()
 {
-	return m_exitBtn->Update();;
+	if(m_Making_button->Update())
+		SCENE->ChangeScene("MainGame");
+	return m_exitBtn->Update();
 }
 
-void cWindow::Render()
-{
+bool cWindow::Render()
+{ 
 	if (bChkBtn) {
-		IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
-		m_exitBtn->Render();
+		switch (WndState) {
+		case ORDER_WND:		return RenderNotice(); break;
+		case STOREINFO_WND:	return RenderStoreInfo(); break;
+		case OPTION_WND:	return RenderOption(); break;
+		}
 	}
 }
+
+void cWindow::Release()
+{
+	SAFE_DELETE(m_exitBtn);
+}
+
+int cWindow::RenderNotice()
+{
+	IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
+	m_Making_button->Render();
+	m_exitBtn->Render();
+	return true;
+}
+
+int cWindow::RenderStoreInfo()
+{
+	IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
+	DEBUG_LOG("STOREINFO");
+	m_exitBtn->Render();
+	return true;
+}
+
+int cWindow::RenderOption()
+{
+	IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
+	DEBUG_LOG("OPTION_WND");
+	m_exitBtn->Render();
+	return true;
+}
+

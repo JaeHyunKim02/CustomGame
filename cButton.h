@@ -20,5 +20,9 @@ public:
 	bool Update();
 	void Render();
 	void Release();
+
+
+	bool isClickDown(int x, int y);
+	bool isOver();
 };
 
