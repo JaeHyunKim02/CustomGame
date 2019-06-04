@@ -14,6 +14,11 @@ cIngameScene::~cIngameScene()
 
 void cIngameScene::Init()
 {
+	m_BackGroundPos.x = 0;
+	m_BackGroundPos.y = 0;
+	 
+	m_MoneyIconPos.x = 450;
+	m_MoneyIconPos.y = 200;
 
 	Pos.x = 0;
 	Pos.y = 0;
@@ -62,34 +67,28 @@ void cIngameScene::Update()
 		DEBUG_LOG("Click");
 		PostQuitMessage(0);
 	} 
-	if (m_Notice_button->Update()) {
-		m_Notice_Wnd->bChkBtn = true;	//알림 버튼 클릭한 경우
+
+	if (m_Notice_button->Update()) {//알림 버튼 클릭한 경우
+		m_Notice_Wnd->bChkBtn = true;	
 		m_Notice_Wnd->WndState = ORDER_WND;
 	}
-	if (m_Notice_Wnd->Update())	m_Notice_Wnd->bChkBtn = false;	//알림 닫기 버튼을 클릭한 경우
+	else if (m_Notice_Wnd->Update())	m_Notice_Wnd->bChkBtn = false;	//알림 닫기 버튼 클릭
 
-	if (m_Info_button->Update()) {
-		m_Info_Wnd->bChkBtn = true;		//가게정보 버튼을 클릭한 경우
+	if (m_Info_button->Update()) {//가게정보 버튼을 클릭한 경우
+		m_Info_Wnd->bChkBtn = true;		
 		m_Info_Wnd->WndState = STOREINFO_WND;
 	}
-	if (m_Info_Wnd->Update())	m_Info_Wnd->bChkBtn = false;	//가게정보창 닫기 버튼을 클릭한 경우
+	else if (m_Info_Wnd->Update())	m_Info_Wnd->bChkBtn = false;	//가게정보창 닫기 버튼 클릭
 
-	if (m_Option_button->Update()) {
-		m_Option_Wnd->bChkBtn = true;	//옵션 버튼을 클릭한 경우
+	if (m_Option_button->Update()) {//옵션 버튼을 클릭 
+		m_Option_Wnd->bChkBtn = true;	
 		m_Option_Wnd->WndState = OPTION_WND;
 	}
-	if (m_Option_Wnd->Update())	m_Option_Wnd->bChkBtn = false;	//옵션창 닫기 버튼을 클릭한 경우
+	else if (m_Option_Wnd->Update())	m_Option_Wnd->bChkBtn = false;	//옵션창 닫기 버튼 클릭
 }
 
 void cIngameScene::Render()
 {
-	Point m_BackGroundPos;
-	m_BackGroundPos.x = 0;
-	m_BackGroundPos.y = 0;
-
-	Point m_MoneyIconPos;
-	m_MoneyIconPos.x = 450;
-	m_MoneyIconPos.y = 200;
 	 
 	IMAGE->Render(IMAGE->FindImage("InGameBg"), m_BackGroundPos, false);
 	IMAGE->Render(IMAGE->FindImage("money_icon"), m_MoneyIconPos, false);

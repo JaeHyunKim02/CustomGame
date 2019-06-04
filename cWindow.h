@@ -12,7 +12,7 @@ public:
 	bool Render();
 	void Release();
 
-	bool bChkBtn = false; //버튼 누름 확인
+	bool bChkBtn;//버튼 누름 확인
 	int WndState;
 
 	int RenderNotice();
