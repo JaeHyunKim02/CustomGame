@@ -56,8 +56,10 @@ void cIngameScene::Update()
 	if (INPUT->KeyPress(VK_LEFT)) {
 		Pos.x -= 10;
 	}*/
-	if (INPUT->MouseLDown())		PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
-
+	if (EFFECT) {
+		if (INPUT->MouseLDown())
+			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
+	}
 	if (m_Exit_Button->Update()) {
 		DEBUG_LOG("Click");
 		PostQuitMessage(0);

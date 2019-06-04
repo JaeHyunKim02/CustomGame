@@ -4,7 +4,6 @@
 
 cWindow::cWindow(int x, int y, const string & key, const string & btn_key, int WndState)
 {
-	
 	m_Window = IMAGE->FindImage(key);
 	m_Pos.x = x;
 	m_Pos.y = y;
@@ -22,12 +21,30 @@ void cWindow::Init()
 	//order창 제작버튼
 	m_Making_button = new cButton(320, 480, "Making");
 	m_Making_button->Init();
+	m_BGMOFF = new cButton(280, 320, "option_BGM_On");
+	m_BGMOFF->Init();
+	m_BGMON = new cButton(360, 320, "option_BGM_Off");
+	m_BGMON->Init();
+
 }
 
 bool cWindow::Update()
 {
 	if(m_Making_button->Update())
 		SCENE->ChangeScene("MainGame");
+
+
+	if (m_BGMOFF->Update()) {
+		DEBUG_LOG("BGM");
+		mciSendCommand(1, MCI_STOP, MCI_DGV_PLAY_REPEAT, NULL);
+		BGM = false;
+		EFFECT= false;
+	}
+	if (m_BGMON->Update()) {
+		mciSendCommand(1, MCI_PLAY, MCI_DGV_PLAY_REPEAT, (DWORD)(LPVOID)&mciPlay);
+		BGM = true;
+		EFFECT = true;
+	}
 	return m_exitBtn->Update();
 }
 
@@ -68,6 +85,8 @@ int cWindow::RenderOption()
 	IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
 	DEBUG_LOG("OPTION_WND");
 	m_exitBtn->Render();
+	m_BGMOFF->Render();
+	m_BGMON->Render();
 	return true;
 }
 

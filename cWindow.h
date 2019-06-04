@@ -18,7 +18,8 @@ public:
 	int RenderNotice();
 	int RenderStoreInfo();
 	int RenderOption();
-	
+public:
+	MCI_PLAY_PARMS mciPlay;
 private:
 	
 	cTexture * m_Window;
@@ -26,5 +27,8 @@ private:
 	cButton * m_exitBtn;
 
 	cButton * m_Making_button;
+	cButton * m_BGMON;
+	cButton * m_BGMOFF;
+
 
 };

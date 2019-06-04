@@ -60,11 +60,21 @@ void cLoadScene::Init()
 	Load("Making_Nomal", "./Image/DImage/2.Home/Making_button(0).bmp");
 	Load("Making_OnCursor", "./Image/DImage/2.Home/Making_button(1).bmp");
 	Load("Making_Click", "./Image/DImage/2.Home/Making_button(2).bmp");
+	
+	//
+	Load("option_BGM_On_Nomal", "./Image/DImage/1.Title/option_sound_Down_Nomal.bmp");
+	Load("option_BGM_On_OnCursor", "./Image/DImage/1.Title/option_sound_Down_OnCursor.bmp");
+	Load("option_BGM_On_Click", "./Image/DImage/1.Title/option_sound_Down_Click.bmp");
+
+	Load("option_BGM_Off_Nomal", "./Image/DImage/1.Title/option_sound_Up_Nomal.bmp");
+	Load("option_BGM_Off_OnCursor", "./Image/DImage/1.Title/option_sound_Up_OnCursor.bmp");
+	Load("option_BGM_Off_Click", "./Image/DImage/1.Title/option_sound_Up_Click.bmp");
+
 
 	m_MaxLoad = m_Load.size();
 }
 
-void cLoadScene::Update()
+void cLoadScene::Update()	
 {
 	if (m_NowLoad != m_MaxLoad) {
 		IMAGE->AddImage(

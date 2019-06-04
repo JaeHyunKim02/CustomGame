@@ -14,6 +14,8 @@ cTitleScene::~cTitleScene()
 
 void cTitleScene::Init()
 {
+	BGM = true;
+	EFFECT = true;
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;
 
@@ -34,20 +36,22 @@ void cTitleScene::Init()
 
 void cTitleScene::Update()
 {
-	if (INPUT->MouseLDown())		PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
+	if (EFFECT) {
+		if (INPUT->MouseLDown())
+			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
+	}
+	
 	if (m_StartButton->Update()) {
 		DEBUG_LOG("Click");
-		PlaySound(TEXT("./Sound/General touch_effect.wav"), NULL, SND_ASYNC);
+		
 		SCENE->ChangeScene("InGame");
 	}
 	if (m_ExitButton->Update()) {
 		DEBUG_LOG("Click");
-		PlaySound(TEXT("./Sound/General touch_effect.wav"), NULL, SND_ASYNC);
 		PostQuitMessage(0);
 	}
 	if (m_option_button->Update()) {
 		DEBUG_LOG("Click");
-		PlaySound(TEXT("./Sound/General touch_effect.wav"), NULL, SND_ASYNC);
 	}
 }
 
