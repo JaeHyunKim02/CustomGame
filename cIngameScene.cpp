@@ -3,6 +3,7 @@
 #include "cWindow.h"
 #include "cButton.h"
 
+
 cIngameScene::cIngameScene()
 {
 }
@@ -14,6 +15,15 @@ cIngameScene::~cIngameScene()
 
 void cIngameScene::Init()
 {
+	MCI_OPEN_PARMS mciOpen;
+	MCI_PLAY_PARMS mciPlay;
+
+	mciOpen.lpstrDeviceType = L"WaveAudio";
+	mciOpen.lpstrElementName = L"./Sound/BGM.wav";
+
+	mciSendCommand(1, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)(LPVOID)&mciOpen);
+	mciSendCommand(1, MCI_PLAY, MCI_DGV_PLAY_REPEAT, (DWORD)(LPVOID)&mciPlay);
+
 	Pos.x = 0;
 	Pos.y = 0;
 	b_Move = false;
@@ -40,10 +50,18 @@ void cIngameScene::Init()
 	m_info_Wnd->Init();
 	m_option_Wnd = new cWindow(320, 480, "option_Wnd", 500, 230, "wndExit");
 	m_option_Wnd->Init();
+
+	b_One = false;
 }
 
 void cIngameScene::Update()
 {
+	//PlaySound(L"./Sound/BGM.wav", NULL, SND_SYNC);
+
+	if (!b_One){
+		//PlayWave(L"./Sound/BGM.wav");
+		b_One = true;
+	}
 
 	/*m_PlayerFrame->Frame();
 	if (INPUT->KeyPress(VK_UP)) {
@@ -59,13 +77,13 @@ void cIngameScene::Update()
 	if (INPUT->KeyPress(VK_LEFT)) {
 		Pos.x -= 10;
 	}*/
-
+	if (INPUT->MouseLDown())		PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
 	if (m_Exit_Button->Update()) {
 		DEBUG_LOG("Click");
 		PostQuitMessage(0);
 	} 
-	if (m_notice_button->Update())	m_notice_Wnd->bChkBtn = true;	//알림 버튼 클릭한 경우
-	if (m_notice_Wnd->Update())		m_notice_Wnd->bChkBtn = false;	//알림 닫기 버튼을 클릭한 경우
+	if (m_notice_button->Update()) m_notice_Wnd->bChkBtn = true;//알림 버튼 클릭한 경우
+	if (m_notice_Wnd->Update()) m_notice_Wnd->bChkBtn = false;	//알림 닫기 버튼을 클릭한 경우
 
 	if (m_info_button->Update())	m_info_Wnd->bChkBtn = true;		//가게정보 버튼을 클릭한 경우
 	if (m_info_Wnd->Update())		m_info_Wnd->bChkBtn = false;	//가게정보창 닫기 버튼을 클릭한 경우
@@ -76,6 +94,8 @@ void cIngameScene::Update()
 
 void cIngameScene::Render()
 {
+	
+
 	Point m_BackGroundPos;
 	m_BackGroundPos.x = 0;
 	m_BackGroundPos.y = 0;
@@ -115,4 +135,7 @@ void cIngameScene::Release()
 	SAFE_DELETE(m_notice_Wnd);
 	SAFE_DELETE(m_info_Wnd);
 	SAFE_DELETE(m_option_Wnd);
+
+
 }
+

@@ -1,9 +1,13 @@
 #pragma once
+
 #include "cScene.h"
 class cButton;
 class cWindow;
 class cIngameScene : public cScene
 {
+private:
+	UINT DeviceID = 0;
+	bool b_One = false;
 private:
 	cTexture * m_BackGround;
 	//cFrame * m_PlayerFrame;
@@ -23,6 +27,7 @@ private:
 	cWindow * m_option_Wnd;
 	bool bNotice_Click;
 
+
 public:
 	cIngameScene();
 	virtual ~cIngameScene();
@@ -31,5 +36,6 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
+
 };
 

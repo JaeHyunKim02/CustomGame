@@ -36,7 +36,7 @@ void cMainGame::Init(HWND hWnd)
 	SCENE->AddScene("InGame", new cIngameScene);
 	
 	//노래 튼당
-	PlaySound(TEXT("./Sound/BGM.wav"), NULL, SND_ASYNC|SND_LOOP);
+	//PlaySound(TEXT("./Sound/BGM.wav"), NULL, SND_ASYNC|SND_LOOP);
 	
 	//처음으로 보여줄 씬으로 바꾼다
 	SCENE->ChangeScene("Load");
