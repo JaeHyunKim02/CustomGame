@@ -17,6 +17,7 @@ cWindow::~cWindow()
 
 void cWindow::Init()
 {
+	bChkBtn = false;
 	m_exitBtn->Init();
 	//order창 제작버튼
 	m_Making_button = new cButton(320, 480, "Making");
@@ -30,7 +31,7 @@ void cWindow::Init()
 
 bool cWindow::Update()
 {
-	if(m_Making_button->Update())
+	if(m_Making_button->Update()&& bChkBtn==true&& WndState==ORDER_WND)
 		SCENE->ChangeScene("MainGame");
 
 

@@ -15,7 +15,8 @@ private:
 	cButton * m_Info_button;
 	cButton * m_Notice_button;
 
-	
+	Point m_BackGroundPos;
+	Point m_MoneyIconPos;
 	//알림창 버튼
 	cButton * m_notice_exit_btn;
 	//알림창 
@@ -34,5 +35,6 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
+public:
 };
 

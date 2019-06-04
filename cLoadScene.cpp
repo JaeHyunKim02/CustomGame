@@ -4,7 +4,7 @@
 
 cLoadScene::cLoadScene()
 {
-	//m_BackGround = IMAGE->AddImage("Loading", "./Image/Loading.bmp");
+	m_BackGround = IMAGE->AddImage("Loading", "./Image/BackGround/Loading.bmp");
 
 }
 
@@ -71,6 +71,8 @@ void cLoadScene::Init()
 	Load("option_BGM_Off_Click", "./Image/DImage/1.Title/option_sound_Up_Click.bmp");
 
 
+
+	//MainGame  
 	m_MaxLoad = m_Load.size();
 }
 
@@ -96,6 +98,8 @@ void cLoadScene::Render()
 	Point Pos;
 	Pos.x = 0;
 	Pos.y = 0;
+
+	IMAGE->Render(IMAGE->FindImage("Loading"), Pos, false);
 }
 
 void cLoadScene::Release()
