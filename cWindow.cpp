@@ -1,93 +1,52 @@
 #include "stdafx.h"
 #include "cWindow.h"
 #include"cButton.h"
-
-cWindow::cWindow(int x, int y, const string & key, const string & btn_key, int WndState)
+#include"cOptionWnd.h"
+#include"cMakingWnd.h"
+#include"cStoreWnd.h"
+cWindow::cWindow(int x, int y, const string & key)
 {
-	m_Window = IMAGE->FindImage(key);
+	m_Window = key;
 	m_Pos.x = x;
 	m_Pos.y = y;
-	m_exitBtn = new cButton(500, 230, btn_key);
 }
 
 cWindow::~cWindow()
 {
-	
+	Release();
 }
 
 void cWindow::Init()
 {
 	bChkBtn = false;
-	m_exitBtn->Init();
-	//order창 제작버튼
-	m_Making_button = new cButton(320, 480, "Making");
-	m_Making_button->Init();
-	m_BGMOFF = new cButton(280, 320, "option_BGM_On");
-	m_BGMOFF->Init();
-	m_BGMON = new cButton(360, 320, "option_BGM_Off");
-	m_BGMON->Init();
-
+	m_MakingWnd = new cMakingWnd(m_Pos.x, m_Pos.y, m_Window);
+	m_OptionWnd = new cOptionWnd(m_Pos.x, m_Pos.y, m_Window); 
+	m_StoreWnd = new cStoreWnd(m_Pos.x, m_Pos.y, m_Window); 
 }
 
-bool cWindow::Update()
+bool cWindow::Update(int WndState)
 {
-	if(m_Making_button->Update()&& bChkBtn==true&& WndState==ORDER_WND)
-		SCENE->ChangeScene("MainGame");
-
-
-	if (m_BGMOFF->Update()) {
-		DEBUG_LOG("BGM");
-		mciSendCommand(1, MCI_STOP, MCI_DGV_PLAY_REPEAT, NULL);
-		BGM = false;
-		EFFECT= false;
+	switch (WndState) {
+	case MAKING_WND: m_MakingWnd->Update(); break;
+	case OPTION_WND: m_OptionWnd->Update(); break;
+	case STOREINFO_WND: m_StoreWnd->Update(); break;
 	}
-	if (m_BGMON->Update()) {
-		mciSendCommand(1, MCI_PLAY, MCI_DGV_PLAY_REPEAT, (DWORD)(LPVOID)&mciPlay);
-		BGM = true;
-		EFFECT = true;
-	}
-	return m_exitBtn->Update();
+	return true;
 }
 
-bool cWindow::Render()
-{ 
-	if (bChkBtn) {
-		switch (WndState) {
-		case ORDER_WND:		return RenderNotice(); break;
-		case STOREINFO_WND:	return RenderStoreInfo(); break;
-		case OPTION_WND:	return RenderOption(); break;
-		}
+bool cWindow::Render(int WndState)
+{
+	switch (WndState) {
+	case MAKING_WND: m_MakingWnd->Render(); break;
+	case OPTION_WND: m_OptionWnd->Render(); break;
+	case STOREINFO_WND: m_StoreWnd->Render(); break;
 	}
+	return true;
 }
 
 void cWindow::Release()
-{
-	SAFE_DELETE(m_exitBtn);
-}
-
-int cWindow::RenderNotice()
-{
-	IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
-	m_Making_button->Render();
-	m_exitBtn->Render();
-	return true;
-}
-
-int cWindow::RenderStoreInfo()
-{
-	IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
-	DEBUG_LOG("STOREINFO");
-	m_exitBtn->Render();
-	return true;
-}
-
-int cWindow::RenderOption()
-{
-	IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
-	DEBUG_LOG("OPTION_WND");
-	m_exitBtn->Render();
-	m_BGMOFF->Render();
-	m_BGMON->Render();
-	return true;
-}
-
+{ 
+	SAFE_DELETE(m_MakingWnd);
+	SAFE_DELETE(m_OptionWnd);
+	SAFE_DELETE(m_StoreWnd);
+} 

@@ -37,31 +37,31 @@ void cLoadScene::Init()
 	Load("Option_Nomal", "./Image/DImage/Ui/Option_button(0).bmp");
 	Load("Option_OnCursor", "./Image/DImage/Ui/Option_button(1).bmp");
 	Load("Option_Click", "./Image/DImage/Ui/Option_button(2).bmp");
-	//				ingame
+
+	//ingame
 	Load("money_icon", "./Image/DImage/2.Home/have_money.bmp");
 
-	Load("Making_Nomal", "./Image/DImage/2.Home/Making_button(0).bmp");
-	Load("Making_OnCursor", "./Image/DImage/2.Home/Making_button(1).bmp");
-	Load("Making_Click", "./Image/DImage/2.Home/Making_button(2).bmp");
+	Load("Notice_Nomal", "./Image/DImage/2.Home/Notice_icon(0).bmp");
+	Load("Notice_OnCursor", "./Image/DImage/2.Home/Notice_icon(1).bmp");
+	Load("Notice_Click", "./Image/DImage/2.Home/Notice_icon(2).bmp");
 
 	Load("Info_Nomal", "./Image/DImage/2.Home/Store_Information_button(0).bmp");
 	Load("Info_OnCursor", "./Image/DImage/2.Home/Store_Information_button(1).bmp");
 	Load("Info_Click", "./Image/DImage/2.Home/Store_Information_button(2).bmp");
 
 	//window
-	Load("Order_Wnd", "./Image/DImage/Ui/Notice.bmp");
-	Load("StoreInfo_Wnd", "./Image/DImage/Ui/Notice.bmp");
-	Load("Option_Wnd", "./Image/DImage/Ui/Notice.bmp");
-	//exit window button
+	Load("Making_Wnd", "./Image/DImage/Ui/Window.bmp");
+	Load("StoreInfo_Wnd", "./Image/DImage/Ui/Window.bmp");
+	Load("Option_Wnd", "./Image/DImage/Ui/Window.bmp");
 	Load("WndExit_Nomal", "./Image/DImage/Ui/WndExit_Nomal.bmp");
 	Load("WndExit_OnCursor", "./Image/DImage/Ui/WndExit_OnCursor.bmp");
 	Load("WndExit_Click", "./Image/DImage/Ui/WndExit_Click.bmp"); 
+
 	//making window button
 	Load("Making_Nomal", "./Image/DImage/2.Home/Making_button(0).bmp");
 	Load("Making_OnCursor", "./Image/DImage/2.Home/Making_button(1).bmp");
 	Load("Making_Click", "./Image/DImage/2.Home/Making_button(2).bmp");
 	
-	//
 	Load("option_BGM_On_Nomal", "./Image/DImage/1.Title/option_sound_Down_Nomal.bmp");
 	Load("option_BGM_On_OnCursor", "./Image/DImage/1.Title/option_sound_Down_OnCursor.bmp");
 	Load("option_BGM_On_Click", "./Image/DImage/1.Title/option_sound_Down_Click.bmp");
@@ -70,9 +70,8 @@ void cLoadScene::Init()
 	Load("option_BGM_Off_OnCursor", "./Image/DImage/1.Title/option_sound_Up_OnCursor.bmp");
 	Load("option_BGM_Off_Click", "./Image/DImage/1.Title/option_sound_Up_Click.bmp");
 
-
-
 	//MainGame  
+	Load("MainGameBg", "./Image/DImage/BackGround/title_background.bmp");
 	m_MaxLoad = m_Load.size();
 }
 

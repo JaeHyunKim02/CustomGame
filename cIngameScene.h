@@ -8,7 +8,7 @@ private:
 	cTexture * m_BackGround;
 	//cFrame * m_PlayerFrame;
 	Point Pos;
-	bool b_Move;
+	int WndState;
 
 	cButton * m_Exit_Button;
 	cButton * m_Option_button;
@@ -19,11 +19,7 @@ private:
 	Point m_MoneyIconPos;
 	//알림창 버튼
 	cButton * m_notice_exit_btn;
-	//알림창 
-	cWindow * m_Notice_Wnd;
-	cWindow * m_Info_Wnd;
-	cWindow * m_Option_Wnd;
-	bool bNotice_Click;
+	cWindow * m_Window;
 public:
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;

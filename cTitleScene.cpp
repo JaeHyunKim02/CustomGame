@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "cTitleScene.h"
 #include"cButton.h"
-
 #include <windows.h> 
 cTitleScene::cTitleScene()
 {
@@ -40,7 +39,6 @@ void cTitleScene::Update()
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
 	}
-	
 	if (m_StartButton->Update()) {
 		DEBUG_LOG("Click");
 		

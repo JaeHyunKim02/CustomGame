@@ -19,7 +19,6 @@ cButton::~cButton()
 
 void cButton::Init()
 {
-
 	//중점이 왼쪽 위
 	//SetRect(&m_rt, m_Pos.x, m_Pos.y,
 	//	m_Pos.x + m_Nomal->m_info->bmWidth,

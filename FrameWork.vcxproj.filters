@@ -44,6 +44,15 @@
     <Filter Include="Scene\Window">
       <UniqueIdentifier>{9d95e667-447c-4b61-8c96-26bf4b841d6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Window\MakingWnd">
+      <UniqueIdentifier>{6a29c7ad-723f-41db-848a-c07655c8a914}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Window\StoreInfoWnd">
+      <UniqueIdentifier>{e22f0634-4d1a-46c4-b9c7-34af8d9b520e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Window\OptionWnd">
+      <UniqueIdentifier>{0315d21c-2e85-4f86-88d4-407a1b442b13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -95,7 +104,16 @@
     <ClInclude Include="cWindow.h">
       <Filter>Scene\Window</Filter>
     </ClInclude>
-    <ClInclude Include="MainGame.h">
+    <ClInclude Include="cMakingWnd.h">
+      <Filter>Scene\Window\MakingWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="cOptionWnd.h">
+      <Filter>Scene\Window\OptionWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="cStoreWnd.h">
+      <Filter>Scene\Window\StoreInfoWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="cMainScene.h">
       <Filter>Scene\Ingame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -142,7 +160,16 @@
     <ClCompile Include="cWindow.cpp">
       <Filter>Scene\Window</Filter>
     </ClCompile>
-    <ClCompile Include="MainGame.cpp">
+    <ClCompile Include="cMakingWnd.cpp">
+      <Filter>Scene\Window\MakingWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="cOptionWnd.cpp">
+      <Filter>Scene\Window\OptionWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="cStoreWnd.cpp">
+      <Filter>Scene\Window\StoreInfoWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="cMainScene.cpp">
       <Filter>Scene\Ingame</Filter>
     </ClCompile>
   </ItemGroup>
