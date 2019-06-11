@@ -70,8 +70,19 @@ void cLoadScene::Init()
 	Load("option_BGM_Off_OnCursor", "./Image/DImage/1.Title/option_sound_Up_OnCursor.bmp");
 	Load("option_BGM_Off_Click", "./Image/DImage/1.Title/option_sound_Up_Click.bmp");
 
+	Load("Store_Expention_Nomal", "./Image/DImage/2.Home/Store_Expention(0).bmp");
+	Load("Store_Expention_OnCursor", "./Image/DImage/2.Home/Store_Expention(1).bmp");
+	Load("Store_Expention_Click", "./Image/DImage/2.Home/Store_Expention(2).bmp");
 	//MainGame  
 	Load("MainGameBg", "./Image/DImage/BackGround/title_background.bmp");
+	Load("MessageWnd", "./Image/DImage/Ui/MessageWnd.bmp");
+	Load("Wnd_Yes_Nomal",	 "./Image/DImage/Ui/Wnd_Yes_Nomal.bmp");
+	Load("Wnd_Yes_OnCursor", "./Image/DImage/Ui/Wnd_Yes_OnCursor.bmp");
+	Load("Wnd_Yes_Click",	 "./Image/DImage/Ui/Wnd_Yes_Click.bmp");
+
+	Load("Wnd_No_Nomal",	"./Image/DImage/Ui/Wnd_No_Nomal.bmp");
+	Load("Wnd_No_OnCursor", "./Image/DImage/Ui/Wnd_No_OnCursor.bmp");
+	Load("Wnd_No_Click",	"./Image/DImage/Ui/Wnd_No_Click.bmp");
 	m_MaxLoad = m_Load.size();
 }
 
