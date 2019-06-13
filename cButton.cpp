@@ -48,9 +48,8 @@ bool cButton::Update()
 	ScreenToClient(g_hWnd, &pt);
 
 	if (b_Click) {
-		if (INPUT->MouseLUp() && isOver()) {
+		if (INPUT->MouseLUp() && isOver())
 			return true;
-		}
 		else
 			b_Click = false;
 	}
@@ -83,14 +82,12 @@ void cButton::Render()
 {
 	if (b_Click) {
 		IMAGE->Render(m_Click, m_Pos, true, RGB(255, 0, 255));
-		DEBUG_LOG("Click");
 	}
 	else if (b_OnCursor) {
-		IMAGE->Render(m_OnCursor, m_Pos, true, RGB(255, 0, 255)); 
+		IMAGE->Render(m_OnCursor, m_Pos, true, RGB(255, 0, 255));
 	}
-	else {
+	else
 		IMAGE->Render(m_Nomal, m_Pos, true, RGB(255, 0, 255));
-	}
 }
 
 void cButton::Release()

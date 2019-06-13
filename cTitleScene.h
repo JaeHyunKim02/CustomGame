@@ -10,8 +10,10 @@ private:
 	Point m_TitleBgPos;
 	bool b_Move;
 
+	int WndState;
+
 	cButton * m_StartButton;
-	cButton * m_ExitButton;
+	cButton * m_GameExitButton;
 	cButton * m_option_button;
 public:
 	cTitleScene();
@@ -21,4 +23,4 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
-}; 
+};

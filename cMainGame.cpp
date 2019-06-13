@@ -55,7 +55,7 @@ void cMainGame::Update()
 
 void cMainGame::Render()
 {
-	HDC hdc = GetDC(m_hWnd);
+	//HDC hdc = GetDC(m_hWnd);
 	HDC m_MemDC;
 	HBITMAP hBitmap;
 	HBITMAP OldBitMap;
@@ -63,15 +63,15 @@ void cMainGame::Render()
 	RECT WindowRect;
 	GetClientRect(m_hWnd, &WindowRect);
 
-	m_MemDC = CreateCompatibleDC(hdc);
-	hBitmap = CreateCompatibleBitmap(hdc, WindowRect.right, WindowRect.bottom);
+	m_MemDC = CreateCompatibleDC(m_hDC);
+	hBitmap = CreateCompatibleBitmap(m_hDC, WindowRect.right, WindowRect.bottom);
 	OldBitMap = (HBITMAP)SelectObject(m_MemDC, hBitmap);
 
 
 	IMAGE->InputHDC(m_MemDC);
 	SCENE->Render();
 
-	BitBlt(hdc, 0, 0, WindowRect.right, WindowRect.bottom, m_MemDC, 0, 0, SRCCOPY);
+	BitBlt(m_hDC, 0, 0, WindowRect.right, WindowRect.bottom, m_MemDC, 0, 0, SRCCOPY);
 	DeleteObject(SelectObject(m_MemDC, OldBitMap));
 	DeleteDC(m_MemDC);
 

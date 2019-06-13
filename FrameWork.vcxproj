@@ -149,8 +149,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cButton.h" />
-    <ClInclude Include="cCloset.h" />
     <ClInclude Include="cFontManager.h" />
+    <ClInclude Include="cGameExitWnd.h" />
     <ClInclude Include="cImageManager.h" />
     <ClInclude Include="cIngameScene.h" />
     <ClInclude Include="cInputManager.h" />
@@ -175,8 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cButton.cpp" />
-    <ClCompile Include="cCloset.cpp" />
     <ClCompile Include="cFontManager.cpp" />
+    <ClCompile Include="cGameExitWnd.cpp" />
     <ClCompile Include="cImageManager.cpp" />
     <ClCompile Include="cIngameScene.cpp" />
     <ClCompile Include="cInputManager.cpp" />

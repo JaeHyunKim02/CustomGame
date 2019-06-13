@@ -1,30 +1,30 @@
 #pragma once
-
 class cButton;
-class cOptionWnd
+class cGameExitWnd
 {
 public:
-	cOptionWnd(int x, int y, const string & key);
-	~cOptionWnd();
-
+	cGameExitWnd(int x, int y, const string & key);
+	~cGameExitWnd();
 public:
 	void Init();
 	void Update();
 	void Render();
-	void Release(); 
+	void Release();
 public:
-		MCI_PLAY_PARMS mciPlay;
+	MCI_PLAY_PARMS mciPlay;
 private:
-	bool bClickChk=true;
-
-	cButton * m_BGMON;
-	cButton * m_BGMOFF;
+	bool bClickChk = true;
 
 	cTexture * m_Window;
 
+	cButton * m_ExitYes;
+	cButton * m_ExitNo;
+	
 	Point m_Pos;
 
 	cButton * m_Making_btn;
 	cButton * m_Exit_btn;
 };
+
+
 
