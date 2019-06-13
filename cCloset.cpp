@@ -26,6 +26,11 @@ void cCloset::Init()
 	case eSHOES:	Init_shoes();		break;
 	}
 }
+//sa
+void cCloset::InitBtn()
+{
+
+}
 
 void cCloset::Render()
 {
