@@ -70,6 +70,15 @@ void cLoadScene::Init()
 	Load("option_BGM_Off_OnCursor", "./Image/DImage/1.Title/option_sound_Up_OnCursor.bmp");
 	Load("option_BGM_Off_Click", "./Image/DImage/1.Title/option_sound_Up_Click.bmp");
 
+	Load("GameExit_No_nomal", "./Image/DImage/1.Title/Game_Exit_No_Nomal.bmp");
+	Load("GameExit_No_OnCursor", "./Image/DImage/1.Title/Game_Exit_No_OnCursor.bmp");
+	Load("GameExit_No_Click", "./Image/DImage/1.Title/Game_Exit_No_Click.bmp");
+	
+	Load("GameExit_Yes_nomal", "./Image/DImage/1.Title/Game_Exit_Yes_Nomal.bmp");
+	Load("GameExit_Yes_OnCursor", "./Image/DImage/1.Title/Game_Exit_Yes_OnCursor.bmp");
+	Load("GameExit_Yes_Click", "./Image/DImage/1.Title/Game_Exit_Yes_Click.bmp");
+
+	
 	//MainGame  
 	Load("MainGameBg", "./Image/DImage/BackGround/title_background.bmp");
 	m_MaxLoad = m_Load.size();
@@ -103,4 +112,5 @@ void cLoadScene::Render()
 
 void cLoadScene::Release()
 {
+
 }

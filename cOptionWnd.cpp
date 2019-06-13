@@ -33,7 +33,6 @@ void cOptionWnd::Update()
 	}
 	if (!bClickChk) {
 		if (m_BGMOFF->Update()) {
-			DEBUG_LOG("BGM");
 			mciSendCommand(1, MCI_STOP, MCI_DGV_PLAY_REPEAT, NULL);
 			BGM = false;
 			EFFECT = false;
@@ -44,6 +43,7 @@ void cOptionWnd::Update()
 			EFFECT = true;
 		}
 		if (m_Exit_btn->Update()) {
+			DEBUG_LOG("CH");
 			Release();
 			bClickChk = true;
 			SCENE->ChangeScene("InGame");

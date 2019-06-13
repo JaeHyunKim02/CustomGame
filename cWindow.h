@@ -3,6 +3,7 @@ class cButton;
 class cMakingWnd;
 class cOptionWnd;
 class cStoreWnd;
+class cGameExitWnd;
 class cWindow
 {
 public:
@@ -22,6 +23,7 @@ public:
 private:
 	bool bChkBtn;//버튼 누름 확인
 	int WndState;
+
 	string ExitBtnKey;
 public:
 	MCI_PLAY_PARMS mciPlay;
@@ -36,4 +38,5 @@ private:
 	cMakingWnd * m_MakingWnd;
 	cStoreWnd * m_StoreWnd;
 	cOptionWnd * m_OptionWnd;
+	cGameExitWnd* m_GameExitWnd;
 };
