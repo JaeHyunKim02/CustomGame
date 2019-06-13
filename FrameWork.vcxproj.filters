@@ -50,6 +50,9 @@
     <Filter Include="Scene\Window\StoreInfoWnd">
       <UniqueIdentifier>{e22f0634-4d1a-46c4-b9c7-34af8d9b520e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Ingame\Closet">
+      <UniqueIdentifier>{2305c84a-c614-4586-b39e-e18a78f99cc2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Scene\Window\OptionWnd">
       <UniqueIdentifier>{0315d21c-2e85-4f86-88d4-407a1b442b13}</UniqueIdentifier>
     </Filter>
@@ -116,6 +119,9 @@
     <ClInclude Include="cMainScene.h">
       <Filter>Scene\Ingame</Filter>
     </ClInclude>
+    <ClInclude Include="cCloset.h">
+      <Filter>Scene\Ingame\Closet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cInputManager.cpp">
@@ -171,6 +177,9 @@
     </ClCompile>
     <ClCompile Include="cMainScene.cpp">
       <Filter>Scene\Ingame</Filter>
+    </ClCompile>
+    <ClCompile Include="cCloset.cpp">
+      <Filter>Scene\Ingame\Closet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

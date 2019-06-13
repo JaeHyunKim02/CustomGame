@@ -20,11 +20,11 @@ void cLoadScene::Init()
 	//이미지 추가
 
 	//이미지는 여기서 추가시킨다. 순서대로 이름, 경로, 이미지 갯수
-	Load("TitleBg", "./Image/DImage/BackGround/title_background.bmp");
-	Load("InGameBg", "./Image/DImage/BackGround/mini_background.bmp");
+	Load("TitleBg", "./Image/BackGround/title_background.bmp");
+	Load("IngameBg", "./Image/DImage/BackGround/mini_background.bmp");
+	Load("MainGameBg", "./Image/BackGround/maingame_background.bmp");
 	//Load("Player", "./Image/Player/(%d).bmp", 2);
 	Load("OH", "./Image/OH.bmp");
-	Load("Game_Logo", "./Image/DImage/Ui/game_logo.bmp");
 	//button		title	
 	Load("Start_Nomal", "./Image/DImage/Ui/Start_Nomal.bmp");
 	Load("Start_OnCursor", "./Image/DImage/Ui/Start_OnCursor.bmp");
@@ -83,6 +83,20 @@ void cLoadScene::Init()
 	Load("Wnd_No_Nomal",	"./Image/DImage/Ui/Wnd_No_Nomal.bmp");
 	Load("Wnd_No_OnCursor", "./Image/DImage/Ui/Wnd_No_OnCursor.bmp");
 	Load("Wnd_No_Click",	"./Image/DImage/Ui/Wnd_No_Click.bmp");
+
+	Load("Top_btn_Nomal", "./Image/DImage/Ui/top_btn(0).bmp");
+	Load("Top_btn_OnCursor", "./Image/DImage/Ui/top_btn(1).bmp");
+	Load("Top_btn_Click", "./Image/DImage/Ui/top_btn(2).bmp");
+
+	Load("Closet_Top", "./Image/DImage/4.MainGame/UI_Top.bmp");
+	Load("Closet_Bottom", "./Image/DImage/4.MainGame/UI_Bottom.bmp");
+	Load("Closet_Accessroy", "./Image/DImage/4.MainGame/UI_Accessory.bmp");
+	Load("Closet_Shoes", "./Image/DImage/4.MainGame/UI_Shoes.bmp");
+	//btn 
+	Load("Top_1_Nomal", "./Image/DImage/4.MainGame/Button/top_1_btn(0).bmp");
+	Load("Top_1_OnCursor", "./Image/DImage/4.MainGame/Button/top_1_btn(1).bmp");
+	Load("Top_1_Click", "./Image/DImage/4.MainGame/Button/top_1_btn(2).bmp");
+
 	m_MaxLoad = m_Load.size();
 }
 

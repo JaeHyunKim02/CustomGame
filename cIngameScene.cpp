@@ -56,7 +56,7 @@ void cIngameScene::Update()
 
 void cIngameScene::Render()
 {
-	IMAGE->Render(IMAGE->FindImage("InGameBg"), m_BackGroundPos, false);
+	IMAGE->Render(IMAGE->FindImage("IngameBg"), m_BackGroundPos, false);
 	IMAGE->Render(IMAGE->FindImage("money_icon"), m_MoneyIconPos, false);
 	
 	m_Notice_button->Render();	//알림버튼 그림

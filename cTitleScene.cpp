@@ -59,7 +59,6 @@ void cTitleScene::Render()
 	//IMAGE->FindImage("이름")을 하여 이미지를 찾을 수 있다.
 	//IMAGE->Render(이미지, 좌표, true = 이미지의 중심을 중앙으로 설정, 제거할 컬러키);
 	IMAGE->Render(IMAGE->FindImage("TitleBg"), m_TitleBgPos, false);
-	IMAGE->Render(IMAGE->FindImage("Game_Logo"), m_TitleBgPos, false);
 
 	m_StartButton->Render();
 	m_ExitButton->Render();
