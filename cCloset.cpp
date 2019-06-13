@@ -25,6 +25,7 @@ void cCloset::Init()
 	case eACCESSORY:Init_accessory();	break;
 	case eSHOES:	Init_shoes();		break;
 	}
+	int a = 2;
 }
 //sa
 void cCloset::InitBtn()
