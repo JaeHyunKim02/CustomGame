@@ -2,6 +2,7 @@
 #include "cScene.h"
 
 class cButton;
+class cCloset;
 class cMainScene:public cScene
 {
 private:
@@ -14,4 +15,17 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
+private:
+	cCloset * m_Top_Closet;
+	cCloset * m_Bottom_Closet;
+	cCloset * m_Accessory_Closet;
+	cCloset * m_Shoes_Closet;
+
+	cButton * m_Closet_Top_btn;
+	cButton * m_Closet_Bottom_btn;
+	cButton * m_Closet_Accessory_btn;
+	cButton * m_Closet_Shoes_btn;
+private:
+	_ClosetKind m_EDress_State;
+	_ClosetKind m_EDress[4];
 }; 

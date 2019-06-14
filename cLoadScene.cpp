@@ -70,7 +70,7 @@ void cLoadScene::Init()
 	Load("option_BGM_Off_OnCursor", "./Image/DImage/1.Title/option_sound_Up_OnCursor.bmp");
 	Load("option_BGM_Off_Click", "./Image/DImage/1.Title/option_sound_Up_Click.bmp");
 
-	Load("GameExit_No_nomal", "./Image/DImage/1.Title/Game_Exit_No_Nomal.bmp");
+	Load("GameExit_No_Nomal", "./Image/DImage/1.Title/Game_Exit_No_Nomal.bmp");
 	Load("GameExit_No_OnCursor", "./Image/DImage/1.Title/Game_Exit_No_OnCursor.bmp");
 	Load("GameExit_No_Click", "./Image/DImage/1.Title/Game_Exit_No_Click.bmp");
 	
@@ -80,7 +80,46 @@ void cLoadScene::Init()
 
 	
 	//MainGame  
-	Load("MainGameBg", "./Image/DImage/BackGround/title_background.bmp");
+	Load("MainGameBg", "./Image/DImage/BackGround/MainGameBg.bmp");
+
+	Load("Mannequin", "./Image/DImage/4.MainGame2/Character_base.bmp");
+
+	//dress-top
+	Load("Top_1",		"./Image/DImage/4.MainGame2/Character_hair_01.bmp");
+	//dress-bottom
+	Load("Bottom_1",	"./Image/DImage/4.MainGame2/Character_cloth_01.bmp");
+	//dress-accessory
+	Load("Accessory_1", "./Image/DImage/4.MainGame2/Character_mouth_01.bmp");
+	//dress-shoes
+	Load("Shoes_1",		"./Image/DImage/4.MainGame2/Character_shoes_01.bmp");
+
+	//closet
+	Load("Closet_1", "./Image/DImage/4.MainGame/closet/Closet_1.bmp");
+	Load("Closet_2", "./Image/DImage/4.MainGame/closet/Closet_2.bmp");
+	Load("Closet_3", "./Image/DImage/4.MainGame/closet/Closet_3.bmp");
+	Load("Closet_4", "./Image/DImage/4.MainGame/closet/Closet_4.bmp");
+	//closet dress button
+	Load("Closet_Top_Nomal",    "./Image/DImage/4.MainGame/Closet_Top_btn(0).bmp");
+	Load("Closet_Top_OnCursor", "./Image/DImage/4.MainGame/Closet_Top_btn(1).bmp");
+	Load("Closet_Top_Click",    "./Image/DImage/4.MainGame/Closet_Top_btn(2).bmp");
+
+	Load("Closet_Bottom_Nomal",		"./Image/DImage/4.MainGame/Closet_Bottom_btn(0).bmp");
+	Load("Closet_Bottom_OnCursor",	"./Image/DImage/4.MainGame/Closet_Bottom_btn(1).bmp");
+	Load("Closet_Bottom_Click",		"./Image/DImage/4.MainGame/Closet_Bottom_btn(2).bmp");
+
+	Load("Closet_Accessory_Nomal",	"./Image/DImage/4.MainGame/Closet_Accessory_btn(0).bmp");
+	Load("Closet_Accessory_OnCursor", "./Image/DImage/4.MainGame/Closet_Accessory_btn(1).bmp");
+	Load("Closet_Accessory_Click",	"./Image/DImage/4.MainGame/Closet_Accessory_btn(2).bmp");
+
+	Load("Closet_Shoes_Nomal",	"./Image/DImage/4.MainGame/Closet_Shoes_btn(0).bmp");
+	Load("Closet_Shoes_OnCursor", "./Image/DImage/4.MainGame/Closet_Shoes_btn(1).bmp");
+	Load("Closet_Shoes_Click",	"./Image/DImage/4.MainGame/Closet_Shoes_btn(2).bmp");
+
+	//closet kind button
+	Load("Top_1_Nomal",    "./Image/DImage/4.MainGame/top_1_btn(0).bmp");
+	Load("Top_1_OnCursor", "./Image/DImage/4.MainGame/top_1_btn(1).bmp");
+	Load("Top_1_Click",    "./Image/DImage/4.MainGame/top_1_btn(2).bmp");
+	 
 	m_MaxLoad = m_Load.size();
 }
 
@@ -107,7 +146,7 @@ void cLoadScene::Render()
 	Pos.x = 0;
 	Pos.y = 0;
 
-	IMAGE->Render(IMAGE->FindImage("Loading"), Pos, false);
+	//IMAGE->Render(IMAGE->FindImage("Loading"), Pos, false);
 }
 
 void cLoadScene::Release()

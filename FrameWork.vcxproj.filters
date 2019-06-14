@@ -56,6 +56,9 @@
     <Filter Include="Scene\Window\MakingWnd">
       <UniqueIdentifier>{6a29c7ad-723f-41db-848a-c07655c8a914}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Closet">
+      <UniqueIdentifier>{225894d8-6275-42cc-b054-50bfb9fed2fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -122,6 +125,9 @@
     <ClInclude Include="cGameExitWnd.h">
       <Filter>Scene\Window\GameExitWnd</Filter>
     </ClInclude>
+    <ClInclude Include="cCloset.h">
+      <Filter>Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cInputManager.cpp">
@@ -180,6 +186,9 @@
     </ClCompile>
     <ClCompile Include="cGameExitWnd.cpp">
       <Filter>Scene\Window\GameExitWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="cCloset.cpp">
+      <Filter>Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
