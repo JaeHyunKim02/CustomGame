@@ -128,8 +128,9 @@
     <ClInclude Include="cGameExitWnd.h">
       <Filter>Scene\Window\GameExitWnd</Filter>
     </ClInclude>
+    <ClInclude Include="Comment.h" />
     <ClInclude Include="cCloset.h">
-      <Filter>Object</Filter>
+      <Filter>Object\Closet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -190,8 +191,9 @@
     <ClCompile Include="cGameExitWnd.cpp">
       <Filter>Scene\Window\GameExitWnd</Filter>
     </ClCompile>
+    <ClCompile Include="Comment.cpp" />
     <ClCompile Include="cCloset.cpp">
-      <Filter>Object</Filter>
+      <Filter>Object\Closet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

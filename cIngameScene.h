@@ -8,8 +8,7 @@ private:
 	cTexture * m_BackGround;
 	//cFrame * m_PlayerFrame;
 	Point Pos;
-	int WndState;
-	int m_nConcept;
+	int WndState; 
 
 	cButton * m_Exit_Button;
 	cButton * m_Option_button;
