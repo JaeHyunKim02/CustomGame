@@ -4,8 +4,6 @@
 
 cLoadScene::cLoadScene()
 {
-	m_BackGround = IMAGE->AddImage("Loading", "./Image/BackGround/Loading.bmp");
-
 }
 
 
@@ -20,138 +18,113 @@ void cLoadScene::Init()
 	//이미지 추가
 
 	//이미지는 여기서 추가시킨다. 순서대로 이름, 경로, 이미지 갯수
-	Load("TitleBg", "./Image/DImage/BackGround/title_background.bmp");
-	Load("InGameBg", "./Image/DImage/BackGround/mini_background.bmp");
-	//Load("Player", "./Image/Player/(%d).bmp", 2);
-	Load("OH", "./Image/OH.bmp");
-	Load("Game_Logo", "./Image/DImage/Ui/game_logo.bmp");
+	Load("TitleBg", "./Image/1.Title/BackGround/TitleBG.bmp");
+	Load("InGameBG", "./Image/2.InGame/BackGround/InGameBG.bmp");
+	Load("MainGameBg", "./Image/3.MainGame/BackGround/MainGameBG.bmp");
+
+	Load("Game_Logo", "./Image/1.Title/Ui/game_logo.bmp");
+
 	//button      title   
-	Load("Start_Nomal", "./Image/DImage/Ui/Start_Nomal.bmp");
-	Load("Start_OnCursor", "./Image/DImage/Ui/Start_OnCursor.bmp");
-	Load("Start_Click", "./Image/DImage/Ui/Start_Click.bmp");
+	Load("Start_Nomal",		"./Image/1.Title/Ui/Start_Nomal.bmp");
+	Load("Start_OnCursor",	"./Image/1.Title/Ui/Start_OnCursor.bmp");
+	Load("Start_Click",		"./Image/1.Title/Ui/Start_Click.bmp");
 
-	Load("Exit_Nomal", "./Image/DImage/Ui/Exit_Nomal.bmp");
-	Load("Exit_OnCursor", "./Image/DImage/Ui/Exit_OnCursor.bmp");
-	Load("Exit_Click", "./Image/DImage/Ui/Exit_Click.bmp");
+	Load("Exit_Nomal",		"./Image/1.Title/Ui/Exit_Nomal.bmp");
+	Load("Exit_OnCursor",	"./Image/1.Title/Ui/Exit_OnCursor.bmp");
+	Load("Exit_Click",		"./Image/1.Title/Ui/Exit_Click.bmp");
 
-	Load("Option_Nomal", "./Image/DImage/Ui/Option_button(0).bmp");
-	Load("Option_OnCursor", "./Image/DImage/Ui/Option_button(1).bmp");
-	Load("Option_Click", "./Image/DImage/Ui/Option_button(2).bmp");
+	Load("Option_Nomal",	"./Image/1.Title/Ui/Option_button(0).bmp");
+	Load("Option_OnCursor", "./Image/1.Title/Ui/Option_button(1).bmp");
+	Load("Option_Click",	"./Image/1.Title/Ui/Option_button(2).bmp");
 
 	//ingame
-	Load("money_icon", "./Image/DImage/2.Home/have_money.bmp");
+	Load("Notice_Nomal",	"./Image/2.InGame/UI/Notice_icon(0).bmp");
+	Load("Notice_OnCursor", "./Image/2.InGame/UI/Notice_icon(1).bmp");
+	Load("Notice_Click",	"./Image/2.InGame/UI/Notice_icon(2).bmp");
 
-	Load("Notice_Nomal", "./Image/DImage/2.Home/Notice_icon(0).bmp");
-	Load("Notice_OnCursor", "./Image/DImage/2.Home/Notice_icon(1).bmp");
-	Load("Notice_Click", "./Image/DImage/2.Home/Notice_icon(2).bmp");
-
-	Load("Info_Nomal", "./Image/DImage/2.Home/Store_Information_button(0).bmp");
-	Load("Info_OnCursor", "./Image/DImage/2.Home/Store_Information_button(1).bmp");
-	Load("Info_Click", "./Image/DImage/2.Home/Store_Information_button(2).bmp");
+	Load("Info_Nomal",		"./Image/2.InGame/UI/Store_Information_button(0).bmp");
+	Load("Info_OnCursor",	"./Image/2.InGame/UI/Store_Information_button(1).bmp");
+	Load("Info_Click",		"./Image/2.InGame/UI/Store_Information_button(2).bmp");
 
 	//window
-	Load("Making_Wnd", "./Image/DImage/Ui/Window.bmp");
-	Load("StoreInfo_Wnd", "./Image/DImage/Ui/Window.bmp");
-	Load("Option_Wnd", "./Image/DImage/Ui/Window.bmp");
-	Load("WndExit_Nomal", "./Image/DImage/Ui/WndExit_Nomal.bmp");
-	Load("WndExit_OnCursor", "./Image/DImage/Ui/WndExit_OnCursor.bmp");
-	Load("WndExit_Click", "./Image/DImage/Ui/WndExit_Click.bmp");
+	Load("Making_Wnd",		"./Image/UI/Window.bmp");
+	Load("StoreInfo_Wnd",	"./Image/UI/Window.bmp");
+	Load("Option_Wnd",		"./Image/UI/Window.bmp");
+	Load("WndExit_Nomal",	"./Image/UI/WndExit_Nomal.bmp");
+	Load("WndExit_OnCursor","./Image/UI/WndExit_OnCursor.bmp");
+	Load("WndExit_Click",	"./Image/UI/WndExit_Click.bmp");
 
 	//making window button
-	Load("Making_Nomal", "./Image/DImage/2.Home/Making_button(0).bmp");
-	Load("Making_OnCursor", "./Image/DImage/2.Home/Making_button(1).bmp");
-	Load("Making_Click", "./Image/DImage/2.Home/Making_button(2).bmp");
+	Load("Making_Nomal",	"./Image/2.InGame/UI/Making_button(0).bmp");
+	Load("Making_OnCursor", "./Image/2.InGame/UI/Making_button(1).bmp");
+	Load("Making_Click",	"./Image/2.InGame/UI/Making_button(2).bmp");
 
-	Load("option_BGM_On_Nomal", "./Image/DImage/1.Title/option_sound_Down_Nomal.bmp");
-	Load("option_BGM_On_OnCursor", "./Image/DImage/1.Title/option_sound_Down_OnCursor.bmp");
-	Load("option_BGM_On_Click", "./Image/DImage/1.Title/option_sound_Down_Click.bmp");
+	Load("option_BGM_On_Nomal",		"./Image/UI/option_sound_Down_Nomal.bmp");
+	Load("option_BGM_On_OnCursor",	"./Image/UI/option_sound_Down_OnCursor.bmp");
+	Load("option_BGM_On_Click",		"./Image/UI/option_sound_Down_Click.bmp");
 
-	Load("option_BGM_Off_Nomal", "./Image/DImage/1.Title/option_sound_Up_Nomal.bmp");
-	Load("option_BGM_Off_OnCursor", "./Image/DImage/1.Title/option_sound_Up_OnCursor.bmp");
-	Load("option_BGM_Off_Click", "./Image/DImage/1.Title/option_sound_Up_Click.bmp");
-
-	Load("GameExit_No_Nomal", "./Image/DImage/1.Title/Game_Exit_No_Nomal.bmp");
-	Load("GameExit_No_OnCursor", "./Image/DImage/1.Title/Game_Exit_No_OnCursor.bmp");
-	Load("GameExit_No_Click", "./Image/DImage/1.Title/Game_Exit_No_Click.bmp");
-
-	Load("GameExit_Yes_nomal", "./Image/DImage/1.Title/Game_Exit_Yes_Nomal.bmp");
-	Load("GameExit_Yes_OnCursor", "./Image/DImage/1.Title/Game_Exit_Yes_OnCursor.bmp");
-	Load("GameExit_Yes_Click", "./Image/DImage/1.Title/Game_Exit_Yes_Click.bmp");
-
-
-	//MainGame  
-	Load("MainGameBg", "./Image/DImage/BackGround/MainGameBg.bmp");
-
-	Load("Mannequin", "./Image/DImage/4.MainGame2/Character_base.bmp");
-
-
-
+	Load("option_BGM_Off_Nomal",	"./Image/UI/option_sound_Up_Nomal.bmp");
+	Load("option_BGM_Off_OnCursor", "./Image/UI/option_sound_Up_OnCursor.bmp");
+	Load("option_BGM_Off_Click",	"./Image/UI/option_sound_Up_Click.bmp"); 
+  
 	//closet
-	Load("Closet_1", "./Image/DImage/4.MainGame/closet/Closet_1.bmp");
-	Load("Closet_2", "./Image/DImage/4.MainGame/closet/Closet_2.bmp");
-	Load("Closet_3", "./Image/DImage/4.MainGame/closet/Closet_3.bmp");
-	Load("Closet_4", "./Image/DImage/4.MainGame/closet/Closet_4.bmp");
 	//closet dress button
-	Load("Closet_Top_Nomal", "./Image/DImage/4.MainGame/Closet_Top_btn(0).bmp");
-	Load("Closet_Top_OnCursor", "./Image/DImage/4.MainGame/Closet_Top_btn(1).bmp");
-	Load("Closet_Top_Click", "./Image/DImage/4.MainGame/Closet_Top_btn(2).bmp");
+	Load("Closet_Top_Nomal",	"./Image/3.MainGame/UI/Closet/jacket_button(0).bmp");
+	Load("Closet_Top_OnCursor", "./Image/3.MainGame/UI/Closet/jacket_button(1).bmp");
+	Load("Closet_Top_Click",	"./Image/3.MainGame/UI/Closet/jacket_button(2).bmp");
 
-	Load("Closet_Bottom_Nomal", "./Image/DImage/4.MainGame/Closet_Bottom_btn(0).bmp");
-	Load("Closet_Bottom_OnCursor", "./Image/DImage/4.MainGame/Closet_Bottom_btn(1).bmp");
-	Load("Closet_Bottom_Click", "./Image/DImage/4.MainGame/Closet_Bottom_btn(2).bmp");
+	Load("Closet_Bottom_Nomal",		"./Image/3.MainGame/UI/Closet/skirt_button(0).bmp");
+	Load("Closet_Bottom_OnCursor",	"./Image/3.MainGame/UI/Closet/skirt_button(1).bmp");
+	Load("Closet_Bottom_Click",		"./Image/3.MainGame/UI/Closet/skirt_button(2).bmp");
 
-	Load("Closet_Accessory_Nomal", "./Image/DImage/4.MainGame/Closet_Accessory_btn(0).bmp");
-	Load("Closet_Accessory_OnCursor", "./Image/DImage/4.MainGame/Closet_Accessory_btn(1).bmp");
-	Load("Closet_Accessory_Click", "./Image/DImage/4.MainGame/Closet_Accessory_btn(2).bmp");
+	Load("Closet_Accessory_Nomal",		"./Image/3.MainGame/UI/Closet/accessory_button(0).bmp");
+	Load("Closet_Accessory_OnCursor",	"./Image/3.MainGame/UI/Closet/accessory_button(1).bmp");
+	Load("Closet_Accessory_Click",		"./Image/3.MainGame/UI/Closet/accessory_button(2).bmp");
 
-	Load("Closet_Shoes_Nomal", "./Image/DImage/4.MainGame/Closet_Shoes_btn(0).bmp");
-	Load("Closet_Shoes_OnCursor", "./Image/DImage/4.MainGame/Closet_Shoes_btn(1).bmp");
-	Load("Closet_Shoes_Click", "./Image/DImage/4.MainGame/Closet_Shoes_btn(2).bmp");
+	Load("Closet_Shoes_Nomal",		"./Image/3.MainGame/UI/Closet/shoes_button(0).bmp");
+	Load("Closet_Shoes_OnCursor",	"./Image/3.MainGame/UI/Closet/shoes_button(1).bmp");
+	Load("Closet_Shoes_Click",		"./Image/3.MainGame/UI/Closet/shoes_button(2).bmp");
 
+	Load("Clear_Nomal",    "./Image/3.MainGame/UI/clear_button.bmp");
+	Load("Clear_OnCursor", "./Image/3.MainGame/UI/clear_button.bmp");
+	Load("Clear_Click",    "./Image/3.MainGame/UI/clear_button.bmp");
 	//closet kind button
-	Load("Top_1_Nomal", "./Image/DImage/4.MainGame/top_1_btn(0).bmp");
-	Load("Top_1_OnCursor", "./Image/DImage/4.MainGame/top_1_btn(1).bmp");
-	Load("Top_1_Click", "./Image/DImage/4.MainGame/top_1_btn(2).bmp");
+	Load("Top_1_Nomal",		"./Image/3.MainGame/UI/Closet/top_1_btn(0).bmp");
+	Load("Top_1_OnCursor",	"./Image/3.MainGame/UI/Closet/top_1_btn(1).bmp");
+	Load("Top_1_Click",		"./Image/3.MainGame/UI/Closet/top_1_btn(2).bmp");
 
-	Load("GameExit_No_Nomal", "./Image/DImage/1.Title/Game_Exit_No_Nomal.bmp");
-	Load("GameExit_No_OnCursor", "./Image/DImage/1.Title/Game_Exit_No_OnCursor.bmp");
-	Load("GameExit_No_Click", "./Image/DImage/1.Title/Game_Exit_No_Click.bmp");
+	Load("GameExit_No_Nomal",	"./Image/UI/Game_Exit_No_Nomal.bmp");
+	Load("GameExit_No_OnCursor","./Image/UI/Game_Exit_No_OnCursor.bmp");
+	Load("GameExit_No_Click",	"./Image/UI/Game_Exit_No_Click.bmp");
 
-	Load("GameExit_Yes_Nomal", "./Image/DImage/1.Title/Game_Exit_Yes_Nomal.bmp");
-	Load("GameExit_Yes_OnCursor", "./Image/DImage/1.Title/Game_Exit_Yes_OnCursor.bmp");
-	Load("GameExit_Yes_Click", "./Image/DImage/1.Title/Game_Exit_Yes_Click.bmp");
+	Load("GameExit_Yes_Nomal",		"./Image/UI/Game_Exit_Yes_Nomal.bmp");
+	Load("GameExit_Yes_OnCursor",	"./Image/UI/Game_Exit_Yes_OnCursor.bmp");
+	Load("GameExit_Yes_Click",		"./Image/UI/Game_Exit_Yes_Click.bmp");
 
-	Load("Upgrade_Nomal", "./Image/DImage/2.Home/Upgrade_Nomal.bmp");
-	Load("Upgrade_OnCursor", "./Image/DImage/2.Home/Upgrade_OnCursor.bmp");
-	Load("Upgrade_Click", "./Image/DImage/2.Home/Upgrade_Click.bmp");
+	Load("Upgrade_Nomal",		"./Image/2.InGame/Upgrade_Nomal.bmp");
+	Load("Upgrade_OnCursor",	"./Image/2.InGame/Upgrade_OnCursor.bmp");
+	Load("Upgrade_Click",		"./Image/2.InGame/Upgrade_Click.bmp");
+	 
+	Load("Mannequin", "./Image/3.MainGame/UI/Mannequin.bmp");
 
-	////dress-top
-	//Load("Top_1", "./Image/DImage/4.MainGame2/Character_hair_01.bmp");
-	////dress-bottom
-	//Load("Bottom_1", "./Image/DImage/4.MainGame2/Character_cloth_01.bmp");
-	////dress-accessory
-	//Load("Accessory_1", "./Image/DImage/4.MainGame2/Character_mouth_01.bmp");
-	////dress-shoes
-	//Load("Shoes_1", "./Image/DImage/4.MainGame2/Character_shoes_01.bmp");
+	Load("Top_1", "./Image/3.MainGame/Dress/Top/jacket.bmp");
+	Load("Top_2", "./Image/3.MainGame/Dress/Top/jacket_01.bmp");
+	Load("Top_3", "./Image/3.MainGame/Dress/Top/jacket_03.bmp");
+	Load("Top_4", "./Image/3.MainGame/Dress/Top/jacket_04.bmp");
 
-	Load("Top_1","./Image/DImage/4.MainGame3/jacket.bmp");
-	Load("Top_2", "./Image/DImage/4.MainGame3/jacket_01.bmp");
-	Load("Top_3", "./Image/DImage/4.MainGame3/jacket_03.bmp");
-	Load("Top_4", "./Image/DImage/4.MainGame3/jacket_04.bmp");
+	Load("Bottom_1", "./Image/3.MainGame/Dress/Bottom/skirt.bmp");
+	Load("Bottom_2", "./Image/3.MainGame/Dress/Bottom/skirt_02.bmp");
+	Load("Bottom_3", "./Image/3.MainGame/Dress/Bottom/skirt_03.bmp");
+	//Load("Bottom_4""./Image/3.MainGame3/Dress/Top, "./Image/DImage/4.MainGame3/pants_04.bmp");
 
-	Load("Bottom_1", "./Image/DImage/4.MainGame3/skirt.bmp");
-	Load("Bottom_2", "./Image/DImage/4.MainGame3/skirt_02.bmp");
-	Load("Bottom_3", "./Image/DImage/4.MainGame3/skirt_03.bmp");
-	//Load("Bottom_4", "./Image/DImage/4.MainGame3/pants_04.bmp");
+	Load("Shoes_1", "./Image/3.MainGame/Dress/Shoes/shose.bmp");
+	Load("Shoes_2", "./Image/3.MainGame/Dress/Shoes/shose_01.bmp");
+	Load("Shoes_3", "./Image/3.MainGame/Dress/Shoes/shose_02.bmp");
+	Load("Shoes_4", "./Image/3.MainGame/Dress/Shoes/shose_03.bmp");
 
-	Load("Shoes_1", "./Image/DImage/4.MainGame3/shose.bmp");
-	Load("Shoes_2", "./Image/DImage/4.MainGame3/shose_01.bmp");
-	Load("Shoes_3", "./Image/DImage/4.MainGame3/shose_02.bmp");
-	Load("Shoes_4", "./Image/DImage/4.MainGame3/shose_03.bmp");
-
-	Load("Accessory_1", "./Image/DImage/4.MainGame3/accessory.bmp");
-	Load("Accessory_2", "./Image/DImage/4.MainGame3/accessory_01.bmp");
-	Load("Accessory_3", "./Image/DImage/4.MainGame3/accessory_02.bmp");
+	Load("Accessory_1", "./Image/3.MainGame/Dress/Accessory/accessory.bmp");
+	Load("Accessory_2", "./Image/3.MainGame/Dress/Accessory/accessory_01.bmp");
+	Load("Accessory_3", "./Image/3.MainGame/Dress/Accessory/accessory_02.bmp");
 	//Load("Accessory_4", "./Image/DImage/4.MainGame3/accessory_03.bmp");
 
 	m_MaxLoad = m_Load.size();

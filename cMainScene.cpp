@@ -2,6 +2,7 @@
 #include "cMainScene.h"
 #include "cCloset.h"
 #include "cButton.h"  
+#define DRESS_BTN_Y 888
 cMainScene::cMainScene()
 {
 }
@@ -17,7 +18,7 @@ void cMainScene::Init()
 	m_BackGroundPos.y = 0;
 
 	m_ClosetPos.x = 320;
-	m_ClosetPos.y = 375;
+	m_ClosetPos.y = 450;
 
 	m_Top_Closet = new cCloset("Closet_1");
 	m_Bottom_Closet = new cCloset("Closet_2");
@@ -28,44 +29,44 @@ void cMainScene::Init()
 	m_Accessory_Closet->Init();
 	m_Shoes_Closet->Init();
 
-	m_Closet_Top_btn_1 = new cButton(76, 729, "Closet_Top");
+	m_Closet_Top_btn_1 = new cButton(81, DRESS_BTN_Y, "Closet_Top");
 	m_Closet_Top_btn_1->Init();
-	m_Closet_Bottom_btn_1 = new cButton(176, 729, "Closet_Bottom");
+	m_Closet_Bottom_btn_1 = new cButton(218, DRESS_BTN_Y, "Closet_Bottom");
 	m_Closet_Bottom_btn_1->Init();
-	m_Closet_Accessory_btn_1 = new cButton(276, 729, "Closet_Accessory");
+	m_Closet_Accessory_btn_1 = new cButton(536, DRESS_BTN_Y, "Closet_Accessory");
 	m_Closet_Accessory_btn_1->Init();
-	m_Closet_Shoes_btn_1 = new cButton(376, 729, "Closet_Shoes");
+	m_Closet_Shoes_btn_1 = new cButton(370, DRESS_BTN_Y, "Closet_Shoes");
 	m_Closet_Shoes_btn_1->Init();
 
-	m_Closet_Top_btn_2 = new cButton(76, 729, "Closet_Top");
+	m_Closet_Top_btn_2 = new cButton(81, DRESS_BTN_Y, "Closet_Top");
 	m_Closet_Top_btn_2->Init();
-	m_Closet_Bottom_btn_2 = new cButton(176, 729, "Closet_Bottom");
+	m_Closet_Bottom_btn_2 = new cButton(218, DRESS_BTN_Y, "Closet_Bottom");
 	m_Closet_Bottom_btn_2->Init();
-	m_Closet_Accessory_btn_2 = new cButton(276, 729, "Closet_Accessory");
+	m_Closet_Accessory_btn_2 = new cButton(536, DRESS_BTN_Y, "Closet_Accessory");
 	m_Closet_Accessory_btn_2->Init();
-	m_Closet_Shoes_btn_2 = new cButton(376, 729, "Closet_Shoes");
+	m_Closet_Shoes_btn_2 = new cButton(370, DRESS_BTN_Y, "Closet_Shoes");
 	m_Closet_Shoes_btn_2->Init();
 
-	m_Closet_Top_btn_3 = new cButton(76, 729, "Closet_Top");
+	m_Closet_Top_btn_3 = new cButton(81, DRESS_BTN_Y, "Closet_Top");
 	m_Closet_Top_btn_3->Init();
-	m_Closet_Bottom_btn_3 = new cButton(176, 729, "Closet_Bottom");
+	m_Closet_Bottom_btn_3 = new cButton(218, DRESS_BTN_Y, "Closet_Bottom");
 	m_Closet_Bottom_btn_3->Init();
-	m_Closet_Accessory_btn_3 = new cButton(276, 729, "Closet_Accessory");
+	m_Closet_Accessory_btn_3 = new cButton(536, DRESS_BTN_Y, "Closet_Accessory");
 	m_Closet_Accessory_btn_3->Init();
-	m_Closet_Shoes_btn_3 = new cButton(376, 729, "Closet_Shoes");
+	m_Closet_Shoes_btn_3 = new cButton(370, DRESS_BTN_Y, "Closet_Shoes");
 	m_Closet_Shoes_btn_3->Init();
 	m_EDress_State = eTOP;
 
-	m_Closet_Top_btn_4 = new cButton(76, 729, "Closet_Top");
+	m_Closet_Top_btn_4 = new cButton(81, DRESS_BTN_Y, "Closet_Top");
 	m_Closet_Top_btn_4->Init();
-	m_Closet_Bottom_btn_4 = new cButton(176, 729, "Closet_Bottom");
+	m_Closet_Bottom_btn_4 = new cButton(218, DRESS_BTN_Y, "Closet_Bottom");
 	m_Closet_Bottom_btn_4->Init();
-	m_Closet_Accessory_btn_4 = new cButton(276, 729, "Closet_Accessory");
+	m_Closet_Accessory_btn_4 = new cButton(536, DRESS_BTN_Y, "Closet_Accessory");
 	m_Closet_Accessory_btn_4->Init();
-	m_Closet_Shoes_btn_4 = new cButton(376, 729, "Closet_Shoes");
+	m_Closet_Shoes_btn_4 = new cButton(370, DRESS_BTN_Y, "Closet_Shoes");
 	m_Closet_Shoes_btn_4->Init();
 
-	m_Complete_btn = new cButton(540, 100, "WndExit");
+	m_Complete_btn = new cButton(540, 100, "Clear");
 	m_Complete_btn->Init();
 }
 
@@ -120,7 +121,7 @@ void cMainScene::Update()
 void cMainScene::Render()
 {
 	IMAGE->Render(IMAGE->FindImage("MainGameBg"), m_BackGroundPos, false);
-	IMAGE->Render(IMAGE->FindImage("Mannequin"), m_BackGroundPos, false, RGB(255, 0, 255));
+	IMAGE->Render(IMAGE->FindImage("Mannequin"), m_ClosetPos, true, RGB(255, 0, 255));
 	m_Closet_Top_btn_1->Render();
 	m_Closet_Bottom_btn_1->Render();
 	m_Closet_Accessory_btn_1->Render();

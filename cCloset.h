@@ -26,10 +26,22 @@ private:
 
 	cButton * m_top_1_btn;
 	cButton * m_top_2_btn;
+	cButton * m_top_3_btn;
+	cButton * m_top_4_btn;
 
 	cButton * m_bottom_1_btn;
+	cButton * m_bottom_2_btn;
+	cButton * m_bottom_3_btn;
+	cButton * m_bottom_4_btn;
+
 	cButton * m_accessory_1_btn;
+	cButton * m_accessory_2_btn;
+	cButton * m_accessory_3_btn;
+
 	cButton * m_shoes_1_btn;
+	cButton * m_shoes_2_btn;
+	cButton * m_shoes_3_btn;
+	cButton * m_shoes_4_btn;
 public:
 	_ClosetKind getTop() { return _EDress[eTOP]; }
 	_ClosetKind getBottom() { return _EDress[eBOTTOM]; }
