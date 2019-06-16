@@ -23,6 +23,7 @@ private:
 public:
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;
+	int Money;
 public:
 	cIngameScene();
 	virtual ~cIngameScene();

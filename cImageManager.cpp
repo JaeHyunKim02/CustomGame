@@ -76,6 +76,17 @@ void cImageManager::Render(cTexture * texture, Point pos, bool center , UINT rgb
 	DeleteObject(OldBitMap);
 }
 
+void cImageManager::PrintTexture(const string & str, Point pos)
+{
+		wstring m_str;
+		m_str = wstring(str.begin(), str.end());
+		RECT m_rc = { pos.x,pos.y, pos.x + 300, pos.y + 300 };
+
+		SetBkMode(m_hdc, TRANSPARENT);
+		DrawText(m_hdc, m_str.c_str(), -1, &m_rc, DT_CENTER);
+	
+}
+
 bool cFrame::Frame()
 {
 	if (FrameSkip <= timeGetTime()) {
