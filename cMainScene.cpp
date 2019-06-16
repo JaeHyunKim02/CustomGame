@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "cMainScene.h"
 #include "cCloset.h"
-#include "cButton.h" 
+#include "cButton.h"  
 cMainScene::cMainScene()
 {
 }
@@ -88,8 +88,11 @@ void cMainScene::Update()
 		m_EDress_State = eSHOES;
 	}
 	if (m_Complete_btn->Update()) {
+		isOrder = true;
+		nConcept = rand() % 4;
 		SCENE->ChangeScene("InGame");
 	}
+
 	switch (m_EDress_State) {
 	case eBOTTOM: {
 		m_Bottom_Closet->Update();

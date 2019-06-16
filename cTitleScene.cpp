@@ -41,10 +41,12 @@ void cTitleScene::Update()
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
 	}
 	if (m_StartButton->Update()) {
+		int m_nConcept;
+		isOrder = true;  
+		m_nConcept = rand() % 4;
 		SCENE->ChangeScene("InGame");
 	}
 	if (m_GameExitButton->Update()) {
-		
 		DEBUG_LOG("Click");
 		PostQuitMessage(0);
 	}

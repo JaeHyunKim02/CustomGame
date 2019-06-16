@@ -17,7 +17,7 @@ cIngameScene::~cIngameScene()
 }
 
 void cIngameScene::Init()
-{
+{ 
 	srand((unsigned)time(NULL));
 	m_BackGroundPos.x = 0;
 	m_BackGroundPos.y = 0; 
@@ -38,11 +38,7 @@ void cIngameScene::Init()
 }
 
 void cIngameScene::Update()
-{ 
-	//if (chkOrder&&first) {
-	//	//first = false;
-	//	m_nConcept= rand() % 4;
-	//}
+{  
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
