@@ -73,7 +73,9 @@ void cStoreWnd::Render()
 
 void cStoreWnd::Release()
 {
+
 	SAFE_DELETE(m_Exit_btn);
 	SAFE_DELETE(m_Upgrade_No);
 	SAFE_DELETE(m_Upgrade_Yes);
+
 }

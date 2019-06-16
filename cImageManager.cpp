@@ -78,6 +78,9 @@ void cImageManager::Render(cTexture * texture, Point pos, bool center , UINT rgb
 
 void cImageManager::PrintTexture(const string & str, Point pos)
 {
+
+	//HFONT hFont = CreateFont(10, 0, 0, 0, 0, 0, 0, HANGEUL_CHARSET, 0, 0, 0,
+		//VARIABLE_PITCH | FF_ROMAN, TEXT(L"±Ã¼­")); `== L"±Ã¼­");
 		wstring m_str;
 		m_str = wstring(str.begin(), str.end());
 		RECT m_rc = { pos.x,pos.y, pos.x + 300, pos.y + 300 };

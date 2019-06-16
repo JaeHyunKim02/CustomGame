@@ -10,4 +10,3 @@ public:
 	~cFontManager();
 	void FontSet();
 };
-

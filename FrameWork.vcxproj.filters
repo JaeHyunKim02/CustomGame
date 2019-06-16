@@ -59,6 +59,9 @@
     <Filter Include="Object\Closet">
       <UniqueIdentifier>{225894d8-6275-42cc-b054-50bfb9fed2fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\comment">
+      <UniqueIdentifier>{516de5de-04fc-41e6-baac-61225a1c9732}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -128,6 +131,9 @@
     <ClInclude Include="cCloset.h">
       <Filter>Object</Filter>
     </ClInclude>
+    <ClInclude Include="Comment.h">
+      <Filter>Scene\comment</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cInputManager.cpp">
@@ -189,6 +195,9 @@
     </ClCompile>
     <ClCompile Include="cCloset.cpp">
       <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Comment.cpp">
+      <Filter>Scene\comment</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -160,6 +160,7 @@
     <ClInclude Include="cMainScene.h" />
     <ClInclude Include="cMakingWnd.h" />
     <ClInclude Include="cMultiTexture.h" />
+    <ClInclude Include="Comment.h" />
     <ClInclude Include="cScene.h" />
     <ClInclude Include="cSceneManager.h" />
     <ClInclude Include="cSingleTexture.h" />
@@ -187,6 +188,7 @@
     <ClCompile Include="cMainScene.cpp" />
     <ClCompile Include="cMakingWnd.cpp" />
     <ClCompile Include="cMultiTexture.cpp" />
+    <ClCompile Include="Comment.cpp" />
     <ClCompile Include="cScene.cpp" />
     <ClCompile Include="cSceneManager.cpp" />
     <ClCompile Include="cSingleTexture.cpp" />
