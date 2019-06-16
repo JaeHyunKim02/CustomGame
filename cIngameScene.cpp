@@ -4,7 +4,7 @@
 #include "cButton.h"
 #include <stdlib.h>
 
-bool first = true;
+//bool first = true;
 
 cIngameScene::cIngameScene()
 {
@@ -39,10 +39,10 @@ void cIngameScene::Init()
 
 void cIngameScene::Update()
 { 
-	if (chkOrder&&first) {
-		first = false;
-		m_nConcept= rand() % 4;
-	}
+	//if (chkOrder&&first) {
+	//	//first = false;
+	//	m_nConcept= rand() % 4;
+	//}
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음

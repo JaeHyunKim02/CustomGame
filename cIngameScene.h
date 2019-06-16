@@ -9,6 +9,7 @@ private:
 	//cFrame * m_PlayerFrame;
 	Point Pos;
 	int WndState;
+	int m_nConcept;
 
 	cButton * m_Exit_Button;
 	cButton * m_Option_button;
