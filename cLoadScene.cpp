@@ -25,7 +25,7 @@ void cLoadScene::Init()
 	//Load("Player", "./Image/Player/(%d).bmp", 2);
 	Load("OH", "./Image/OH.bmp");
 	Load("Game_Logo", "./Image/DImage/Ui/game_logo.bmp");
-	//button		title	
+	//button      title   
 	Load("Start_Nomal", "./Image/DImage/Ui/Start_Nomal.bmp");
 	Load("Start_OnCursor", "./Image/DImage/Ui/Start_OnCursor.bmp");
 	Load("Start_Click", "./Image/DImage/Ui/Start_Click.bmp");
@@ -55,13 +55,13 @@ void cLoadScene::Init()
 	Load("Option_Wnd", "./Image/DImage/Ui/Window.bmp");
 	Load("WndExit_Nomal", "./Image/DImage/Ui/WndExit_Nomal.bmp");
 	Load("WndExit_OnCursor", "./Image/DImage/Ui/WndExit_OnCursor.bmp");
-	Load("WndExit_Click", "./Image/DImage/Ui/WndExit_Click.bmp"); 
+	Load("WndExit_Click", "./Image/DImage/Ui/WndExit_Click.bmp");
 
 	//making window button
 	Load("Making_Nomal", "./Image/DImage/2.Home/Making_button(0).bmp");
 	Load("Making_OnCursor", "./Image/DImage/2.Home/Making_button(1).bmp");
 	Load("Making_Click", "./Image/DImage/2.Home/Making_button(2).bmp");
-	
+
 	Load("option_BGM_On_Nomal", "./Image/DImage/1.Title/option_sound_Down_Nomal.bmp");
 	Load("option_BGM_On_OnCursor", "./Image/DImage/1.Title/option_sound_Down_OnCursor.bmp");
 	Load("option_BGM_On_Click", "./Image/DImage/1.Title/option_sound_Down_Click.bmp");
@@ -73,7 +73,57 @@ void cLoadScene::Init()
 	Load("GameExit_No_Nomal", "./Image/DImage/1.Title/Game_Exit_No_Nomal.bmp");
 	Load("GameExit_No_OnCursor", "./Image/DImage/1.Title/Game_Exit_No_OnCursor.bmp");
 	Load("GameExit_No_Click", "./Image/DImage/1.Title/Game_Exit_No_Click.bmp");
-	
+
+	Load("GameExit_Yes_nomal", "./Image/DImage/1.Title/Game_Exit_Yes_Nomal.bmp");
+	Load("GameExit_Yes_OnCursor", "./Image/DImage/1.Title/Game_Exit_Yes_OnCursor.bmp");
+	Load("GameExit_Yes_Click", "./Image/DImage/1.Title/Game_Exit_Yes_Click.bmp");
+
+
+	//MainGame  
+	Load("MainGameBg", "./Image/DImage/BackGround/MainGameBg.bmp");
+
+	Load("Mannequin", "./Image/DImage/4.MainGame2/Character_base.bmp");
+
+	//dress-top
+	Load("Top_1", "./Image/DImage/4.MainGame2/Character_hair_01.bmp");
+	//dress-bottom
+	Load("Bottom_1", "./Image/DImage/4.MainGame2/Character_cloth_01.bmp");
+	//dress-accessory
+	Load("Accessory_1", "./Image/DImage/4.MainGame2/Character_mouth_01.bmp");
+	//dress-shoes
+	Load("Shoes_1", "./Image/DImage/4.MainGame2/Character_shoes_01.bmp");
+
+	//closet
+	Load("Closet_1", "./Image/DImage/4.MainGame/closet/Closet_1.bmp");
+	Load("Closet_2", "./Image/DImage/4.MainGame/closet/Closet_2.bmp");
+	Load("Closet_3", "./Image/DImage/4.MainGame/closet/Closet_3.bmp");
+	Load("Closet_4", "./Image/DImage/4.MainGame/closet/Closet_4.bmp");
+	//closet dress button
+	Load("Closet_Top_Nomal", "./Image/DImage/4.MainGame/Closet_Top_btn(0).bmp");
+	Load("Closet_Top_OnCursor", "./Image/DImage/4.MainGame/Closet_Top_btn(1).bmp");
+	Load("Closet_Top_Click", "./Image/DImage/4.MainGame/Closet_Top_btn(2).bmp");
+
+	Load("Closet_Bottom_Nomal", "./Image/DImage/4.MainGame/Closet_Bottom_btn(0).bmp");
+	Load("Closet_Bottom_OnCursor", "./Image/DImage/4.MainGame/Closet_Bottom_btn(1).bmp");
+	Load("Closet_Bottom_Click", "./Image/DImage/4.MainGame/Closet_Bottom_btn(2).bmp");
+
+	Load("Closet_Accessory_Nomal", "./Image/DImage/4.MainGame/Closet_Accessory_btn(0).bmp");
+	Load("Closet_Accessory_OnCursor", "./Image/DImage/4.MainGame/Closet_Accessory_btn(1).bmp");
+	Load("Closet_Accessory_Click", "./Image/DImage/4.MainGame/Closet_Accessory_btn(2).bmp");
+
+	Load("Closet_Shoes_Nomal", "./Image/DImage/4.MainGame/Closet_Shoes_btn(0).bmp");
+	Load("Closet_Shoes_OnCursor", "./Image/DImage/4.MainGame/Closet_Shoes_btn(1).bmp");
+	Load("Closet_Shoes_Click", "./Image/DImage/4.MainGame/Closet_Shoes_btn(2).bmp");
+
+	//closet kind button
+	Load("Top_1_Nomal", "./Image/DImage/4.MainGame/top_1_btn(0).bmp");
+	Load("Top_1_OnCursor", "./Image/DImage/4.MainGame/top_1_btn(1).bmp");
+	Load("Top_1_Click", "./Image/DImage/4.MainGame/top_1_btn(2).bmp");
+
+	Load("GameExit_No_Nomal", "./Image/DImage/1.Title/Game_Exit_No_Nomal.bmp");
+	Load("GameExit_No_OnCursor", "./Image/DImage/1.Title/Game_Exit_No_OnCursor.bmp");
+	Load("GameExit_No_Click", "./Image/DImage/1.Title/Game_Exit_No_Click.bmp");
+
 	Load("GameExit_Yes_Nomal", "./Image/DImage/1.Title/Game_Exit_Yes_Nomal.bmp");
 	Load("GameExit_Yes_OnCursor", "./Image/DImage/1.Title/Game_Exit_Yes_OnCursor.bmp");
 	Load("GameExit_Yes_Click", "./Image/DImage/1.Title/Game_Exit_Yes_Click.bmp");
@@ -81,12 +131,11 @@ void cLoadScene::Init()
 	Load("Upgrade_Nomal", "./Image/DImage/2.Home/Upgrade_Nomal.bmp");
 	Load("Upgrade_OnCursor", "./Image/DImage/2.Home/Upgrade_OnCursor.bmp");
 	Load("Upgrade_Click", "./Image/DImage/2.Home/Upgrade_Click.bmp");
-	//MainGame  
-	Load("MainGameBg", "./Image/DImage/BackGround/title_background.bmp");
+
 	m_MaxLoad = m_Load.size();
 }
 
-void cLoadScene::Update()		
+void cLoadScene::Update()
 {
 	if (m_NowLoad != m_MaxLoad) {
 		IMAGE->AddImage(
@@ -108,11 +157,11 @@ void cLoadScene::Render()
 	Point Pos;
 	Pos.x = 0;
 	Pos.y = 0;
-	
-	IMAGE->Render(IMAGE->FindImage("Loading"), Pos, false);
+
+	//IMAGE->Render(IMAGE->FindImage("Loading"), Pos, false);
 }
 
 void cLoadScene::Release()
 {
-	
+
 }
