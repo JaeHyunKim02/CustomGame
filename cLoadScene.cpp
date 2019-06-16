@@ -84,14 +84,7 @@ void cLoadScene::Init()
 
 	Load("Mannequin", "./Image/DImage/4.MainGame2/Character_base.bmp");
 
-	//dress-top
-	Load("Top_1", "./Image/DImage/4.MainGame2/Character_hair_01.bmp");
-	//dress-bottom
-	Load("Bottom_1", "./Image/DImage/4.MainGame2/Character_cloth_01.bmp");
-	//dress-accessory
-	Load("Accessory_1", "./Image/DImage/4.MainGame2/Character_mouth_01.bmp");
-	//dress-shoes
-	Load("Shoes_1", "./Image/DImage/4.MainGame2/Character_shoes_01.bmp");
+
 
 	//closet
 	Load("Closet_1", "./Image/DImage/4.MainGame/closet/Closet_1.bmp");
@@ -131,6 +124,35 @@ void cLoadScene::Init()
 	Load("Upgrade_Nomal", "./Image/DImage/2.Home/Upgrade_Nomal.bmp");
 	Load("Upgrade_OnCursor", "./Image/DImage/2.Home/Upgrade_OnCursor.bmp");
 	Load("Upgrade_Click", "./Image/DImage/2.Home/Upgrade_Click.bmp");
+
+	////dress-top
+	//Load("Top_1", "./Image/DImage/4.MainGame2/Character_hair_01.bmp");
+	////dress-bottom
+	//Load("Bottom_1", "./Image/DImage/4.MainGame2/Character_cloth_01.bmp");
+	////dress-accessory
+	//Load("Accessory_1", "./Image/DImage/4.MainGame2/Character_mouth_01.bmp");
+	////dress-shoes
+	//Load("Shoes_1", "./Image/DImage/4.MainGame2/Character_shoes_01.bmp");
+
+	Load("Top_1","./Image/DImage/4.MainGame3/jacket.bmp");
+	Load("Top_2", "./Image/DImage/4.MainGame3/jacket_01.bmp");
+	Load("Top_3", "./Image/DImage/4.MainGame3/jacket_03.bmp");
+	Load("Top_4", "./Image/DImage/4.MainGame3/jacket_04.bmp");
+
+	Load("Bottom_1", "./Image/DImage/4.MainGame3/skirt.bmp");
+	Load("Bottom_2", "./Image/DImage/4.MainGame3/skirt_02.bmp");
+	Load("Bottom_3", "./Image/DImage/4.MainGame3/skirt_03.bmp");
+	//Load("Bottom_4", "./Image/DImage/4.MainGame3/pants_04.bmp");
+
+	Load("Shoes_1", "./Image/DImage/4.MainGame3/shose.bmp");
+	Load("Shoes_2", "./Image/DImage/4.MainGame3/shose_01.bmp");
+	Load("Shoes_3", "./Image/DImage/4.MainGame3/shose_02.bmp");
+	Load("Shoes_4", "./Image/DImage/4.MainGame3/shose_03.bmp");
+
+	Load("Accessory_1", "./Image/DImage/4.MainGame3/accessory.bmp");
+	Load("Accessory_2", "./Image/DImage/4.MainGame3/accessory_01.bmp");
+	Load("Accessory_3", "./Image/DImage/4.MainGame3/accessory_02.bmp");
+	//Load("Accessory_4", "./Image/DImage/4.MainGame3/accessory_03.bmp");
 
 	m_MaxLoad = m_Load.size();
 }
