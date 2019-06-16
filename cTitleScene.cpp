@@ -15,6 +15,7 @@ void cTitleScene::Init()
 {
 	BGM = true;
 	EFFECT = true;
+	isOrder = false;
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;
 
@@ -40,8 +41,6 @@ void cTitleScene::Update()
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
 	}
 	if (m_StartButton->Update()) {
-		DEBUG_LOG("Click");
-		
 		SCENE->ChangeScene("InGame");
 	}
 	if (m_GameExitButton->Update()) {

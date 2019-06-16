@@ -28,6 +28,8 @@ cScene * cSceneManager::AddScene(const string & key, cScene * scenePtr)
 cScene * cSceneManager::ChangeScene(const string & key)
 {
 	auto find = m_Scene.find(key);
+	if (key == "InGame")
+		isOrder = true;
 	if (find != m_Scene.end()) {
 		m_NextScene = find->second;
 		return m_NextScene;

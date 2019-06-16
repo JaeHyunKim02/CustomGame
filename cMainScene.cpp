@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "cMainScene.h"
 #include "cCloset.h"
-#include "cButton.h"
+#include "cButton.h" 
 cMainScene::cMainScene()
 {
 }
@@ -12,7 +12,6 @@ cMainScene::~cMainScene()
 
 void cMainScene::Init()
 {
-
 	for (int i = eTOP; i < eSHOES + 1; i++) m_EDress[i] = eNULL;
 	m_BackGroundPos.x = 0;
 	m_BackGroundPos.y = 0;
@@ -34,6 +33,9 @@ void cMainScene::Init()
 	m_Closet_Shoes_btn = new cButton(376, 729, "Closet_Shoes");
 	m_Closet_Shoes_btn->Init();
 	m_EDress_State = eTOP;
+
+	m_Complete_btn = new cButton(540, 100, "WndExit");
+	m_Complete_btn->Init();
 }
 
 void cMainScene::Update()
@@ -53,6 +55,9 @@ void cMainScene::Update()
 	}
 	if (m_Closet_Shoes_btn->Update()) {
 		m_EDress_State = eSHOES;
+	}
+	if (m_Complete_btn->Update()) {
+		SCENE->ChangeScene("InGame");
 	}
 	switch (m_EDress_State) {
 	case eTOP: {
@@ -86,6 +91,8 @@ void cMainScene::Render()
 	m_Closet_Bottom_btn->Render();
 	m_Closet_Accessory_btn->Render();
 	m_Closet_Shoes_btn->Render();
+
+	m_Complete_btn->Render();
 	switch (m_EDress_State) {
 	case eTOP: {
 		m_Top_Closet->Render();
@@ -129,4 +136,20 @@ void cMainScene::Release()
 	SAFE_DELETE(m_Closet_Bottom_btn);
 	SAFE_DELETE(m_Closet_Accessory_btn);
 	SAFE_DELETE(m_Closet_Shoes_btn);
+
+	SAFE_DELETE(m_Complete_btn);
+}
+int concept = 0;
+int cMainScene::getScore()
+{
+	int nScore=5;
+	int nWrongCnt=0;
+	for (int i = eTOP; i < eSHOES + 1; i++) if (m_EDress[i] != concept) nWrongCnt++;
+	switch (nWrongCnt) {
+	case 1: nScore -= 1; break;
+	case 2: nScore -= 2; break;
+	case 3: nScore -= 3; break;
+	case 4: nScore -= 4; break;
+	}
+	return nScore;
 }

@@ -2,6 +2,9 @@
 #include "cIngameScene.h"
 #include "cWindow.h"
 #include "cButton.h"
+#include <stdlib.h>
+
+bool first = true;
 
 cIngameScene::cIngameScene()
 {
@@ -10,13 +13,14 @@ cIngameScene::cIngameScene()
 
 cIngameScene::~cIngameScene()
 {
+	Release();
 }
 
 void cIngameScene::Init()
 {
+	srand((unsigned)time(NULL));
 	m_BackGroundPos.x = 0;
 	m_BackGroundPos.y = 0; 
-
 	Pos.x = 0;
 	Pos.y = 0; 
 	WndState = EMPTY_WND;
@@ -33,9 +37,12 @@ void cIngameScene::Init()
 	m_Window->Init();
 }
 
-
 void cIngameScene::Update()
 { 
+	if (chkOrder&&first) {
+		first = false;
+		m_nConcept= rand() % 4;
+	}
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음

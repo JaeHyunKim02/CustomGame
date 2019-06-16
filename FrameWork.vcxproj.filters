@@ -59,6 +59,9 @@
     <Filter Include="Object\Closet">
       <UniqueIdentifier>{225894d8-6275-42cc-b054-50bfb9fed2fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Window\NewFilter1">
+      <UniqueIdentifier>{14199e93-3ec1-4556-a277-6285aa01a05c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
