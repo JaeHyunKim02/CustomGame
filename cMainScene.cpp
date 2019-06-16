@@ -89,7 +89,6 @@ void cMainScene::Update()
 	}
 	if (m_Complete_btn->Update()) {
 		isOrder = true;
-		nConcept = rand() % 4;
 		SCENE->ChangeScene("InGame");
 	}
 
