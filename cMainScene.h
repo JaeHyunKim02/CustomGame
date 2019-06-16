@@ -15,6 +15,8 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
+public:
+	int getScore();
 private:
 	cCloset * m_Top_Closet;
 	cCloset * m_Bottom_Closet;
@@ -25,6 +27,9 @@ private:
 	cButton * m_Closet_Bottom_btn;
 	cButton * m_Closet_Accessory_btn;
 	cButton * m_Closet_Shoes_btn;
+
+	cButton * m_Complete_btn;
+
 private:
 	_ClosetKind m_EDress_State;
 	_ClosetKind m_EDress[4];
