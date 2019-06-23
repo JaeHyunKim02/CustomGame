@@ -127,6 +127,13 @@ void cLoadScene::Init()
 	Load("Accessory_3", "./Image/3.MainGame/Dress/Accessory/accessory_02.bmp");
 	//Load("Accessory_4", "./Image/DImage/4.MainGame3/accessory_03.bmp");
 
+
+
+	//마우서 커서 
+	Load("MouseCursor_nomal", "Image/Ui/MouseCursor/MouseCur.bmp");
+	Load("MouseCursor_onclick", "Image/Ui/MouseCursor/MouseCur(1).bmp");
+	Load("MouseCursor_upclick", "Image/Ui/MouseCursor/MouseCur(2).bmp");
+
 	m_MaxLoad = m_Load.size();
 }
 

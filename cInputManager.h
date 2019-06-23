@@ -32,7 +32,7 @@ public:
 	POINT GetMousePos() {
 		POINT pt;
 		GetCursorPos(&pt);
-		ScreenToClient(m_hwnd, &pt);
+		ScreenToClient(g_hWnd, &pt);
 	
 		return pt;
 	}

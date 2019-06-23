@@ -9,6 +9,9 @@ private:
 	cTexture * m_BackGround;
 	Point m_BackGroundPos;
 	Point m_ClosetPos;
+
+	cMouseCursor * m_Mouse;
+	Point MousePoint;
 public:
 	cMainScene();
 	~cMainScene();

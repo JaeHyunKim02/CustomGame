@@ -18,6 +18,10 @@ cIngameScene::~cIngameScene()
 
 void cIngameScene::Init()
 { 
+	m_Mouse = new cMouseCursor();
+	m_Mouse->Init();
+
+
 	srand((unsigned)time(NULL));
 	m_BackGroundPos.x = 0;
 	m_BackGroundPos.y = 0; 
@@ -39,6 +43,12 @@ void cIngameScene::Init()
 
 void cIngameScene::Update()
 {  
+	MousePoint.x = INPUT->GetMousePos().x;
+	MousePoint.y = INPUT->GetMousePos().y;
+
+	m_Mouse->Update(MousePoint);
+
+
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
@@ -74,11 +84,13 @@ void cIngameScene::Render()
 	if (WndState != EMPTY_WND) {
 		m_Window->Render(WndState);
 	}
+	m_Mouse->Render(MousePoint);
 }
 
 void cIngameScene::Release()
 {
 	//SAFE_DELETE(m_PlayerFrame);
+	SAFE_DELETE(m_Mouse);
 	SAFE_DELETE(m_Exit_Button);
 	SAFE_DELETE(m_Option_button);
 	SAFE_DELETE(m_Info_button);

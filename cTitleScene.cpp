@@ -2,6 +2,7 @@
 #include "cTitleScene.h"
 #include"cButton.h"
 #include <windows.h> 
+#include"cMouseCursor.h"
 cTitleScene::cTitleScene()
 {
 }
@@ -16,6 +17,11 @@ void cTitleScene::Init()
 	BGM = true;
 	EFFECT = true;
 	isOrder = false;
+
+	m_Mouse = new cMouseCursor();
+	m_Mouse->Init();
+	
+
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;
 
@@ -32,10 +38,17 @@ void cTitleScene::Init()
 	m_StartButton->Init();
 	m_GameExitButton->Init();
 	m_option_button->Init();
+
+
 }
 
 void cTitleScene::Update()
 {
+	MousePoint.x = INPUT->GetMousePos().x;
+	MousePoint.y = INPUT->GetMousePos().y;
+
+	m_Mouse->Update(MousePoint);
+
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
@@ -62,14 +75,18 @@ void cTitleScene::Render()
 	//IMAGE->Render(이미지, 좌표, true = 이미지의 중심을 중앙으로 설정, 제거할 컬러키);
 	IMAGE->Render(IMAGE->FindImage("TitleBg"), m_TitleBgPos, false);
 	IMAGE->Render(IMAGE->FindImage("Game_Logo"), m_TitleBgPos, false,RGB(255,0,255));
+	//IMAGE->Render(IMAGE->FindImage("MouseTest"), MousePoint, true, RGB(255, 0, 255));
 
 	m_StartButton->Render();
 	m_GameExitButton->Render();
 	m_option_button->Render();
+
+	m_Mouse->Render(MousePoint);
 }
 
 void cTitleScene::Release()
 {
+	SAFE_DELETE(m_Mouse);
 	SAFE_DELETE(m_StartButton);
 	SAFE_DELETE(m_GameExitButton);
 	SAFE_DELETE(m_option_button);

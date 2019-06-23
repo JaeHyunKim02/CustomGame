@@ -6,6 +6,7 @@
 cSceneManager::cSceneManager()
 	: m_NowScene(nullptr), m_NextScene(nullptr)
 {
+
 }
 
 

@@ -24,6 +24,9 @@ public:
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;
 	int Money;
+
+	cMouseCursor * m_Mouse;
+	Point MousePoint;
 public:
 	cIngameScene();
 	virtual ~cIngameScene();

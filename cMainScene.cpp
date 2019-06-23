@@ -13,6 +13,10 @@ cMainScene::~cMainScene()
 
 void cMainScene::Init()
 {
+	m_Mouse = new cMouseCursor();
+	m_Mouse->Init();
+
+
 	for (int i = eTOP; i < eSHOES + 1; i++) m_EDress[i] = eNULL;
 	m_BackGroundPos.x = 0;
 	m_BackGroundPos.y = 0;
@@ -72,6 +76,12 @@ void cMainScene::Init()
 
 void cMainScene::Update()
 {
+	MousePoint.x = INPUT->GetMousePos().x;
+	MousePoint.y = INPUT->GetMousePos().y;
+
+	m_Mouse->Update(MousePoint);
+
+
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
@@ -172,10 +182,13 @@ void cMainScene::Render()
 	case eSHOES_4: IMAGE->Render(IMAGE->FindImage("Shoes_4"), m_ClosetPos, true, RGB(255, 0, 255)); break;
 
 	}
+
+	m_Mouse->Render(MousePoint);
 }
 
 void cMainScene::Release()
 {
+	SAFE_DELETE(m_Mouse);
 	SAFE_DELETE(m_Top_Closet);
 	SAFE_DELETE(m_Bottom_Closet);
 	SAFE_DELETE(m_Accessory_Closet);
