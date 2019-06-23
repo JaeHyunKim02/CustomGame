@@ -199,6 +199,21 @@ void cMainScene::Release()
 	SAFE_DELETE(m_Closet_Accessory_btn_1);
 	SAFE_DELETE(m_Closet_Shoes_btn_1);
 
+	SAFE_DELETE(m_Closet_Top_btn_2);
+	SAFE_DELETE(m_Closet_Bottom_btn_2);
+	SAFE_DELETE(m_Closet_Accessory_btn_2);
+	SAFE_DELETE(m_Closet_Shoes_btn_2);
+
+	SAFE_DELETE(m_Closet_Top_btn_3);
+	SAFE_DELETE(m_Closet_Bottom_btn_3);
+	SAFE_DELETE(m_Closet_Accessory_btn_3);
+	SAFE_DELETE(m_Closet_Shoes_btn_3);
+
+	SAFE_DELETE(m_Closet_Top_btn_4);
+	SAFE_DELETE(m_Closet_Bottom_btn_4);
+	SAFE_DELETE(m_Closet_Accessory_btn_4);
+	SAFE_DELETE(m_Closet_Shoes_btn_4);
+
 	SAFE_DELETE(m_Complete_btn);
 }
 int concept = 0;

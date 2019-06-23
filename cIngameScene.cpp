@@ -95,5 +95,5 @@ void cIngameScene::Release()
 	SAFE_DELETE(m_Option_button);
 	SAFE_DELETE(m_Info_button);
 	SAFE_DELETE(m_Notice_button);
-	SAFE_DELETE(m_notice_exit_btn);
+	SAFE_DELETE(m_Window);
 }

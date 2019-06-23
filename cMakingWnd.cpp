@@ -12,6 +12,7 @@ cMakingWnd::cMakingWnd(int x, int y, const string & key)
 
 cMakingWnd::~cMakingWnd()
 {
+	Release();
 }
 
 void cMakingWnd::Init()
