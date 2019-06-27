@@ -107,30 +107,44 @@ void cLoadScene::Init()
 	 
 	Load("Mannequin", "./Image/3.MainGame/UI/Mannequin.bmp");
 
-	Load("Top_1", "./Image/3.MainGame/Dress/Top/jacket.bmp");
-	Load("Top_2", "./Image/3.MainGame/Dress/Top/jacket_01.bmp");
+	Load("Top_1", "./Image/3.MainGame/Dress/Top/jacket_01.bmp");
+	Load("Top_2", "./Image/3.MainGame/Dress/Top/jacket_02.bmp");
 	Load("Top_3", "./Image/3.MainGame/Dress/Top/jacket_03.bmp");
 	Load("Top_4", "./Image/3.MainGame/Dress/Top/jacket_04.bmp");
+	Load("Top_5", "./Image/3.MainGame/Dress/Top/jacket_05.bmp");
+	Load("Top_6", "./Image/3.MainGame/Dress/Top/jacket_06.bmp");
+	Load("Top_7", "./Image/3.MainGame/Dress/Top/jacket_07.bmp");
 
 	Load("Bottom_1", "./Image/3.MainGame/Dress/Bottom/skirt.bmp");
 	Load("Bottom_2", "./Image/3.MainGame/Dress/Bottom/skirt_02.bmp");
 	Load("Bottom_3", "./Image/3.MainGame/Dress/Bottom/skirt_03.bmp");
+	Load("Bottom_4", "./Image/3.MainGame/Dress/Bottom/skirt_04.bmp");
+	Load("Bottom_5", "./Image/3.MainGame/Dress/Bottom/skirt_05.bmp");
+	Load("Bottom_6", "./Image/3.MainGame/Dress/Bottom/skirt_06.bmp");
 	//Load("Bottom_4""./Image/3.MainGame3/Dress/Top, "./Image/DImage/4.MainGame3/pants_04.bmp");
 
 	Load("Shoes_1", "./Image/3.MainGame/Dress/Shoes/shose.bmp");
 	Load("Shoes_2", "./Image/3.MainGame/Dress/Shoes/shose_01.bmp");
 	Load("Shoes_3", "./Image/3.MainGame/Dress/Shoes/shose_02.bmp");
 	Load("Shoes_4", "./Image/3.MainGame/Dress/Shoes/shose_03.bmp");
+	Load("Shoes_5", "./Image/3.MainGame/Dress/Shoes/shose_04.bmp");
 
-	Load("Accessory_1", "./Image/3.MainGame/Dress/Accessory/accessory.bmp");
-	Load("Accessory_2", "./Image/3.MainGame/Dress/Accessory/accessory_01.bmp");
-	Load("Accessory_3", "./Image/3.MainGame/Dress/Accessory/accessory_02.bmp");
+	Load("Accessory_1", "./Image/3.MainGame/Dress/Accessory/accessory_01.bmp");
+	Load("Accessory_2", "./Image/3.MainGame/Dress/Accessory/accessory_02.bmp");
+	Load("Accessory_3", "./Image/3.MainGame/Dress/Accessory/accessory_03.bmp");
+	Load("Accessory_4", "./Image/3.MainGame/Dress/Accessory/accessory_04.bmp");
 	//Load("Accessory_4", "./Image/DImage/4.MainGame3/accessory_03.bmp");
 
+	Load("Next_Nomal",		"./Image/3.MainGame/UI/Closet/next.bmp");
+	Load("Next_OnCursor",	"./Image/3.MainGame/UI/Closet/next.bmp");
+	Load("Next_Click",		"./Image/3.MainGame/UI/Closet/next.bmp");
 
+	Load("Before_Nomal",		"./Image/3.MainGame/UI/Closet/before.bmp");
+	Load("Before_OnCursor",		"./Image/3.MainGame/UI/Closet/before.bmp");
+	Load("Before_Click",		"./Image/3.MainGame/UI/Closet/before.bmp");
 
 	//마우서 커서 
-	Load("MouseCursor_nomal", "Image/Ui/MouseCursor/MouseCur.bmp");
+	Load("MouseCursor_nomal",	"Image/Ui/MouseCursor/MouseCur.bmp");
 	Load("MouseCursor_onclick", "Image/Ui/MouseCursor/MouseCur(1).bmp");
 	Load("MouseCursor_upclick", "Image/Ui/MouseCursor/MouseCur(2).bmp");
 

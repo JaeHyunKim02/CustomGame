@@ -41,7 +41,7 @@ void cTitleScene::Init()
 
 
 }
-
+ 
 void cTitleScene::Update()
 {
 	MousePoint.x = INPUT->GetMousePos().x;

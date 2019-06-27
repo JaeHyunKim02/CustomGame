@@ -43,14 +43,14 @@ void cMouseCursor::Render(Point pos)
 {
 
 	if (state == mNomal) {
-		IMAGE->Render(g_MNomal, pos, true, RGB(255, 0, 255));//g_MPos
+		IMAGE->Render(g_MNomal, pos, false, RGB(255, 0, 255));//g_MPos
 	}
 	else if (state == mDown) {
-		IMAGE->Render(g_MOnCursor, pos, true, RGB(255, 0, 255));
+		IMAGE->Render(g_MOnCursor, pos, false, RGB(255, 0, 255));
 		DEBUG_LOG("DOWN");
 	}
 	else if (state == mUp) {
-		IMAGE->Render(g_MClick, pos, true, RGB(255, 0, 255));
+		IMAGE->Render(g_MClick, pos, false, RGB(255, 0, 255));
 		DEBUG_LOG("UP");
 	}
 }

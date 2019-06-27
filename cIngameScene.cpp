@@ -28,8 +28,8 @@ void cIngameScene::Init()
 	Pos.x = 0;
 	Pos.y = 0; 
 	WndState = EMPTY_WND;
-	m_Exit_Button = new cButton(100, 500, "Exit");
-	m_Exit_Button->Init();
+	//m_Exit_Button = new cButton(100, 500, "Exit");
+	//m_Exit_Button->Init();
 	m_Option_button = new cButton(100, 300, "Option");
 	m_Option_button->Init();
 	m_Info_button = new cButton(550, 100, "Info");
@@ -52,23 +52,19 @@ void cIngameScene::Update()
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
-	}
-	if (m_Exit_Button->Update()) {
-		DEBUG_LOG("Click");
-		PostQuitMessage(0);
 	} 
 	if (m_Notice_button->Update()) {//알림 버튼 클릭한 경우 
-		WndState = MAKING_WND; DEBUG_LOG("Click");
+		WndState = MAKING_WND;  
 	} 
 
-	if (m_Info_button->Update()) {//가게정보 버튼을 클릭한 경우 
-		WndState =STOREINFO_WND; DEBUG_LOG("Click");
+	else if (m_Info_button->Update()) {//가게정보 버튼을 클릭한 경우 
+		WndState =STOREINFO_WND; 
 	} 
 
-	if (m_Option_button->Update()) {//옵션 버튼을 클릭  
-		WndState = OPTION_WND; DEBUG_LOG("Click");
+	else if (m_Option_button->Update()) {//옵션 버튼을 클릭  
+		WndState = OPTION_WND;  
 	} 
-	if (WndState != EMPTY_WND) {
+	else if (WndState != EMPTY_WND) {
 		m_Window->Update(WndState);
 	}
 }
@@ -91,7 +87,7 @@ void cIngameScene::Release()
 {
 	//SAFE_DELETE(m_PlayerFrame);
 	SAFE_DELETE(m_Mouse);
-	SAFE_DELETE(m_Exit_Button);
+	//SAFE_DELETE(m_Exit_Button);
 	SAFE_DELETE(m_Option_button);
 	SAFE_DELETE(m_Info_button);
 	SAFE_DELETE(m_Notice_button);
