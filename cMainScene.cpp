@@ -158,7 +158,7 @@ void cMainScene::Release()
 	SAFE_DELETE(m_Top_Closet);
 	SAFE_DELETE(m_Bottom_Closet);
 	SAFE_DELETE(m_Accessory_Closet);
-	SAFE_DELETE(m_Shoes_Closet	);
+	SAFE_DELETE(m_Shoes_Closet);
 	SAFE_DELETE(m_Closet_Top_btn);
 	SAFE_DELETE(m_Closet_Bottom_btn);
 	SAFE_DELETE(m_Closet_Accessory_btn);

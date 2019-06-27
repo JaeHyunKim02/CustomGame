@@ -36,7 +36,6 @@ void cMainGame::Init(HWND hWnd)
 	SCENE->AddScene("Title", new cTitleScene);
 	SCENE->AddScene("InGame", new cIngameScene);
 	SCENE->AddScene("MainGame", new cMainScene);
-	//SCENE->AddScene("MainGame", new MainGame);
 	
 	//노래 튼당
 	//PlaySound(TEXT("./Sound/BGM.wav"), NULL, SND_ASYNC|SND_LOOP);
