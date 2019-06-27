@@ -51,9 +51,9 @@ void cIngameScene::Init()
 
 void cIngameScene::Update()
 {  
-	MousePoint.x = INPUT->GetMousePos().x;
-	MousePoint.y = INPUT->GetMousePos().y;
-	m_Mouse->Update(MousePoint);
+	//MousePoint.x = INPUT->GetMousePos().x;
+	//MousePoint.y = INPUT->GetMousePos().y;
+	//m_Mouse->Update(MousePoint);
 	//isOrder;
 	//chkOrder;
 
