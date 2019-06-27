@@ -12,6 +12,11 @@ private:
 
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
+private:
+	string top_key;
+	string bottom_key;
+	string accessory_key;
+	string shoes_key;
 public:
 	cMainScene();
 	~cMainScene();
@@ -27,25 +32,10 @@ private:
 	cCloset * m_Accessory_Closet;
 	cCloset * m_Shoes_Closet;
 
-	cButton * m_Closet_Top_btn_1;
-	cButton * m_Closet_Top_btn_2;
-	cButton * m_Closet_Top_btn_3;
-	cButton * m_Closet_Top_btn_4;
-
-	cButton * m_Closet_Bottom_btn_1;
-	cButton * m_Closet_Bottom_btn_2;
-	cButton * m_Closet_Bottom_btn_3;
-	cButton * m_Closet_Bottom_btn_4;
-	
-	cButton * m_Closet_Accessory_btn_1;
-	cButton * m_Closet_Accessory_btn_2;
-	cButton * m_Closet_Accessory_btn_3;
-	cButton * m_Closet_Accessory_btn_4;
-
-	cButton * m_Closet_Shoes_btn_1;
-	cButton * m_Closet_Shoes_btn_2;
-	cButton * m_Closet_Shoes_btn_3;
-	cButton * m_Closet_Shoes_btn_4;
+	cButton * m_Closet_Top_btn; 
+	cButton * m_Closet_Bottom_btn; 
+	cButton * m_Closet_Accessory_btn; 
+	cButton * m_Closet_Shoes_btn;
 
 	cButton * m_Complete_btn;
 

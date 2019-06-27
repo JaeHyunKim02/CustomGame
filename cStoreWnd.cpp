@@ -33,24 +33,21 @@ void cStoreWnd::Init()
 void cStoreWnd::Update()
 {
 	if (bClickChk) {
-		
 		Init();
 		bClickChk = false;
 	}
 	if (!bClickChk) { 
 		if (m_Exit_btn->Update()) {
-			//Release();
-			
+			Release();
 			//TextOut(hdc, 100, 100, L"money", 15);
-			
 			bClickChk = true;
 			SCENE->ChangeScene("InGame");
 		}
-		if (m_Upgrade_No->Update()) {
+		else if (m_Upgrade_No->Update()) {
 			DEBUG_LOG("UPGRADE NO!");
 			//업그레이드 조건 넣어줌
 		}
-		if (m_Upgrade_Yes->Update()) {
+		else if (m_Upgrade_Yes->Update()) {
 			DEBUG_LOG("UPGRADE YES!");
 			//업그레이드 조건 넣어줌
 		}
@@ -66,10 +63,7 @@ void cStoreWnd::Render()
 		m_Upgrade_No->Render();
 		m_Upgrade_Yes->Render();
 	}
-
-
 	IMAGE->PrintTexture("Money =" + to_string(Money), { 300 , 300 });
-
 }
 
 void cStoreWnd::Release()
