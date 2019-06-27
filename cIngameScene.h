@@ -8,7 +8,10 @@ private:
 	cTexture * m_BackGround;
 	//cFrame * m_PlayerFrame;
 	Point Pos;
-	int WndState; 
+	int WndState;
+	Point m_ChangPos;
+	cTexture * m_ChangMmannequin;
+
 
 	cButton * m_Exit_Button;
 	cButton * m_Option_button;
@@ -17,16 +20,24 @@ private:
 
 	Point m_BackGroundPos;
 	Point m_MoneyIconPos;
+	
+	cButton * m_goshop;
+	
 	//알림창 버튼
 	cButton * m_notice_exit_btn;
 	cWindow * m_Window;
 public:
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;
-	int Money;
 
+	int Money;
+	string kindC;
+
+	//마우스
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
+
+	int count = 1;
 public:
 	cIngameScene();
 	virtual ~cIngameScene();

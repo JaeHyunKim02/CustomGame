@@ -13,6 +13,7 @@ cMainScene::~cMainScene()
 
 void cMainScene::Init()
 {
+	isChangTime = false;
 	m_Mouse = new cMouseCursor();
 	m_Mouse->Init();
 
@@ -69,6 +70,7 @@ void cMainScene::Update()
 	if (m_Closet_Shoes_btn->Update())	 m_EDress_State = eSHOES;
 	if (m_Complete_btn->Update()) {
 		isOrder = true;
+		
 		SCENE->ChangeScene("InGame");
 	}
 	switch (m_EDress_State) {

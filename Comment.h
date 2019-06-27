@@ -11,10 +11,10 @@ private:
 	bool b_Move;
 
 	int WndState;
-
-	cButton * m_StartButton;
-	cButton * m_GameExitButton;
 	cButton * m_GoTitle;
+
+	cMouseCursor * m_Mouse;
+	Point MousePoint;
 
 public:
 	int MyScore;

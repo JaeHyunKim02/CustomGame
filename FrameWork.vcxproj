@@ -164,6 +164,7 @@
     <ClInclude Include="Comment.h" />
     <ClInclude Include="cScene.h" />
     <ClInclude Include="cSceneManager.h" />
+    <ClInclude Include="cShopScene.h" />
     <ClInclude Include="cSingleTexture.h" />
     <ClInclude Include="cTexture.h" />
     <ClInclude Include="cTitleScene.h" />
@@ -193,6 +194,7 @@
     <ClCompile Include="Comment.cpp" />
     <ClCompile Include="cScene.cpp" />
     <ClCompile Include="cSceneManager.cpp" />
+    <ClCompile Include="cShopScene.cpp" />
     <ClCompile Include="cSingleTexture.cpp" />
     <ClCompile Include="cTexture.cpp" />
     <ClCompile Include="cTitleScene.cpp" />
