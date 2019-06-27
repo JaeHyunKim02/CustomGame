@@ -5,6 +5,8 @@
 #include "cIngameScene.h"
 #include"cTitleScene.h"
 #include"cMainScene.h"
+#include"cShopScene.h"
+#include"Comment.h"
 cMainGame::cMainGame()
 {
 }
@@ -36,6 +38,9 @@ void cMainGame::Init(HWND hWnd)
 	SCENE->AddScene("Title", new cTitleScene);
 	SCENE->AddScene("InGame", new cIngameScene);
 	SCENE->AddScene("MainGame", new cMainScene);
+	SCENE->AddScene("Shop", new cShopScene);
+	SCENE->AddScene("Comment", new Comment);
+
 	//SCENE->AddScene("MainGame", new MainGame);
 	
 	//노래 튼당

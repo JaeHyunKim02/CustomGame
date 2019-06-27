@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include"cButton.h"
-#include <windows.h>
 #include"Comment.h"
 Comment::Comment()
 {
@@ -15,6 +14,9 @@ Comment::~Comment()
 
 void Comment::Init()
 {
+	m_Mouse = new cMouseCursor();
+	m_Mouse->Init();
+
 	BGM = true;
 	EFFECT = true;
 	MCI_OPEN_PARMS mciOpen;
@@ -47,6 +49,10 @@ void Comment::Init()
 
 void Comment::Update()
 {
+	MousePoint.x = INPUT->GetMousePos().x;
+	MousePoint.y = INPUT->GetMousePos().y;
+
+	m_Mouse->Update(MousePoint);
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
@@ -54,14 +60,14 @@ void Comment::Update()
 	if (m_GoTitle->Update()) {
 		SCENE->ChangeScene("InGame");
 	}
-	/*if(MyComment == GREAT//이런 느낌으로 조건 넣으면 될듯){
+	if(MyComment == GREAT){//이런 느낌으로 조건 넣으면 될듯
 
 	}
-	else if(MyComment == GOOD//이런 느낌으로 조건 넣으면 될듯){
+	else if(MyComment == GOOD){//이런 느낌으로 조건 넣으면 될듯
 	}
-	else if(MyComment == BAD//이런 느낌으로 조건 넣으면 될듯){
+	else if(MyComment == BAD){//이런 느낌으로 조건 넣으면 될듯
 	}
-	*/
+	
 }
 
 void Comment::Render()
@@ -71,9 +77,11 @@ void Comment::Render()
 	//IMAGE->Render(이미지, 좌표, true = 이미지의 중심을 중앙으로 설정, 제거할 컬러키);
 	IMAGE->Render(IMAGE->FindImage("TitleBg"), m_TitleBgPos, false);
 	m_GoTitle->Render();
+	m_Mouse->Render(MousePoint);
 }
 
 void Comment::Release()
 {
+	SAFE_DELETE(m_Mouse);
 	SAFE_DELETE(m_GoTitle);
 }

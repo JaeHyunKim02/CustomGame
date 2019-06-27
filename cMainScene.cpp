@@ -13,6 +13,7 @@ cMainScene::~cMainScene()
 
 void cMainScene::Init()
 {
+	isChangTime = false;
 	m_Mouse = new cMouseCursor();
 	m_Mouse->Init();
 
@@ -100,6 +101,7 @@ void cMainScene::Update()
 	}
 	if (m_Complete_btn->Update()) {
 		isOrder = true;
+		
 		SCENE->ChangeScene("InGame");
 	}
 

@@ -59,11 +59,14 @@
     <Filter Include="Object\Closet">
       <UniqueIdentifier>{225894d8-6275-42cc-b054-50bfb9fed2fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Window\NewFilter1">
-      <UniqueIdentifier>{14199e93-3ec1-4556-a277-6285aa01a05c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Manager\MouseCursor">
       <UniqueIdentifier>{5ade3cde-209f-4175-8270-d6b7ef40e66b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Result">
+      <UniqueIdentifier>{d5469fe5-b1f3-4675-b919-2b09d9023ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\cShopScene">
+      <UniqueIdentifier>{94828107-e68b-4b27-9bed-9e27f402bfa9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -131,12 +134,17 @@
     <ClInclude Include="cGameExitWnd.h">
       <Filter>Scene\Window\GameExitWnd</Filter>
     </ClInclude>
-    <ClInclude Include="Comment.h" />
     <ClInclude Include="cCloset.h">
       <Filter>Object\Closet</Filter>
     </ClInclude>
     <ClInclude Include="cMouseCursor.h">
       <Filter>Manager\MouseCursor</Filter>
+    </ClInclude>
+    <ClInclude Include="Comment.h">
+      <Filter>Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="cShopScene.h">
+      <Filter>Scene\cShopScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -197,12 +205,17 @@
     <ClCompile Include="cGameExitWnd.cpp">
       <Filter>Scene\Window\GameExitWnd</Filter>
     </ClCompile>
-    <ClCompile Include="Comment.cpp" />
     <ClCompile Include="cCloset.cpp">
       <Filter>Object\Closet</Filter>
     </ClCompile>
     <ClCompile Include="cMouseCursor.cpp">
       <Filter>Manager\MouseCursor</Filter>
+    </ClCompile>
+    <ClCompile Include="Comment.cpp">
+      <Filter>Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="cShopScene.cpp">
+      <Filter>Scene\cShopScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

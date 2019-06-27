@@ -12,6 +12,7 @@ cStoreWnd::cStoreWnd(int x, int y, const string & key)
 
 cStoreWnd::~cStoreWnd()
 {
+	Release();
 }
 
 void cStoreWnd::Init()
