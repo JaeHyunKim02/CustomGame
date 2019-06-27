@@ -116,11 +116,10 @@ void cIngameScene::Release()
 	//SAFE_DELETE(m_PlayerFrame);
 	SAFE_DELETE(m_Mouse);
 	//SAFE_DELETE(m_Exit_Button);
+
+	SAFE_DELETE(m_Window);
+	SAFE_DELETE(m_goshop);
 	SAFE_DELETE(m_Option_button);
 	SAFE_DELETE(m_Info_button);
 	SAFE_DELETE(m_Notice_button);
-	SAFE_DELETE(m_Window);
-	SAFE_DELETE(m_goshop);
-
-
 }
