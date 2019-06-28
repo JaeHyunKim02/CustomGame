@@ -10,7 +10,7 @@ private:
 	Point Pos;
 	Point m_TitleBgPos;
 	bool b_Move;
-
+	bool isOver;
 	int WndState;
 
 

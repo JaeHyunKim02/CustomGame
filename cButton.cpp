@@ -107,7 +107,12 @@ void cButton::Render()
 			IMAGE->Render(m_Nomal, m_Pos, true, RGB(255, 0, 255));
 	}
 }
-
+void cButton::ClickRender()
+{
+	if (bChkLock) { 
+		IMAGE->Render(m_Click, m_Pos, true, RGB(255, 0, 255));
+	}
+}
 void cButton::Release()
 {
 }

@@ -5,10 +5,12 @@
 #define DRESS_BTN_Y 888
 cMainScene::cMainScene()
 {
+
 }
 
 cMainScene::~cMainScene()
 {
+	Release();
 } 
 
 void cMainScene::Init()
@@ -41,7 +43,6 @@ void cMainScene::Init()
 	m_Closet_Accessory_btn->Init();
 	m_Closet_Shoes_btn = new cButton(370, DRESS_BTN_Y, "Closet_Shoes");
 	m_Closet_Shoes_btn->Init(); 
-
 	m_Complete_btn = new cButton(540, 100, "Clear");
 	m_Complete_btn->Init();
 
@@ -135,10 +136,33 @@ void cMainScene::Render()
 {
 	IMAGE->Render(IMAGE->FindImage("MainGameBg"), m_BackGroundPos, false);
 	IMAGE->Render(IMAGE->FindImage("Mannequin"), m_ClosetPos, true, RGB(255, 0, 255));
-	m_Closet_Top_btn->Render();
-	m_Closet_Bottom_btn->Render();
-	m_Closet_Accessory_btn->Render();
-	m_Closet_Shoes_btn->Render();
+	switch (m_EDress_State) {
+	case eTOP: {
+		m_Closet_Top_btn->ClickRender();
+		m_Closet_Bottom_btn->Render();
+		m_Closet_Accessory_btn->Render();
+		m_Closet_Shoes_btn->Render();
+		break;
+	}
+	case eBOTTOM: {
+		m_Closet_Top_btn->Render();
+		m_Closet_Bottom_btn->ClickRender();
+		m_Closet_Accessory_btn->Render();
+		m_Closet_Shoes_btn->Render(); break;
+	}
+	case eACCESSORY: {
+		m_Closet_Top_btn->Render();
+		m_Closet_Bottom_btn->Render();
+		m_Closet_Accessory_btn->ClickRender();
+		m_Closet_Shoes_btn->Render(); break;
+		}
+	case eSHOES: {
+		m_Closet_Shoes_btn->ClickRender();
+		m_Closet_Top_btn->Render();
+		m_Closet_Bottom_btn->Render();
+		m_Closet_Accessory_btn->Render(); break;
+		} 
+	} 
 
 	m_Complete_btn->Render();
 	switch (m_EDress_State) {
