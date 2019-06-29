@@ -2,7 +2,7 @@
 #include"cButton.h"
 #include"cScene.h"
 
-class cShopScene: public cScene
+class cShopScene : public cScene
 {
 private:
 	cTexture * ShopBackGround;
@@ -19,11 +19,9 @@ private:
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
 
-	bool isBuy1=false;
-	bool isBuy2=false;
-	bool isBuy3=false;
-	bool isBuy4=false;
-
+private:
+	
+	bool bBuyBtn[4][4];
 public:
 	cShopScene();
 	~cShopScene();
@@ -32,4 +30,9 @@ public:
 	void Update();
 	void Render();
 	void Release();
+public:
+	void UpdateTop();
+	void UpdateBOt();
+	void UpdateAcc();
+	void UpdateShoes();
 };

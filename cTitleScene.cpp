@@ -63,10 +63,8 @@ void cTitleScene::Update()
 		SCENE->ChangeScene("InGame");
 	}
 	if (m_option_button->Update()) {
-		DEBUG_LOG("Click");
 	}
 	if (m_GameExitButton->Update()) {
-		DEBUG_LOG("Click");
 		PostQuitMessage(0);
 	}
 	

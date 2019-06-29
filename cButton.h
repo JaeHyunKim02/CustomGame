@@ -25,6 +25,8 @@ public:
 	void ClickRender();
 	void Release();
 	void ChangeLock(bool lock) {
+		if (this == nullptr)
+			DEBUG_LOG("Hello");
 		bChkLock = lock;
 	}
 

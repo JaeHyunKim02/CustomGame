@@ -52,8 +52,7 @@ cTexture * cImageManager::FindImage(const string & key, int count)
 void cImageManager::Render(cTexture * texture, Point pos, bool center , UINT rgb)
 {
 	HDC m_MemDC;
-	HBITMAP OldBitMap;
-
+	HBITMAP OldBitMap; 
 	m_MemDC = CreateCompatibleDC(m_hdc);
 	OldBitMap = (HBITMAP)SelectObject(m_MemDC, texture->m_image);
 

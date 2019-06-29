@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "cShopScene.h"
-#include"cButton.h"
-
+bool bBuyList[4][4];
 cShopScene::cShopScene()
 {
 
+	
 }
 
 
@@ -14,8 +14,7 @@ cShopScene::~cShopScene()
 }
 
 void cShopScene::Init()
-{
-	Money += 10000;
+{ 
 	m_ShopBgPos.x = 0;
 	m_ShopBgPos.y = 0;
 
@@ -41,54 +40,57 @@ void cShopScene::Update()
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 	m_Mouse->Update(MousePoint);
-
-	if (m_BuyButton_1->Update()) {//드레스 1. 1000원
-		if (Money < 1000 || isBuy1) {
-			DEBUG_LOG("돈 부족");
-		}
-		else {
-			Money -= 1000;
-			isBuy1 = true;
-
-			DEBUG_LOG("드레스1");
-		}
-	}
-	if (m_BuyButton_2->Update()) {//드레스 2. 2000원
-		if (Money < 1000|| isBuy2) {
-			DEBUG_LOG("돈 부족");
-		}
-		else {
-			Money -= 2000;
-			isBuy2 = true;
-			DEBUG_LOG("드레스2");
+	UpdateTop();
+	for (int j = 0; j < 4; j++) {
+		for (int i = 0; i < 4; i++) {
+			if (bBuyBtn[j][i] == true && bBuyList[j][i] == false) {
+				if (Money > 1000 * (i + 1)) {
+					bBuyList[j][i] = true;
+					Money -= 1000 * (i + 1);
+				}
+				else {
+					bBuyBtn[j][i] = false;
+					DEBUG_LOG("구입 실패");
+				}
+			}
 		}
 	}
-	if (m_BuyButton_3->Update()) {//드래스 3. 3000원
 
-		if (Money < 1000 || isBuy3) {
-			DEBUG_LOG("돈 부족");
-		}
-		else {
-			Money -= 3000;
-			isBuy3 = true;
-			DEBUG_LOG("드레스3");
-
-		}
-	}
-	if (m_BuyButton_4->Update()) {//드레스 4 4000원
-		if (Money < 4000 || isBuy4) {
-			DEBUG_LOG("돈 부족");
-		}
-		else {
-			Money -= 4000;
-			isBuy4 = true;
-			DEBUG_LOG("드레스4");
-		}
-	}
 	if (m_Exit->Update()) {
-		SCENE->ChangeScene("InGame"); 
+		SCENE->ChangeScene("InGame");
 	}
+} 
+void cShopScene::UpdateTop()
+{
+	if (m_BuyButton_1->Update())	   bBuyBtn[eTOP][0] = true;
+	else if (m_BuyButton_2->Update())  bBuyBtn[eTOP][1] = true;
+	else if (m_BuyButton_3->Update())  bBuyBtn[eTOP][2] = true;
+	else if (m_BuyButton_4->Update())  bBuyBtn[eTOP][3] = true; 
+ 
 }
+//void cShopScene::UpdateBOt()
+//{
+//	if (m_BuyButton_1->Update())  bBuyBtn[eTOP][0] = true;
+//	if (m_BuyButton_2->Update())  bBuyBtn[eTOP][1] = true;
+//	if (m_BuyButton_3->Update())  bBuyBtn[eTOP][2] = true;
+//	if (m_BuyButton_4->Update())  bBuyBtn[eTOP][3] = true;
+//}
+//
+//void cShopScene::UpdateAcc()
+//{
+//	if (m_BuyButton_1->Update())  bBuyBtn[eTOP][0] = true;
+//	if (m_BuyButton_2->Update())  bBuyBtn[eTOP][1] = true;
+//	if (m_BuyButton_3->Update())  bBuyBtn[eTOP][2] = true;
+//	if (m_BuyButton_4->Update())  bBuyBtn[eTOP][3] = true;
+//}
+//
+//void cShopScene::UpdateShoes()
+//{
+//	if (m_BuyButton_1->Update())  bBuyBtn[eTOP][0] = true;
+//	if (m_BuyButton_2->Update())  bBuyBtn[eTOP][1] = true;
+//	if (m_BuyButton_3->Update())  bBuyBtn[eTOP][2] = true;
+//	if (m_BuyButton_4->Update())  bBuyBtn[eTOP][3] = true;
+//}
 
 void cShopScene::Render()
 {

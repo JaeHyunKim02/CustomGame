@@ -47,11 +47,9 @@ void cMouseCursor::Render(Point pos)
 	}
 	else if (state == mDown) {
 		IMAGE->Render(g_MOnCursor, pos, false, RGB(255, 0, 255));
-		DEBUG_LOG("DOWN");
 	}
 	else if (state == mUp) {
 		IMAGE->Render(g_MClick, pos, false, RGB(255, 0, 255));
-		DEBUG_LOG("UP");
 	}
 }
 
