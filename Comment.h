@@ -17,9 +17,14 @@ private:
 	Point MousePoint;
 
 public:
+
+
 	int MyScore;
 	int MyComment;
-	int m_Comment;
+	
+	int m_Comment1;
+	int m_Comment2;
+	int m_Comment3;
 	unsigned int nSeed = (unsigned)time(NULL);
 
 	enum{
