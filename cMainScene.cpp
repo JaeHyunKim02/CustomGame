@@ -3,7 +3,7 @@
 #include "cCloset.h"
 #include "cButton.h"  
 #define DRESS_BTN_Y 888
-extern bool bBuyList[4][4];
+//extern bool bBuyList[4][4];
 cMainScene::cMainScene()
 {
 
@@ -12,7 +12,7 @@ cMainScene::cMainScene()
 cMainScene::~cMainScene()
 {
 	Release();
-} 
+}
 
 void cMainScene::Init()
 {
@@ -27,10 +27,10 @@ void cMainScene::Init()
 	m_ClosetPos.x = 320;
 	m_ClosetPos.y = 450;
 
-	m_Top_Closet       =new cCloset(eTOP);
-	m_Bottom_Closet    =new cCloset(eBOTTOM);
-	m_Accessory_Closet =new cCloset(eACCESSORY);
-	m_Shoes_Closet     =new cCloset(eSHOES);
+	m_Top_Closet = new cCloset(eTOP);
+	m_Bottom_Closet = new cCloset(eBOTTOM);
+	m_Accessory_Closet = new cCloset(eACCESSORY);
+	m_Shoes_Closet = new cCloset(eSHOES);
 	m_Top_Closet->Init();
 	m_Bottom_Closet->Init();
 	m_Accessory_Closet->Init();
@@ -43,20 +43,20 @@ void cMainScene::Init()
 	m_Closet_Accessory_btn = new cButton(536, DRESS_BTN_Y, "Closet_Accessory");
 	m_Closet_Accessory_btn->Init();
 	m_Closet_Shoes_btn = new cButton(370, DRESS_BTN_Y, "Closet_Shoes");
-	m_Closet_Shoes_btn->Init(); 
+	m_Closet_Shoes_btn->Init();
 	m_Complete_btn = new cButton(540, 100, "Clear");
 	m_Complete_btn->Init();
 
 	m_EDress_State = eTOP;
 
-	top_key		  = "Null";
-	bottom_key	  = "Null";
+	top_key = "Null";
+	bottom_key = "Null";
 	accessory_key = "Null";
-	shoes_key	  = "Null";
+	shoes_key = "Null";
 }
 
 void cMainScene::Update()
-{ 
+{
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 	m_Mouse->Update(MousePoint);
@@ -71,7 +71,7 @@ void cMainScene::Update()
 	if (m_Closet_Shoes_btn->Update())	 m_EDress_State = eSHOES;
 	if (m_Complete_btn->Update()) {
 		isOrder = true;
-		
+
 		SCENE->ChangeScene("InGame");
 	}
 	switch (m_EDress_State) {
@@ -79,7 +79,7 @@ void cMainScene::Update()
 		m_Bottom_Closet->Update();
 		m_EDress[eBOTTOM] = m_Bottom_Closet->getBottom(); //´©¸¥ ¿ÊÀÇ Á¤º¸¸¦ °¡Á®¿È
 		switch (m_EDress[eBOTTOM]) {
-		case eBOTTOM_1: bottom_key = "Bottom_1";break;
+		case eBOTTOM_1: bottom_key = "Bottom_1"; break;
 		case eBOTTOM_2: bottom_key = "Bottom_2"; break;
 		case eBOTTOM_3: bottom_key = "Bottom_3"; break;
 		case eBOTTOM_4: bottom_key = "Bottom_4"; break;
@@ -155,14 +155,14 @@ void cMainScene::Render()
 		m_Closet_Bottom_btn->Render();
 		m_Closet_Accessory_btn->ClickRender();
 		m_Closet_Shoes_btn->Render(); break;
-		}
+	}
 	case eSHOES: {
 		m_Closet_Shoes_btn->ClickRender();
 		m_Closet_Top_btn->Render();
 		m_Closet_Bottom_btn->Render();
 		m_Closet_Accessory_btn->Render(); break;
-		} 
-	} 
+	}
+	}
 
 	m_Complete_btn->Render();
 	switch (m_EDress_State) {
@@ -170,11 +170,11 @@ void cMainScene::Render()
 	case eBOTTOM:	m_Bottom_Closet->Render();		break;
 	case eACCESSORY:m_Accessory_Closet->Render();	break;
 	case eSHOES:	m_Shoes_Closet->Render();		break;
-	} 
-	if (bottom_key	  != "Null")IMAGE->Render(IMAGE->FindImage(bottom_key),		m_ClosetPos, true, RGB(255, 0, 255));
-	if (top_key != "Null")		IMAGE->Render(IMAGE->FindImage(top_key),		m_ClosetPos, true, RGB(255, 0, 255));
-	if (accessory_key != "Null")IMAGE->Render(IMAGE->FindImage(accessory_key),	m_ClosetPos, true, RGB(255, 0, 255));
-	if (shoes_key     != "Null")IMAGE->Render(IMAGE->FindImage(shoes_key),		m_ClosetPos, true, RGB(255, 0, 255));
+	}
+	if (bottom_key != "Null")IMAGE->Render(IMAGE->FindImage(bottom_key), m_ClosetPos, true, RGB(255, 0, 255));
+	if (top_key != "Null")		IMAGE->Render(IMAGE->FindImage(top_key), m_ClosetPos, true, RGB(255, 0, 255));
+	if (accessory_key != "Null")IMAGE->Render(IMAGE->FindImage(accessory_key), m_ClosetPos, true, RGB(255, 0, 255));
+	if (shoes_key != "Null")IMAGE->Render(IMAGE->FindImage(shoes_key), m_ClosetPos, true, RGB(255, 0, 255));
 	m_Mouse->Render(MousePoint);
 }
 
@@ -189,7 +189,7 @@ void cMainScene::Release()
 	SAFE_DELETE(m_Closet_Bottom_btn);
 	SAFE_DELETE(m_Closet_Accessory_btn);
 	SAFE_DELETE(m_Closet_Shoes_btn);
-	 
+
 	SAFE_DELETE(m_Complete_btn);
 }
 //int concept = 0;

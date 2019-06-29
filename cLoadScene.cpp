@@ -34,14 +34,14 @@ void cLoadScene::Init()
 	Load("Exit_OnCursor", "./Image/1.Title/Ui/Exit_OnCursor.bmp");
 	Load("Exit_Click", "./Image/1.Title/Ui/Exit_Click.bmp");
 
-	Load("Option_Nomal", "./Image/1.Title/Ui/Option_button(0).bmp");
-	Load("Option_OnCursor", "./Image/1.Title/Ui/Option_button(1).bmp");
-	Load("Option_Click", "./Image/1.Title/Ui/Option_button(2).bmp");
+	Load("Option_Nomal", "./Image/2.InGame/Ui/setting.bmp");
+	Load("Option_OnCursor", "./Image/2.InGame/Ui/setting.bmp");
+	Load("Option_Click", "./Image/2.InGame/Ui/setting.bmp");
 
 	//ingame
-	Load("Notice_Nomal", "./Image/2.InGame/UI/Notice_icon(0).bmp");
-	Load("Notice_OnCursor", "./Image/2.InGame/UI/Notice_icon(1).bmp");
-	Load("Notice_Click", "./Image/2.InGame/UI/Notice_icon(2).bmp");
+	Load("Notice_Nomal", "./Image/2.InGame/UI/notice_icon.bmp");
+	Load("Notice_OnCursor", "./Image/2.InGame/UI/notice_icon2.bmp");
+	Load("Notice_Click", "./Image/2.InGame/UI/notice_icon3.bmp");
 
 	Load("Info_Nomal", "./Image/2.InGame/UI/Store_Information_button(0).bmp");
 	Load("Info_OnCursor", "./Image/2.InGame/UI/Store_Information_button(1).bmp");
@@ -133,7 +133,7 @@ void cLoadScene::Init()
 	Load("Accessory_1", "./Image/3.MainGame/Dress/Accessory/accessory_01.bmp");
 	Load("Accessory_2", "./Image/3.MainGame/Dress/Accessory/accessory_02.bmp");
 	Load("Accessory_3", "./Image/3.MainGame/Dress/Accessory/accessory_03.bmp");
-	Load("Accessory_4", "./Image/3.MainGame/Dress/Accessory/accessory_04.bmp"); 
+	Load("Accessory_4", "./Image/3.MainGame/Dress/Accessory/accessory_04.bmp");
 	//Load("Accessory_4", "./Image/DImage/4.MainGame3/accessory_03.bmp");
 
 	Load("Next_Nomal", "./Image/3.MainGame/UI/Closet/next.bmp");

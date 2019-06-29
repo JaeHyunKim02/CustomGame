@@ -1,10 +1,12 @@
 #include "stdafx.h"
 #include "cShopScene.h"
 bool bBuyList[4][4];
+int nCntBuyPos[4][4]; //옷을 산 순서를 체크하는 변수
+int nCnt[4] = { 0,0,0,0 };
 cShopScene::cShopScene()
 {
 
-	
+
 }
 
 
@@ -14,24 +16,20 @@ cShopScene::~cShopScene()
 }
 
 void cShopScene::Init()
-{ 
+{
 	m_ShopBgPos.x = 0;
 	m_ShopBgPos.y = 0;
 
 	m_Mouse = new cMouseCursor();
 	m_Mouse->Init();
-
-	m_BuyButton_1 = new cButton(50, 500, "Buy");
-	m_BuyButton_2 = new cButton(200, 500, "Buy");
-	m_BuyButton_3 = new cButton(350, 500, "Buy");
-	m_BuyButton_4 = new cButton(500, 500, "Buy");
-
+	for (int j = 0; j < 4; j++) {
+		for (int i = 0; i < 4; i++) {
+			m_BuyButton[j][i] = new cButton(50 + (150 * i), 500 + (j * 100), "Buy");
+			m_BuyButton[j][i]->Init();
+		}
+	}
 	m_Exit = new cButton(500, 200, "WndExit");
 	m_Exit->Init();
-	m_BuyButton_1->Init();
-	m_BuyButton_2->Init();
-	m_BuyButton_3->Init();
-	m_BuyButton_4->Init();
 
 }
 
@@ -40,13 +38,26 @@ void cShopScene::Update()
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 	m_Mouse->Update(MousePoint);
-	UpdateTop();
+	BuyDress();
+	if (m_Exit->Update()) {
+		SCENE->ChangeScene("InGame");
+	}
+}
+void cShopScene::BuyDress()//옷 구
+{
+	for (int j = 0; j < 4; j++) {
+		for (int i = 0; i < 4; i++) {
+			if (m_BuyButton[j][i]->Update())
+				bBuyBtn[j][i] = true;
+		}
+	}
 	for (int j = 0; j < 4; j++) {
 		for (int i = 0; i < 4; i++) {
 			if (bBuyBtn[j][i] == true && bBuyList[j][i] == false) {
-				if (Money > 1000 * (i + 1)) {
+				if (Money >= 1000 * (i + 1)) {
 					bBuyList[j][i] = true;
 					Money -= 1000 * (i + 1);
+					CntBuyList(j, i);
 				}
 				else {
 					bBuyBtn[j][i] = false;
@@ -56,51 +67,43 @@ void cShopScene::Update()
 		}
 	}
 
-	if (m_Exit->Update()) {
-		SCENE->ChangeScene("InGame");
-	}
-} 
-void cShopScene::UpdateTop()
-{
-	if (m_BuyButton_1->Update())	   bBuyBtn[eTOP][0] = true;
-	else if (m_BuyButton_2->Update())  bBuyBtn[eTOP][1] = true;
-	else if (m_BuyButton_3->Update())  bBuyBtn[eTOP][2] = true;
-	else if (m_BuyButton_4->Update())  bBuyBtn[eTOP][3] = true; 
- 
 }
-//void cShopScene::UpdateBOt()
-//{
-//	if (m_BuyButton_1->Update())  bBuyBtn[eTOP][0] = true;
-//	if (m_BuyButton_2->Update())  bBuyBtn[eTOP][1] = true;
-//	if (m_BuyButton_3->Update())  bBuyBtn[eTOP][2] = true;
-//	if (m_BuyButton_4->Update())  bBuyBtn[eTOP][3] = true;
-//}
-//
-//void cShopScene::UpdateAcc()
-//{
-//	if (m_BuyButton_1->Update())  bBuyBtn[eTOP][0] = true;
-//	if (m_BuyButton_2->Update())  bBuyBtn[eTOP][1] = true;
-//	if (m_BuyButton_3->Update())  bBuyBtn[eTOP][2] = true;
-//	if (m_BuyButton_4->Update())  bBuyBtn[eTOP][3] = true;
-//}
-//
-//void cShopScene::UpdateShoes()
-//{
-//	if (m_BuyButton_1->Update())  bBuyBtn[eTOP][0] = true;
-//	if (m_BuyButton_2->Update())  bBuyBtn[eTOP][1] = true;
-//	if (m_BuyButton_3->Update())  bBuyBtn[eTOP][2] = true;
-//	if (m_BuyButton_4->Update())  bBuyBtn[eTOP][3] = true;
-//}
+void cShopScene::CntBuyList(int i, int j)
+{
+	switch (i) {
+	case eTOP: {
+		nCntBuyPos[eTOP][j] = nCnt[eTOP];
+		nCnt[eTOP]++;
+		break;
+	}
+	case eBOTTOM: {
+		nCntBuyPos[eBOTTOM][j] = nCnt[eBOTTOM];
+		nCnt[eBOTTOM]++;
+		break;
+	}
+	case eACCESSORY: {
+		nCntBuyPos[eACCESSORY][j] = nCnt[eACCESSORY];
+		nCnt[eACCESSORY]++;
+		break;
+	}
+	case eSHOES: {
+		nCntBuyPos[eSHOES][j] = nCnt[eSHOES];
+		nCnt[eSHOES]++;
+		break;
+	}
+	}
+}
+
 
 void cShopScene::Render()
 {
 
 	IMAGE->Render(IMAGE->FindImage("ShopBg"), m_ShopBgPos, false);
-
-	m_BuyButton_1->Render();
-	m_BuyButton_2->Render();
-	m_BuyButton_3->Render();
-	m_BuyButton_4->Render();
+	for (int j = 0; j < 4; j++) {
+		for (int i = 0; i < 4; i++) {
+			m_BuyButton[j][i]->Render();
+		}
+	}
 	m_Exit->Render();
 	IMAGE->PrintTexture("Money =" + to_string(Money), { 300 , 300 });
 	m_Mouse->Render(MousePoint);
@@ -108,10 +111,11 @@ void cShopScene::Render()
 
 void cShopScene::Release()
 {
-	SAFE_DELETE(m_BuyButton_1);
-	SAFE_DELETE(m_BuyButton_2);
-	SAFE_DELETE(m_BuyButton_3);
-	SAFE_DELETE(m_BuyButton_4);
+	for (int j = 0; j < 4; j++) {
+		for (int i = 0; i < 4; i++) {
+			SAFE_DELETE(m_BuyButton[j][i]);
+		}
+	}
 	SAFE_DELETE(m_Exit);
 	SAFE_DELETE(m_Mouse);
 }

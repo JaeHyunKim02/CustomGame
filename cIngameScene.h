@@ -15,14 +15,13 @@ private:
 
 	cButton * m_Exit_Button;
 	cButton * m_Option_button;
-	cButton * m_Info_button;
 	cButton * m_Notice_button;
 
 	Point m_BackGroundPos;
 	Point m_MoneyIconPos;
-	
+
 	cButton * m_goshop;
-	
+
 	//알림창 버튼
 	cButton * m_notice_exit_btn;
 	cWindow * m_Window;

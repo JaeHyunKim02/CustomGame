@@ -18,7 +18,7 @@ cMakingWnd::~cMakingWnd()
 void cMakingWnd::Init()
 {
 	m_Making_btn = new cButton(320, 480, "Making");
-	m_Making_btn->Init(); 
+	m_Making_btn->Init();
 	m_Exit_btn = new cButton(500, 200, "WndExit");
 	m_Exit_btn->Init();
 }
@@ -29,8 +29,10 @@ void cMakingWnd::Update()
 		Init();
 		bClickChk = false;
 	}
-	if (m_Making_btn->Update())
+	if (m_Making_btn->Update()) {
+		chkOrder = false;
 		SCENE->ChangeScene("MainGame");
+	}
 	if (m_Exit_btn->Update()) {
 		Release();
 		bClickChk = true;
