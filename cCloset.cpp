@@ -13,13 +13,14 @@ cCloset::cCloset(_ClosetKind ClosetKind)
 
 cCloset::~cCloset()
 {
-
+	Release();
 	SAFE_DELETE(m_next_btn);
 	SAFE_DELETE(m_before_btn);
-	Release();
 }
 void cCloset::Init()
 {
+	for (int i = 0; i < 4; i++)
+		b_first[i] = true;
 	bNextBtn = false;
 	switch (m_ClosetKind) {
 	case eTOP:		Init_top();
@@ -42,7 +43,8 @@ void cCloset::Render()
 			m_top_3_btn->Render();
 			m_top_4_btn->Render();
 		}
-		else NextCloseRender();
+		else
+			NextCloseRender();
 		break;
 	}
 	case eBOTTOM: {
@@ -83,17 +85,17 @@ void cCloset::Render()
 
 void cCloset::Update()
 {
-	switch (m_ClosetKind) {
+	switch (m_ClosetKind) {//선택한 옷장에 따라 다른 버튼 업데이트
 	case eTOP: {
-		if (bNextBtn) NextClosetUpdate();
+		if (bNextBtn)
+			NextClosetUpdate();
 		else if (!bNextBtn) {	//before closet
 			if (m_top_1_btn->Update())		_EDress[eTOP] = eTOP_1;
 			else if (m_top_2_btn->Update()) _EDress[eTOP] = eTOP_2;
 			else if (m_top_3_btn->Update()) _EDress[eTOP] = eTOP_3;
 			else if (m_top_4_btn->Update()) _EDress[eTOP] = eTOP_4;
 		}
-		break;
-	}
+	}break;
 	case eBOTTOM: {
 		if (bNextBtn) NextClosetUpdate();
 		else if (!bNextBtn) {
@@ -102,8 +104,7 @@ void cCloset::Update()
 			if (m_bottom_3_btn->Update()) _EDress[eBOTTOM] = eBOTTOM_3;
 			if (m_bottom_4_btn->Update()) _EDress[eBOTTOM] = eBOTTOM_4;
 		}
-		break;
-	}
+	}break;
 	case eACCESSORY: {
 		if (bNextBtn) NextClosetUpdate();
 		else if (!bNextBtn) {
@@ -112,8 +113,7 @@ void cCloset::Update()
 			if (m_accessory_3_btn->Update()) _EDress[eACCESSORY] = eACCESSORY_3;
 			if (m_accessory_4_btn->Update()) _EDress[eACCESSORY] = eACCESSORY_4;
 		}
-		break;
-	}
+	}break;
 	case eSHOES: {
 		if (bNextBtn) NextClosetUpdate();
 		else if (!bNextBtn) {
@@ -122,57 +122,92 @@ void cCloset::Update()
 			if (m_shoes_3_btn->Update()) _EDress[eSHOES] = eSHOES_3;
 			if (m_shoes_4_btn->Update()) _EDress[eSHOES] = eSHOES_4;
 		}
-		break;
+	}break;
 	}
-	}
-	if (m_next_btn->Update()) {
+
+	if (m_next_btn->Update()) { //다음 버튼
+		bNextBtn = true;
 		switch (m_ClosetKind) {
-		case eTOP:		Next_Init_top();		break;
-		case eBOTTOM:	Next_Init_bottom();		break;
-		case eACCESSORY:Next_Init_accessory();	break;
-		case eSHOES:	Next_Init_shoes();		break;
-		}
-	}
-	else if (m_before_btn->Update()) {
-		switch (m_ClosetKind) {
-		case eTOP:
-			bNextBtn = false;
-			Release(); Init_top();		break;
-		case eBOTTOM:
-			bNextBtn = false;
-			Release(); Init_bottom();	break;
+		case eTOP: {
+			b_first[0] = true; 
+			Next_Init_top();		
+		}break;
+		case eBOTTOM: {
+			b_first[1] = true;
+			Next_Init_bottom(); }		break;
 		case eACCESSORY:
-			bNextBtn = false;
-			Release(); Init_accessory();break;
-		case eSHOES:
-			bNextBtn = false;
-			Release(); Init_shoes();	break;
+		{
+			b_first[2] = true;
+			Next_Init_accessory();
+		}break;
+		case eSHOES: {
+			b_first[3] = true;
+			Next_Init_shoes();
+		}break;
 		}
+	}
+	else if (m_before_btn->Update()) {//이전 버튼
+		bNextBtn = false;
+		switch (m_ClosetKind) {
+		case eTOP: Release(); Init_top();		break;
+		case eBOTTOM: Release(); Init_bottom();	break;
+		case eACCESSORY: Release(); Init_accessory(); break;
+		case eSHOES: Release(); Init_shoes();	break;
+		}
+	}
+}
+void cCloset::ChangeDressLock(int j, int i) { //옷 미리보기 버튼 잠금해제
+	switch (m_ClosetKind) {
+	case eTOP: {
+		switch (i + 5) {
+		case eTOP_1: m_next_top_1_btn->ChangeLock(true); break;
+		case eTOP_2: m_next_top_2_btn->ChangeLock(true); break;
+		case eTOP_3: m_next_top_3_btn->ChangeLock(true); break;
+		//case eTOP_4: m_next_top_4_btn->ChangeLock(true); break;
+		}
+	}
+		break;
+	case eBOTTOM: {
+		switch (i + 13) { 
+		}
+	}
+				  break;
+	case eACCESSORY: {
+		switch (i + 21) { 
+		}
+	}
+					 break;
+	case eSHOES: {
+		switch (i + 29) { 
+		}
+	}
+				 break;
 	}
 }
 void cCloset::NextClosetUpdate()
 {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (bBuyList[i][j] == true)
+				ChangeDressLock(i, j);
+		}
+	}
 	if (bNextBtn) {
 		switch (m_ClosetKind) {
 		case eTOP: {
-			if(m_next_top_1_btn->Update())
-				_EDress[eTOP] = eTOP_5;
-			if(m_next_top_2_btn->Update()) 
-				_EDress[eTOP] = eTOP_6;
-			if(m_next_top_3_btn->Update())
-				_EDress[eTOP] = eTOP_7;
+			if (m_next_top_1_btn->Update()) _EDress[eTOP] = eTOP_5;
+			if (m_next_top_2_btn->Update()) _EDress[eTOP] = eTOP_6;
+			if (m_next_top_3_btn->Update()) _EDress[eTOP] = eTOP_7;
+			//if (m_next_top_4_btn->Update()) _EDress[eTOP] = eTOP_8;
 			break;
-		}
+		}break;
 		case eBOTTOM: {
-			if (m_next_bottom_1_btn->Update())  _EDress[eBOTTOM] = eBOTTOM_5;
-			if (m_next_bottom_2_btn->Update())  _EDress[eBOTTOM] = eBOTTOM_6;
 			break;
 		}
-		case eACCESSORY: { 
+		case eACCESSORY: {
 			break;
 		}
 		case eSHOES: {
-			if (m_next_shoes_1_btn->Update())  _EDress[eSHOES] = eSHOES_5;
 			break;
 		}
 		}
@@ -185,17 +220,18 @@ void cCloset::NextCloseRender() { //다음 옷장 랜더
 			m_next_top_1_btn->Render();
 			m_next_top_2_btn->Render();
 			m_next_top_3_btn->Render();
+			//m_next_top_3_btn->Render();
 			break;
 		}
 		case eBOTTOM: {
-			m_next_bottom_1_btn->Render();
+			//m_next_bottom_1_btn->Render();
 			break;
 		}
 		case eACCESSORY: {
 			break;
 		}
 		case eSHOES: {
-			m_next_shoes_1_btn->Render();
+			//m_next_shoes_1_btn->Render();
 			break;
 		}
 		}
@@ -203,13 +239,13 @@ void cCloset::NextCloseRender() { //다음 옷장 랜더
 }
 
 void cCloset::Init_top()
-{  
+{
 	m_top_1_btn = new cButton(DRESS_BTN_X, DRESS_BTN_Y, "Top_1");
 	m_top_1_btn->Init();
 	m_top_2_btn = new cButton(DRESS_BTN_X + 135, DRESS_BTN_Y, "Top_1");
 	m_top_2_btn->Init();
 	m_top_3_btn = new cButton(DRESS_BTN_X + 135 * 2, DRESS_BTN_Y, "Top_1"); \
-	m_top_3_btn->Init();
+		m_top_3_btn->Init();
 	m_top_4_btn = new cButton(DRESS_BTN_X + 135 * 3, DRESS_BTN_Y, "Top_1");
 	m_top_4_btn->Init();
 }
@@ -249,38 +285,47 @@ void cCloset::Init_shoes()
 
 void cCloset::Next_Init_top()
 {
-	bNextBtn = true;
-	Release();
-	m_next_top_1_btn = new cButton(DRESS_BTN_X +135 * nCntTopPos, DRESS_BTN_Y, "Top_1");
-	m_next_top_1_btn->Init(false);
-	m_next_top_2_btn = new cButton(DRESS_BTN_X + 135* nCntTopPos, DRESS_BTN_Y, "Top_1");
-	m_next_top_2_btn->Init(false);
-	m_next_top_3_btn = new cButton(DRESS_BTN_X + 135 * nCntTopPos, DRESS_BTN_Y, "Top_1");
-	m_next_top_3_btn->Init(false);
+	if (b_first[0]) {
+		Release();
+		m_next_top_1_btn = new cButton(DRESS_BTN_X + 135 * 0, DRESS_BTN_Y, "Top_1");
+		m_next_top_1_btn->Init(false);
+		m_next_top_2_btn = new cButton(DRESS_BTN_X + 135 * 1, DRESS_BTN_Y, "Top_1");
+		m_next_top_2_btn->Init(false);
+		m_next_top_3_btn = new cButton(DRESS_BTN_X + 135 * 2, DRESS_BTN_Y, "Top_1");
+		m_next_top_3_btn->Init(false);
+		b_first[0] = false;
+	}
 }
 void cCloset::Next_Init_bottom()
 {
-	bNextBtn = true;
-	Release();
-	m_next_bottom_1_btn = new cButton(DRESS_BTN_X+135*nCntBotPos, DRESS_BTN_Y, "Top_1");
-	m_next_bottom_1_btn->Init(false);
-	m_next_bottom_2_btn = new cButton(DRESS_BTN_X+ 135+nCntBotPos, DRESS_BTN_Y, "Top_1");
-	m_next_bottom_2_btn->Init(false);
+	if (b_first[1]) {
+		Release();
+		m_next_bottom_1_btn = new cButton(DRESS_BTN_X + 135 * 1, DRESS_BTN_Y, "Top_1");
+		m_next_bottom_1_btn->Init(false);
+		m_next_bottom_2_btn = new cButton(DRESS_BTN_X + 135 + 2, DRESS_BTN_Y, "Top_1");
+		m_next_bottom_2_btn->Init(false);
+		b_first[1] = false;
+	}
 }
 void cCloset::Next_Init_accessory()
 {
-	bNextBtn = true;
-	Release(); 
+	if (b_first[2]) {
+		Release();
+		b_first[2] = false;
+	}
 }
 void cCloset::Next_Init_shoes()
 {
-	bNextBtn = true;
-	Release();
-	m_next_shoes_1_btn = new cButton(DRESS_BTN_X+135*nCntShoesPos, DRESS_BTN_Y, "Top_1");
-	m_next_shoes_1_btn->Init(false);
+	if (b_first[3]) {
+		Release();
+		m_next_shoes_1_btn = new cButton(DRESS_BTN_X + 135 * nCntShoesPos, DRESS_BTN_Y, "Top_1");
+		m_next_shoes_1_btn->Init(false);
+		b_first[3] = false;
+	}
 }
 void cCloset::Release()
 {
+
 	SAFE_DELETE(m_top_1_btn);
 	SAFE_DELETE(m_top_2_btn);
 	SAFE_DELETE(m_top_3_btn);

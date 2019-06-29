@@ -38,7 +38,6 @@ void cGameExitWnd::Update()
 	}
 
 	if (m_Exit_btn->Update() | m_ExitNo->Update()) {
-		DEBUG_LOG("CH");
 		Release();
 		bClickChk = true;
 		SCENE->ChangeScene("InGame");

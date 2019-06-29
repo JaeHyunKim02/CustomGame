@@ -12,6 +12,7 @@ private:
 
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
+
 private:
 	string top_key;
 	string bottom_key;

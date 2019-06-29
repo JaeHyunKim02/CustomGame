@@ -3,6 +3,7 @@
 #include "cCloset.h"
 #include "cButton.h"  
 #define DRESS_BTN_Y 888
+extern bool bBuyList[4][4];
 cMainScene::cMainScene()
 {
 
@@ -55,10 +56,9 @@ void cMainScene::Init()
 }
 
 void cMainScene::Update()
-{
+{ 
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
-
 	m_Mouse->Update(MousePoint);
 
 	if (EFFECT) {
@@ -172,7 +172,7 @@ void cMainScene::Render()
 	case eSHOES:	m_Shoes_Closet->Render();		break;
 	} 
 	if (bottom_key	  != "Null")IMAGE->Render(IMAGE->FindImage(bottom_key),		m_ClosetPos, true, RGB(255, 0, 255));
-	if (top_key		  != "Null")IMAGE->Render(IMAGE->FindImage(top_key),		m_ClosetPos, true, RGB(255, 0, 255));
+	if (top_key != "Null")		IMAGE->Render(IMAGE->FindImage(top_key),		m_ClosetPos, true, RGB(255, 0, 255));
 	if (accessory_key != "Null")IMAGE->Render(IMAGE->FindImage(accessory_key),	m_ClosetPos, true, RGB(255, 0, 255));
 	if (shoes_key     != "Null")IMAGE->Render(IMAGE->FindImage(shoes_key),		m_ClosetPos, true, RGB(255, 0, 255));
 	m_Mouse->Render(MousePoint);

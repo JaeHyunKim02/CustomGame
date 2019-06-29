@@ -1,8 +1,8 @@
 #pragma once
 
-
+#include"cShopScene.h"
 class cButton;
-class cCloset
+class cCloset:  public cShopScene
 {
 public:
 	cCloset(_ClosetKind Closetkind);
@@ -15,6 +15,7 @@ public:
 public:
 	void NextClosetUpdate();
 	void NextCloseRender();
+	void ChangeDressLock(int j, int i);
 public:
 	void Init_top();
 	void Init_bottom();
@@ -25,13 +26,14 @@ public:
 	void Next_Init_bottom();
 	void Next_Init_accessory();
 	void Next_Init_shoes();
-private:
+private: 
 	bool bNextBtn;
 	bool first;//√ ±‚»≠ 
 	int nCntTopPos;
 	int nCntBotPos;
 	int nCntAccPos;
 	int nCntShoesPos;
+	bool b_first[4];
 private:
 	_ClosetKind _EDress[4];
 	Point m_closet_pos;
