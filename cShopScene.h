@@ -13,6 +13,7 @@ private:
 	cButton * m_BuyButton_3;
 	cButton * m_BuyButton_4;
 
+	cButton * m_Exit;
 	Point pos;
 
 	cMouseCursor * m_Mouse;

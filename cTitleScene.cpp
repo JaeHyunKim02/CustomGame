@@ -10,7 +10,7 @@ cTitleScene::cTitleScene()
 
 cTitleScene::~cTitleScene()
 {
-
+	Release();
 }
 
 void cTitleScene::Init()
@@ -62,13 +62,14 @@ void cTitleScene::Update()
 		m_nConcept = rand() % 4;
 		SCENE->ChangeScene("InGame");
 	}
+	if (m_option_button->Update()) {
+		DEBUG_LOG("Click");
+	}
 	if (m_GameExitButton->Update()) {
 		DEBUG_LOG("Click");
 		PostQuitMessage(0);
 	}
-	if (m_option_button->Update()) {
-		DEBUG_LOG("Click");
-	}
+	
 }
 
 void cTitleScene::Render()
@@ -91,7 +92,7 @@ void cTitleScene::Render()
 
 void cTitleScene::Release()
 {
-
+	
 	SAFE_DELETE(m_Mouse);
 	SAFE_DELETE(m_StartButton);
 	SAFE_DELETE(m_GameExitButton);

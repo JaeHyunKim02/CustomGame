@@ -14,6 +14,7 @@ cMainGame::cMainGame()
 
 cMainGame::~cMainGame()
 {
+	Release();
 }
 
 void cMainGame::Init(HWND hWnd)

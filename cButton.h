@@ -22,6 +22,7 @@ public:
 	void Init(bool bChkLock);
 	bool Update();
 	void Render();
+	void ClickRender();
 	void Release();
 	void ChangeLock(bool lock) {
 		bChkLock = lock;

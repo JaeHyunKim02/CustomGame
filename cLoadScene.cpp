@@ -128,7 +128,12 @@ void cLoadScene::Init()
 	Load("Accessory_3", "./Image/3.MainGame/Dress/Accessory/accessory_02.bmp");
 	//Load("Accessory_4", "./Image/DImage/4.MainGame3/accessory_03.bmp");
 
-
+	Load("Next_Nomal", "./Image/3.MainGame/UI/Closet/next.bmp");
+	Load("Next_OnCursor", "./Image/3.MainGame/UI/Closet/next.bmp");
+	Load("Next_Click", "./Image/3.MainGame/UI/Closet/next.bmp");
+	Load("Before_Nomal", "./Image/3.MainGame/UI/Closet/before.bmp");
+	Load("Before_OnCursor", "./Image/3.MainGame/UI/Closet/before.bmp");
+	Load("Before_Click", "./Image/3.MainGame/UI/Closet/before.bmp");
 
 	//마우서 커서 
 	Load("MouseCursor_nomal", "./Image/Ui/MouseCursor/MouseCur.bmp");

@@ -10,7 +10,7 @@ cShopScene::cShopScene()
 
 cShopScene::~cShopScene()
 {
-
+	Release();
 }
 
 void cShopScene::Init()
@@ -27,6 +27,8 @@ void cShopScene::Init()
 	m_BuyButton_3 = new cButton(350, 500, "Buy");
 	m_BuyButton_4 = new cButton(500, 500, "Buy");
 
+	m_Exit = new cButton(500, 200, "WndExit");
+	m_Exit->Init();
 	m_BuyButton_1->Init();
 	m_BuyButton_2->Init();
 	m_BuyButton_3->Init();
@@ -74,8 +76,6 @@ void cShopScene::Update()
 		}
 	}
 	if (m_BuyButton_4->Update()) {//드레스 4 4000원
-
-
 		if (Money < 4000 || isBuy4) {
 			DEBUG_LOG("돈 부족");
 		}
@@ -83,9 +83,10 @@ void cShopScene::Update()
 			Money -= 4000;
 			isBuy4 = true;
 			DEBUG_LOG("드레스4");
-
 		}
-
+	}
+	if (m_Exit->Update()) {
+		SCENE->ChangeScene("InGame"); 
 	}
 }
 
@@ -98,7 +99,7 @@ void cShopScene::Render()
 	m_BuyButton_2->Render();
 	m_BuyButton_3->Render();
 	m_BuyButton_4->Render();
-
+	m_Exit->Render();
 	IMAGE->PrintTexture("Money =" + to_string(Money), { 300 , 300 });
 	m_Mouse->Render(MousePoint);
 }
