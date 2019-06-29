@@ -110,6 +110,6 @@ void cShopScene::Release()
 	SAFE_DELETE(m_BuyButton_2);
 	SAFE_DELETE(m_BuyButton_3);
 	SAFE_DELETE(m_BuyButton_4);
-
+	SAFE_DELETE(m_Exit);
 	SAFE_DELETE(m_Mouse);
 }

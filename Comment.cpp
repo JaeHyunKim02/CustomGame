@@ -35,7 +35,7 @@ void Comment::Init()
 
 	
 	srand(nSeed);
-	m_Comment = rand()%3;
+	//m_Comment = rand()%3;
 	if (MyScore >= 4) {
 		MyComment = GREAT;
 	}

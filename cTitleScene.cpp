@@ -79,7 +79,7 @@ void cTitleScene::Render()
 	//IMAGE->Render(이미지, 좌표, true = 이미지의 중심을 중앙으로 설정, 제거할 컬러키);
 
 	IMAGE->Render(IMAGE->FindImage("TitleBg"), m_TitleBgPos, false);
-	IMAGE->Render(IMAGE->FindImage("Game_Logo"), m_TitleBgPos, false,RGB(255,0,255));
+	//IMAGE->Render(IMAGE->FindImage("Game_Logo"), m_TitleBgPos, false,RGB(255,0,255));
 
 	//IMAGE->Render(IMAGE->FindImage("MouseTest"), MousePoint, true, RGB(255, 0, 255));
 
