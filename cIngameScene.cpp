@@ -65,7 +65,7 @@ void cIngameScene::Update()
 			count = 1;
 		char a[128];
 		sprintf_s(a, "M_%d", count);
-		//kindC = "M_" + count;
+		kindC = "M_" + count;
 		kindC = a;
 		//SCENE->ChangeScene("InGame");
 	}
@@ -84,6 +84,7 @@ void cIngameScene::Update()
 
 	else if (m_Option_button->Update()) {//옵션 버튼을 클릭  
 		WndState = OPTION_WND;  
+		//SCENE->ChangeScene("Comment");
 	} 
 	else if (WndState != EMPTY_WND) {
 		m_Window->Update(WndState);

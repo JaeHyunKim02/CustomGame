@@ -31,9 +31,17 @@ void Comment::Init()
 
 	m_TitleBgPos.x = 0;
 	m_TitleBgPos.y = 0;
-	m_GoTitle = new cButton(320, 700, "GameExit_Yes");
-
+	m_GoTitle = new cButton(320, 500, "GameExit_Yes");
+	m_GoTitle->Init();
 	
+	CommentPos1.x = 320;
+	CommentPos1.y = 100;
+	CommentPos2.x = 320;
+	CommentPos2.y = 300;
+	CommentPos3.x = 320;
+	CommentPos3.y = 600;
+
+
 	srand(nSeed);
 	//m_Comment = rand()%3;
 	if (MyScore >= 4) {
@@ -49,6 +57,8 @@ void Comment::Init()
 
 void Comment::Update()
 {
+	if (4 >= CommentCount) CommentCount = 1;
+
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 
@@ -60,14 +70,27 @@ void Comment::Update()
 	if (m_GoTitle->Update()) {
 		SCENE->ChangeScene("InGame");
 	}
+
+	
 	if(MyComment == GREAT){//이런 느낌으로 조건 넣으면 될듯
 
 	}
 	else if(MyComment == GOOD){//이런 느낌으로 조건 넣으면 될듯
+
 	}
 	else if(MyComment == BAD){//이런 느낌으로 조건 넣으면 될듯
+	
 	}
 	
+	if (CommentCount == 1) {
+		//m_Comment1
+	}
+	else if (CommentCount == 2) {
+		//m_Comment2
+	}
+	else if (CommentCount == 3) {
+		//m_Comment3
+	}
 }
 
 void Comment::Render()
@@ -76,6 +99,17 @@ void Comment::Render()
 	//IMAGE->FindImage("이름")을 하여 이미지를 찾을 수 있다.
 	//IMAGE->Render(이미지, 좌표, true = 이미지의 중심을 중앙으로 설정, 제거할 컬러키);
 	IMAGE->Render(IMAGE->FindImage("TitleBg"), m_TitleBgPos, false);
+
+	if (m_Comment1 != "NULL") {
+		IMAGE->Render(IMAGE->FindImage(m_Comment1), CommentPos1, false);
+	}
+	if (m_Comment2 != "NULL") {
+		IMAGE->Render(IMAGE->FindImage(m_Comment2), CommentPos2, false);
+	}
+	if (m_Comment3 != "NULL") {
+		IMAGE->Render(IMAGE->FindImage(m_Comment3), CommentPos3, false);
+	}
+
 	m_GoTitle->Render();
 	m_Mouse->Render(MousePoint);
 }

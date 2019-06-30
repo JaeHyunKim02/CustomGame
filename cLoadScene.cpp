@@ -149,9 +149,9 @@ void cLoadScene::Init()
 	Load("MouseCursor_upclick", "./Image/Ui/MouseCursor/MouseCur(2).bmp");
 
 	//댓글들 로딩
-	Load("1", "./Image/Ui/Comment1.bmp");
-	Load("2", "./Image/Ui/Comment2.bmp");
-	Load("3", "./Image/Ui/Comment3.bmp");
+	Load("1", "./Image/5.Comment/Comment1.bmp");
+	Load("2", "./Image/5.Comment/Comment2.bmp");
+	Load("3", "./Image/5.Comment/Comment3.bmp");
 
 
 	//메인 화면 바뀌는 마네킹들

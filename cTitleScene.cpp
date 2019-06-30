@@ -65,7 +65,8 @@ void cTitleScene::Update()
 	if (m_option_button->Update()) {
 	}
 	if (m_GameExitButton->Update()) {
-		PostQuitMessage(0);
+		//PostQuitMessage(0);
+		SCENE->ChangeScene("Comment");
 	}
 	
 }
