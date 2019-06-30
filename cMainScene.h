@@ -9,7 +9,6 @@ private:
 	cTexture * m_BackGround;
 	Point m_BackGroundPos;
 	Point m_ClosetPos;
-
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
 
@@ -25,6 +24,9 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
+public:
+	int EvalDress(); //옷 평가
+	void ClickRender();
 private:
 	cCloset * m_Top_Closet;
 	cCloset * m_Bottom_Closet;
@@ -35,10 +37,12 @@ private:
 	cButton * m_Closet_Bottom_btn;
 	cButton * m_Closet_Accessory_btn;
 	cButton * m_Closet_Shoes_btn;
+	cButton * m_Complete_btn;//제출 버튼
 
-	cButton * m_Complete_btn;
-
+	cButton * m_HomeBtn;
 private:
 	_ClosetKind m_EDress_State;
 	_ClosetKind m_EDress[4];
+private:
+	bool bChkSubmit; 
 };

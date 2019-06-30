@@ -38,9 +38,7 @@ void cIngameScene::Init()
 	//m_Exit_Button = new cButton(100, 500, "Exit");
 	//m_Exit_Button->Init();
 	m_Option_button = new cButton(100, 300, "Option");
-	m_Option_button->Init();
-	m_Info_button = new cButton(550, 100, "Info");
-	m_Info_button->Init();
+	m_Option_button->Init(); 
 	m_Notice_button = new cButton(100, 100, "Notice");
 	m_Notice_button->Init(); 
 	m_goshop = new cButton(50, 300, "GoShop");
@@ -74,14 +72,9 @@ void cIngameScene::Update()
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
 	} 
-	if (m_Notice_button->Update()) {//알림 버튼 클릭한 경우 
+	if (m_Notice_button->Update() && chkOrder) {//알림 버튼 클릭한 경우 
 		WndState = MAKING_WND;  
-	} 
-
-	else if (m_Info_button->Update()) {//가게정보 버튼을 클릭한 경우 
-		WndState =STOREINFO_WND; 
-	} 
-
+	}  
 	else if (m_Option_button->Update()) {//옵션 버튼을 클릭  
 		WndState = OPTION_WND;  
 		//SCENE->ChangeScene("Comment");
@@ -102,8 +95,7 @@ void cIngameScene::Render()
 	
 	//IMAGE->Render(IMAGE->FindImage("money_icon"), m_MoneyIconPos, false);
 	
-	m_Notice_button->Render();	//알림버튼 그림
-	m_Info_button->Render();	//가게정보버튼 그림
+	if (chkOrder)m_Notice_button->Render();	//알림버튼 그림 
 	m_Option_button->Render();	//옵션버튼 그림
 	m_goshop->Render();//상점가는 버튼
 	if (WndState != EMPTY_WND) {
@@ -120,7 +112,6 @@ void cIngameScene::Release()
 
 	SAFE_DELETE(m_Window);
 	SAFE_DELETE(m_goshop);
-	SAFE_DELETE(m_Option_button);
-	SAFE_DELETE(m_Info_button);
+	SAFE_DELETE(m_Option_button); 
 	SAFE_DELETE(m_Notice_button);
 }
