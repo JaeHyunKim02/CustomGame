@@ -66,7 +66,7 @@ void Comment::Update()
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);
-	}
+	}//kjhgfjkhjg
 	if (m_GoTitle->Update()) {
 		SCENE->ChangeScene("InGame");
 	}
