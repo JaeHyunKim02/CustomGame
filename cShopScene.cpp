@@ -6,6 +6,8 @@ int nCnt[4] = { 0,0,0,0 };
 cShopScene::cShopScene()
 {
 
+	m_ShopBgPos.x = 0;
+	m_ShopBgPos.y = 0;
 
 }
 
@@ -17,20 +19,39 @@ cShopScene::~cShopScene()
 
 void cShopScene::Init()
 {
-	m_ShopBgPos.x = 0;
-	m_ShopBgPos.y = 0;
-
 	m_Mouse = new cMouseCursor();
 	m_Mouse->Init();
+	m_next_btn = new cButton(600, 458, "Next");
+	m_before_btn = new cButton(43, 458, "Before");
+	m_next_btn->Init();
+	m_before_btn->Init();
+
+	m_Product[eTOP][0] = new cButton(193, 302, "Buy");
+	m_Product[eTOP][1] = new cButton(450, 302, "Buy");
+	m_Product[eTOP][2] = new cButton(193, 770, "Buy");
+	m_Product[eTOP][3] = new cButton(450, 770, "Buy");
+
+	m_Product[eBOTTOM][0] = new cButton(193, 302, "Buy");
+	m_Product[eBOTTOM][1] = new cButton(450, 302, "Buy");
+	m_Product[eBOTTOM][2] = new cButton(193, 770, "Buy");
+	m_Product[eBOTTOM][3] = new cButton(450, 770, "Buy");
+
+	m_Product[eACCESSORY][0] = new cButton(193, 302, "Buy");
+	m_Product[eACCESSORY][1] = new cButton(450, 302, "Buy");
+	m_Product[eACCESSORY][2] = new cButton(193, 770, "Buy");
+	m_Product[eACCESSORY][3] = new cButton(450, 770, "Buy");
+
+	m_Product[eSHOES][0] = new cButton(193, 302, "Buy");
+	m_Product[eSHOES][1] = new cButton(450, 302, "Buy");
+	m_Product[eSHOES][2] = new cButton(193, 770, "Buy");
+	m_Product[eSHOES][3] = new cButton(450, 770, "Buy");
 	for (int j = 0; j < 4; j++) {
 		for (int i = 0; i < 4; i++) {
-			m_BuyButton[j][i] = new cButton(50 + (150 * i), 500 + (j * 100), "Buy");
-			m_BuyButton[j][i]->Init();
+			m_Product[j][i]->Init();
 		}
 	}
-	m_Exit = new cButton(500, 200, "WndExit");
+	m_Exit = new cButton(40, 600, "WndExit");
 	m_Exit->Init();
-
 }
 
 void cShopScene::Update()
@@ -38,35 +59,44 @@ void cShopScene::Update()
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 	m_Mouse->Update(MousePoint);
+	if (m_before_btn->Update() && m_state != eTOP) m_state--;
+	if (m_next_btn->Update() && m_state != eSHOES) m_state++;
 	BuyDress();
 	if (m_Exit->Update()) {
 		SCENE->ChangeScene("InGame");
 	}
 }
 void cShopScene::BuyDress()//옷 구
-{
-	for (int j = 0; j < 4; j++) {
-		for (int i = 0; i < 4; i++) {
-			if (m_BuyButton[j][i]->Update())
-				bBuyBtn[j][i] = true;
+{ 
+	for (int i = 0; i < 4; i++) {
+		if (m_Product[m_state][i]->Update()) {
+			m_bBuyBtn[m_state][i] = true;
+			DEBUG_LOG(m_state);
 		}
-	}
-	for (int j = 0; j < 4; j++) {
-		for (int i = 0; i < 4; i++) {
-			if (bBuyBtn[j][i] == true && bBuyList[j][i] == false) {
-				if (Money >= 1000 * (i + 1)) {
-					bBuyList[j][i] = true;
-					Money -= 1000 * (i + 1);
-					CntBuyList(j, i);
-				}
-				else {
-					bBuyBtn[j][i] = false;
-					DEBUG_LOG("구입 실패");
-				}
+	} 
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (bBuyList[i][j] == true)
+			{
+				DEBUG_LOG(i);
+				DEBUG_LOG(j);
+				DEBUG_LOG("//////");
 			}
 		}
 	}
-
+	for (int i = 0; i < 4; i++) {
+		if (m_bBuyBtn[m_state][i] == true && bBuyList[m_state][i] == false) {
+			if (Money >= 1000 * (i + 1)) {
+				bBuyList[m_state][i] = true;
+				Money -= 1000 * (i + 1);
+				CntBuyList(m_state, i);
+			}
+			else {
+				m_bBuyBtn[m_state][i] = false;
+				DEBUG_LOG("구입 실패");
+			}
+		}
+	}
 }
 void cShopScene::CntBuyList(int i, int j)
 {
@@ -97,15 +127,17 @@ void cShopScene::CntBuyList(int i, int j)
 
 void cShopScene::Render()
 {
-
 	IMAGE->Render(IMAGE->FindImage("ShopBg"), m_ShopBgPos, false);
-	for (int j = 0; j < 4; j++) {
-		for (int i = 0; i < 4; i++) {
-			m_BuyButton[j][i]->Render();
-		}
+	switch (m_state) {
+	case eTOP:		for (int i = 0; i < 4; i++) m_Product[eTOP][i]->Render();		break;
+	case eBOTTOM:   for (int i = 0; i < 4; i++) m_Product[eBOTTOM][i]->Render();	break;
+	case eACCESSORY:for (int i = 0; i < 4; i++) m_Product[eACCESSORY][i]->Render(); break;
+	case eSHOES:	for (int i = 0; i < 4; i++) m_Product[eSHOES][i]->Render();		break;
 	}
+	m_next_btn->Render();
+	m_before_btn->Render();
 	m_Exit->Render();
-	IMAGE->PrintTexture("Money =" + to_string(Money), { 300 , 300 });
+	IMAGE->PrintTexture("Money =" + to_string(Money), { 300 , 200 });
 	m_Mouse->Render(MousePoint);
 }
 
@@ -113,7 +145,7 @@ void cShopScene::Release()
 {
 	for (int j = 0; j < 4; j++) {
 		for (int i = 0; i < 4; i++) {
-			SAFE_DELETE(m_BuyButton[j][i]);
+			SAFE_DELETE(m_Product[j][i]);
 		}
 	}
 	SAFE_DELETE(m_Exit);

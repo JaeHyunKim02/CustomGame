@@ -30,7 +30,6 @@ public:
 		bChkLock = lock;
 	}
 
-	bool isClickDown(int x, int y);
 	bool isOver();
 };
 

@@ -13,7 +13,7 @@ public:
 	void Render();
 	void Release();
 public:
-	void NextClosetUpdate();
+	void NextClosetUpdate(_ClosetKind state);
 	void NextCloseRender();
 	void ChangeDressLock(int j, int i);
 public:

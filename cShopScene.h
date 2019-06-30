@@ -1,3 +1,4 @@
+
 #pragma once
 #include"cButton.h"
 #include"cScene.h"
@@ -8,14 +9,18 @@ private:
 	cTexture * ShopBackGround;
 	Point m_ShopBgPos;
 
-	cButton * m_BuyButton[4][4];
+	//cButton * m_BuyButton[4][4];
+	cButton * m_Product[4][4];
 	cButton * m_Exit;
 	Point pos;
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
 
+	cButton * m_next_btn;
+	cButton * m_before_btn;
 private:
-	bool bBuyBtn[4][4];
+	bool m_bBuyBtn[4][4];
+	int m_state;
 public:
 	cShopScene();
 	~cShopScene();
