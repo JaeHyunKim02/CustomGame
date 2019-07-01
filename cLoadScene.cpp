@@ -176,6 +176,22 @@ void cLoadScene::Init()
 	Load("Order_2", "./Image/2.InGame/Orders/Order2.bmp");
 	Load("Order_3", "./Image/2.InGame/Orders/Order3.bmp");
 
+
+
+
+
+
+
+
+
+
+
+	Load("Top_Product_1_Nomal", "./Image/4.Shop/Product/Top_Product_1.bmp");
+	Load("Top_Product_1_OnCursor", "./Image/4.Shop/Product/Top_Product_1.bmp");
+	Load("Top_Product_1_Click", "./Image/4.Shop/Product/Top_Product_1.bmp");
+	 
+	Load("ResultBg", "./Image/6.Result/BackGround/ResultBg.bmp");
+
 	m_MaxLoad = m_Load.size();
 }
 

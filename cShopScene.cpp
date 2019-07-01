@@ -26,25 +26,25 @@ void cShopScene::Init()
 	m_next_btn->Init();
 	m_before_btn->Init();
 
-	m_Product[eTOP][0] = new cButton(193, 302, "Buy");
-	m_Product[eTOP][1] = new cButton(450, 302, "Buy");
-	m_Product[eTOP][2] = new cButton(193, 770, "Buy");
-	m_Product[eTOP][3] = new cButton(450, 770, "Buy");
+	m_Product[eTOP][0] = new cButton(193, 283, "Top_Product_1");
+	m_Product[eTOP][1] = new cButton(450, 283, "Top_Product_1");
+	m_Product[eTOP][2] = new cButton(193, 708, "Top_Product_1");
+	m_Product[eTOP][3] = new cButton(450, 708, "Top_Product_1");
 
-	m_Product[eBOTTOM][0] = new cButton(193, 302, "Buy");
-	m_Product[eBOTTOM][1] = new cButton(450, 302, "Buy");
-	m_Product[eBOTTOM][2] = new cButton(193, 770, "Buy");
-	m_Product[eBOTTOM][3] = new cButton(450, 770, "Buy");
+	m_Product[eBOTTOM][0] = new cButton(193, 283, "Top_Product_1");
+	m_Product[eBOTTOM][1] = new cButton(450, 283, "Top_Product_1");
+	m_Product[eBOTTOM][2] = new cButton(193, 708, "Top_Product_1");
+	m_Product[eBOTTOM][3] = new cButton(450, 708, "Top_Product_1");
 
-	m_Product[eACCESSORY][0] = new cButton(193, 302, "Buy");
-	m_Product[eACCESSORY][1] = new cButton(450, 302, "Buy");
-	m_Product[eACCESSORY][2] = new cButton(193, 770, "Buy");
-	m_Product[eACCESSORY][3] = new cButton(450, 770, "Buy");
+	m_Product[eACCESSORY][0] = new cButton(193, 283, "Top_Product_1");
+	m_Product[eACCESSORY][1] = new cButton(450, 283, "Top_Product_1");
+	m_Product[eACCESSORY][2] = new cButton(193, 708, "Top_Product_1");
+	m_Product[eACCESSORY][3] = new cButton(450, 708, "Top_Product_1");
 
-	m_Product[eSHOES][0] = new cButton(193, 302, "Buy");
-	m_Product[eSHOES][1] = new cButton(450, 302, "Buy");
-	m_Product[eSHOES][2] = new cButton(193, 770, "Buy");
-	m_Product[eSHOES][3] = new cButton(450, 770, "Buy");
+	m_Product[eSHOES][0] = new cButton(193, 283, "Top_Product_1");
+	m_Product[eSHOES][1] = new cButton(450, 283, "Top_Product_1");
+	m_Product[eSHOES][2] = new cButton(193, 708, "Top_Product_1");
+	m_Product[eSHOES][3] = new cButton(450, 708, "Top_Product_1");
 	for (int j = 0; j < 4; j++) {
 		for (int i = 0; i < 4; i++) {
 			m_Product[j][i]->Init();
@@ -73,17 +73,7 @@ void cShopScene::BuyDress()//¿Ê ±¸
 			m_bBuyBtn[m_state][i] = true;
 			DEBUG_LOG(m_state);
 		}
-	} 
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
-			if (bBuyList[i][j] == true)
-			{
-				DEBUG_LOG(i);
-				DEBUG_LOG(j);
-				DEBUG_LOG("//////");
-			}
-		}
-	}
+	}  
 	for (int i = 0; i < 4; i++) {
 		if (m_bBuyBtn[m_state][i] == true && bBuyList[m_state][i] == false) {
 			if (Money >= 1000 * (i + 1)) {
