@@ -2,6 +2,7 @@
 #include "cMakingWnd.h"
 #include"cButton.h"
 
+int temp=0;
 cMakingWnd::cMakingWnd(int x, int y, const string & key)
 {
 	m_Window = IMAGE->FindImage(key);
@@ -17,6 +18,26 @@ cMakingWnd::~cMakingWnd()
 
 void cMakingWnd::Init()
 {
+	srand(nSeed);
+	CountOrder = rand()%3+1;//주문지 늘어나면 여기서 추가시키면 됨
+	if (temp == CountOrder) {
+		while (1)
+		{
+		CountOrder = rand() % 3 + 1;
+		if (CountOrder != temp)
+			break;
+		}
+	}
+	temp = CountOrder;
+	
+	//CountOrder = 1;
+	char buffer[128];
+	sprintf_s(buffer, "Order_%d", CountOrder);
+	strOrder = buffer;
+
+	m_OrderPos.x = 320;
+	m_OrderPos.y = 300;
+
 	m_Making_btn = new cButton(320, 480, "Making");
 	m_Making_btn->Init();
 	m_Exit_btn = new cButton(500, 200, "WndExit");
@@ -43,10 +64,16 @@ void cMakingWnd::Update()
 void cMakingWnd::Render()
 {
 	if (!bClickChk) {
+		
 		IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
+		IMAGE->Render(IMAGE->FindImage(strOrder), m_OrderPos, true);
 		m_Making_btn->Render();
 		m_Exit_btn->Render();
 	}
+	//Order_1
+	
+	//	IMAGE->Render(IMAGE->FindImage(m_Comment3), CommentPos3, false);
+	
 }
 
 void cMakingWnd::Release()

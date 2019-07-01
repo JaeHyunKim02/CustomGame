@@ -25,7 +25,7 @@ void Comment::Init()
 	mciOpen.lpstrDeviceType = L"WaveAudio";
 	mciOpen.lpstrElementName = L"./Sound/BGM.wav";
 
-	mciSendCommand(1, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)(LPVOID)&mciOpen);
+	mciSendCommand(1, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)(LPVOID)&mciOpen); 
 	mciSendCommand(1, MCI_PLAY, MCI_DGV_PLAY_REPEAT, (DWORD)(LPVOID)&mciPlay);
 
 
