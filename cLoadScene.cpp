@@ -176,21 +176,25 @@ void cLoadScene::Init()
 	Load("Order_2", "./Image/2.InGame/Orders/Order2.bmp");
 	Load("Order_3", "./Image/2.InGame/Orders/Order3.bmp");
 
-
-
-
-
-
-
-
-
-
-
 	Load("Top_Product_1_Nomal", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_OnCursor", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_Click", "./Image/4.Shop/Product/Top_Product_1.bmp");
-	 
+
 	Load("ResultBg", "./Image/6.Result/BackGround/ResultBg.bmp");
+	Load("MyMoney", "./Image/2.InGame/Ui/have_money.bmp");
+	Load("CommentWnd", "./Image/2.InGame/Ui/Comment/Comment_window.bmp");
+
+	//메인화면 마네킹 넘기기 버튼
+
+	Load("PageDown", "./Image/2.InGame/BackGround/page_bottonDown.bmp");
+	//Load("PageDown_OnCursor", "./Image/2.InGame/BackGround/page_bottonDown(1).bmp");
+	//Load("PageDown_Click", "./Image/2.InGame/BackGround/page_bottonDown(2).bmp");
+
+	Load("PageUp_Nomal", "./Image/2.InGame/BackGround/page_bottonUp.bmp");
+	Load("PageUp_OnCursor", "./Image/2.InGame/BackGround/page_bottonUP(1).bmp");
+	Load("PageUp_Click", "./Image/2.InGame/BackGround/page_bottonUp(2).bmp");
+
+	Load("HelpWindow", "./Image/Ui/HelpWnd.bmp");
 
 	m_MaxLoad = m_Load.size();
 }

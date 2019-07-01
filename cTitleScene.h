@@ -23,6 +23,8 @@ public:
 	//¸¶¿ì½º
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
+	MCI_OPEN_PARMS mciOpen;
+	MCI_PLAY_PARMS mciPlay;
 public:
 	cTitleScene();
 	virtual ~cTitleScene();

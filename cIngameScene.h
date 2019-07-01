@@ -9,14 +9,14 @@ private:
 	//cFrame * m_PlayerFrame;
 	Point Pos;
 	int WndState;
-	Point m_ChangPos;
+	Point m_ChangePos;
 	cTexture * m_ChangMmannequin;
 
 
-	cButton * m_Exit_Button;
-	cButton * m_Option_button;
+	cButton * m_GameExitButton;
 	cButton * m_Notice_button;
-
+	cButton * m_Option_button;
+	cButton  * m_HowToPlay_button;
 
 	Point m_BackGroundPos;
 	Point m_MoneyIconPos;
@@ -26,6 +26,17 @@ private:
 	//알림창 버튼
 	cButton * m_notice_exit_btn;
 	cWindow * m_Window;
+
+	Point CommentPos;
+	Point CommentPos2;
+
+	cButton * m_Page_Button1;
+	cButton * m_Page_Button2;
+	cButton * m_Page_Button3;
+	Point ShowPageButtonPos;
+
+
+
 public:
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;

@@ -34,12 +34,13 @@ void cTitleScene::Init()
 
 	mciSendCommand(1, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)(LPVOID)&mciOpen);
 	mciSendCommand(1, MCI_PLAY, MCI_DGV_PLAY_REPEAT, (DWORD)(LPVOID)&mciPlay);
+
 	m_TitleBgPos.x = 0;
 	m_TitleBgPos.y = 0;
 	m_StartButton = new cButton(320, 550, "Start");
-	m_GameExitButton = new cButton(580, 40, "Exit");
-	m_option_button = new cButton(530, 40, "Option");
-	m_HowToPlay_button = new cButton(480, 40, "HowToPlay");
+	m_GameExitButton = new cButton(590, 40, "Exit");
+	m_option_button = new cButton(520, 40, "Option");
+	m_HowToPlay_button = new cButton(450, 40, "HowToPlay");
 	m_StartButton->Init();
 	m_GameExitButton->Init();
 	m_option_button->Init();

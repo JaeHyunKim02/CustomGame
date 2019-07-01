@@ -43,6 +43,7 @@ void cOptionWnd::Update()
 			EFFECT = true;
 		}
 		if (m_Exit_btn->Update()) {
+
 			bClickChk = true;
 			SCENE->ChangeScene("InGame");
 		}

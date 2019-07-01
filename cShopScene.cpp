@@ -66,6 +66,7 @@ void cShopScene::Update()
 		SCENE->ChangeScene("InGame");
 	}
 }
+
 void cShopScene::BuyDress()//¿Ê ±¸
 { 
 	for (int i = 0; i < 4; i++) {
