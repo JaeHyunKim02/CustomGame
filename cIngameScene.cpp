@@ -161,10 +161,16 @@ void cIngameScene::Render()
 	IMAGE->Render(IMAGE->FindImage("PageDown"), ShowPageButtonPos, true, RGB(255, 0, 255));
 	//IMAGE->Render(IMAGE->FindImage("money_icon"), m_MoneyIconPos, false);
 
+<<<<<<< HEAD
+	if (chkOrder)m_Notice_button->Render();	//알림버튼 그림 
+
+	m_Option_button->Render();	//옵션버튼 그림
+=======
 	//240남았음
 	//198
 	m_Notice_button->Render();	//알림버튼 그림
 	//m_Option_button->Render();	//옵션버튼 그림
+>>>>>>> 95477fd1fea1811c7559111f42f25256faf074d7
 	m_goshop->Render();//상점가는 버튼
 	if (WndState != EMPTY_WND) {
 		m_Window->Render(WndState);
