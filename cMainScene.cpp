@@ -141,18 +141,18 @@ void cMainScene::Update()
 		}
 	}
 }
-int cMainScene::EvalDress()
-{
-	int cnt=0;
-	int score;
-	//for (int i = 0; i < 4; i++) {
-	//	if (m_EDress[i] == ) {
-	//		cnt++;
-	//	}
-	//} 
-
-	return cnt;
-}
+//int cMainScene::EvalDress()
+//{
+//	//int cnt=0;
+//	//int score;
+//	//for (int i = 0; i < 4; i++) {
+//	//	if (m_EDress[i] == ) {
+//	//		cnt++;
+//	//	}
+//	//} 
+//
+//	//return cnt;
+//}
 
 void cMainScene::ClickRender()
 {
@@ -201,11 +201,13 @@ void cMainScene::Render()
 	if (top_key != "Null")		IMAGE->Render(IMAGE->FindImage(top_key), m_ClosetPos, true, RGB(255, 0, 255));
 	if (accessory_key != "Null")IMAGE->Render(IMAGE->FindImage(accessory_key), m_ClosetPos, true, RGB(255, 0, 255));
 	if (shoes_key != "Null")	IMAGE->Render(IMAGE->FindImage(shoes_key), m_ClosetPos, true, RGB(255, 0, 255));
-	m_Mouse->Render(MousePoint);
+
 	if (bChkSubmit) {
 		IMAGE->Render(IMAGE->FindImage("ResultBg"), m_BackGroundPos, false, RGB(255, 0, 255));
 		m_HomeBtn->Render();
 	}
+	
+	m_Mouse->Render(MousePoint);
 }
 
 void cMainScene::Release()

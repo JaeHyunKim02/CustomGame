@@ -19,8 +19,9 @@ private :
 
 	bool bChkLock;
 public:
+	cButton(int x, int y, const string & key, const string & key2);
 	cButton(int x, int y , const string& key);
-	cButton(int x, int y, const string & key, string & key2);
+	
 	~cButton();
 
 	void Init();

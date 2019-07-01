@@ -220,24 +220,24 @@ void cCloset::NextClosetUpdate(_ClosetKind state)
 			break;
 		}break;
 		case eBOTTOM: {
-			if (m_next_bottom_1_btn->Update()) _EDress[eBOTTOM] = eTOP_5;
-			if (m_next_bottom_2_btn->Update()) _EDress[eBOTTOM] = eTOP_6;
-			if (m_next_bottom_3_btn->Update()) _EDress[eBOTTOM] = eTOP_7;
-			if (m_next_bottom_4_btn->Update()) _EDress[eBOTTOM] = eTOP_8;
+			if (m_next_bottom_1_btn->Update()) _EDress[eBOTTOM] = eBOTTOM_5;
+			if (m_next_bottom_2_btn->Update()) _EDress[eBOTTOM] = eBOTTOM_6;
+			if (m_next_bottom_3_btn->Update()) _EDress[eBOTTOM] = eBOTTOM_7;
+			if (m_next_bottom_4_btn->Update()) _EDress[eBOTTOM] = eBOTTOM_8;
 			break;
 		}
 		case eACCESSORY: {
-			if (m_next_accessory_1_btn->Update()) _EDress[eACCESSORY] = eTOP_5;
-			if (m_next_accessory_2_btn->Update()) _EDress[eACCESSORY] = eTOP_6;
-			if (m_next_accessory_3_btn->Update()) _EDress[eACCESSORY] = eTOP_7;
-			if (m_next_accessory_4_btn->Update()) _EDress[eACCESSORY] = eTOP_8;
+			if (m_next_accessory_1_btn->Update()) _EDress[eACCESSORY] = eACCESSORY_5;
+			if (m_next_accessory_2_btn->Update()) _EDress[eACCESSORY] = eACCESSORY_6;
+			if (m_next_accessory_3_btn->Update()) _EDress[eACCESSORY] = eACCESSORY_7;
+			if (m_next_accessory_4_btn->Update()) _EDress[eACCESSORY] = eACCESSORY_8;
 			break;
 		}
 		case eSHOES: {
-			if (m_next_shoes_1_btn->Update()) _EDress[eSHOES] = eTOP_5;
-			if (m_next_shoes_2_btn->Update()) _EDress[eSHOES] = eTOP_6;
-			if (m_next_shoes_3_btn->Update()) _EDress[eSHOES] = eTOP_7;
-			if (m_next_shoes_4_btn->Update()) _EDress[eSHOES] = eTOP_8;
+			if (m_next_shoes_1_btn->Update()) _EDress[eSHOES] = eSHOES_5;
+			if (m_next_shoes_2_btn->Update()) _EDress[eSHOES] = eSHOES_6;
+			if (m_next_shoes_3_btn->Update()) _EDress[eSHOES] = eSHOES_7;
+			if (m_next_shoes_4_btn->Update()) _EDress[eSHOES] = eSHOES_8;
 			break;
 		}
 		}

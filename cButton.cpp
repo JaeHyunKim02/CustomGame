@@ -1,17 +1,7 @@
 #include "stdafx.h"
 #include "cButton.h"
 
-
-cButton::cButton(int x, int y, const string& key)
-{ 
-	m_Nomal = IMAGE->FindImage(key +    "_Nomal");
-	m_OnCursor = IMAGE->FindImage(key + "_OnCursor");
-	m_Click = IMAGE->FindImage(key +    "_Click");
-
-	m_Pos.x = x;
-	m_Pos.y = y;
-} 
-cButton::cButton(int x, int y, const string& key, string& key2)
+cButton::cButton(int x, int y, const string& key, const string& key2)
 {
 	m_Nomal = IMAGE->FindImage(key + "_Nomal");
 	m_OnCursor = IMAGE->FindImage(key + "_OnCursor");
@@ -24,6 +14,17 @@ cButton::cButton(int x, int y, const string& key, string& key2)
 	m_Pos.x = x;
 	m_Pos.y = y;
 }
+cButton::cButton(int x, int y, const string& key)
+{ 
+	m_Nomal = IMAGE->FindImage(key +    "_Nomal");
+	m_OnCursor = IMAGE->FindImage(key + "_OnCursor");
+	m_Click = IMAGE->FindImage(key +    "_Click");
+
+	m_Pos.x = x;
+	m_Pos.y = y;
+} 
+
+
 cButton::~cButton()
 {
 }
@@ -97,7 +98,8 @@ bool cButton::Update()
 	}
 	else
 		return false;
-}/*
+}
+/*
 bool cButton::isClickDown(int x, int y)
 {
 	if (isOver)
@@ -108,6 +110,7 @@ bool cButton::isClickDown(int x, int y)
 	stateBtn = OFF;
 	return false;
 }*/
+
 void cButton::Render()
 {
 	if (bChkLock) {
@@ -123,9 +126,7 @@ void cButton::Render()
 }
 void cButton::ClickRender()
 {
-	if (bChkLock) { 
-		IMAGE->Render(m_Click, m_Pos, true, RGB(255, 0, 255));
-	}
+	if (bChkLock)IMAGE->Render(m_Click, m_Pos, true, RGB(255, 0, 255));
 }
 
 void cButton::StateRender(_EPRODUCSTATE state)

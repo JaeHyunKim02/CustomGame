@@ -189,6 +189,10 @@ void cLoadScene::Init()
 	Load("Top_Product_1_Nomal", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_OnCursor", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_Click", "./Image/4.Shop/Product/Top_Product_1.bmp");
+
+	Load("Top_Product_2_Nomal",		"./Image/4.Shop/Product/Top_Product_2.bmp");
+	Load("Top_Product_2_OnCursor",	"./Image/4.Shop/Product/Top_Product_2.bmp");
+	Load("Top_Product_2_Click",		"./Image/4.Shop/Product/Top_Product_2.bmp");
 	 
 	Load("ResultBg", "./Image/6.Result/BackGround/ResultBg.bmp");
 

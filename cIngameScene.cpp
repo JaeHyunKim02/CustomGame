@@ -72,11 +72,7 @@ void cIngameScene::Update()
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
 	}
-	if (m_Notice_button->Update()) {//알림 버튼 클릭한 경우 
-		WndState = MAKING_WND;  
-			
-	} 
-
+	if (m_Notice_button->Update() && chkOrder)  WndState = MAKING_WND;  
 	else if (m_Option_button->Update()) {//옵션 버튼을 클릭  
 		WndState = OPTION_WND;  
 		//SCENE->ChangeScene("Comment");
@@ -96,14 +92,11 @@ void cIngameScene::Render()
 	IMAGE->Render(IMAGE->FindImage(kindC), m_ChangPos, true);
 	
 	//IMAGE->Render(IMAGE->FindImage("money_icon"), m_MoneyIconPos, false);
-	
-	m_Notice_button->Render();	//알림버튼 그림
+
+	if (chkOrder)m_Notice_button->Render();	//알림버튼 그림 
 	m_Option_button->Render();	//옵션버튼 그림
 	m_goshop->Render();//상점가는 버튼
-	if (WndState != EMPTY_WND) {
-		m_Window->Render(WndState);
-	}
-
+	if (WndState != EMPTY_WND) m_Window->Render(WndState);
 	m_Mouse->Render(MousePoint);
 }
 
