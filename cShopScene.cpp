@@ -24,43 +24,58 @@ void cShopScene::Init()
 	m_next_btn = new cButton(600, 458, "Next");
 	m_before_btn = new cButton(43, 458, "Before");
 	m_next_btn->Init();
-	m_before_btn->Init();
+	m_before_btn->Init(); 
+	m_Product[eTOP][0] = new cButton(193, 283, "Top_Product_1","Top_Product_2");
+	m_Product[eTOP][1] = new cButton(450, 283, "Top_Product_1","Top_Product_2");
+	m_Product[eTOP][2] = new cButton(193, 708, "Top_Product_1","Top_Product_2");
+	m_Product[eTOP][3] = new cButton(450, 708, "Top_Product_1","Top_Product_2");
 
-	m_Product[eTOP][0] = new cButton(193, 283, "Top_Product_1");
-	m_Product[eTOP][1] = new cButton(450, 283, "Top_Product_1");
-	m_Product[eTOP][2] = new cButton(193, 708, "Top_Product_1");
-	m_Product[eTOP][3] = new cButton(450, 708, "Top_Product_1");
+	m_Product[eBOTTOM][0] = new cButton(193, 283, "Top_Product_1","Top_Product_2");
+	m_Product[eBOTTOM][1] = new cButton(450, 283, "Top_Product_1","Top_Product_2");
+	m_Product[eBOTTOM][2] = new cButton(193, 708, "Top_Product_1","Top_Product_2");
+	m_Product[eBOTTOM][3] = new cButton(450, 708, "Top_Product_1","Top_Product_2");
 
-	m_Product[eBOTTOM][0] = new cButton(193, 283, "Top_Product_1");
-	m_Product[eBOTTOM][1] = new cButton(450, 283, "Top_Product_1");
-	m_Product[eBOTTOM][2] = new cButton(193, 708, "Top_Product_1");
-	m_Product[eBOTTOM][3] = new cButton(450, 708, "Top_Product_1");
+	m_Product[eACCESSORY][0] = new cButton(193, 283, "Top_Product_1","Top_Product_2");
+	m_Product[eACCESSORY][1] = new cButton(450, 283, "Top_Product_1","Top_Product_2");
+	m_Product[eACCESSORY][2] = new cButton(193, 708, "Top_Product_1","Top_Product_2");
+	m_Product[eACCESSORY][3] = new cButton(450, 708, "Top_Product_1","Top_Product_2");
 
-	m_Product[eACCESSORY][0] = new cButton(193, 283, "Top_Product_1");
-	m_Product[eACCESSORY][1] = new cButton(450, 283, "Top_Product_1");
-	m_Product[eACCESSORY][2] = new cButton(193, 708, "Top_Product_1");
-	m_Product[eACCESSORY][3] = new cButton(450, 708, "Top_Product_1");
-
-	m_Product[eSHOES][0] = new cButton(193, 283, "Top_Product_1");
-	m_Product[eSHOES][1] = new cButton(450, 283, "Top_Product_1");
-	m_Product[eSHOES][2] = new cButton(193, 708, "Top_Product_1");
-	m_Product[eSHOES][3] = new cButton(450, 708, "Top_Product_1");
+	m_Product[eSHOES][0] = new cButton(193, 283, "Top_Product_1","Top_Product_2");
+	m_Product[eSHOES][1] = new cButton(450, 283, "Top_Product_1","Top_Product_2");
+	m_Product[eSHOES][2] = new cButton(193, 708, "Top_Product_1","Top_Product_2");
+	m_Product[eSHOES][3] = new cButton(450, 708, "Top_Product_1","Top_Product_2");
 	for (int j = 0; j < 4; j++) {
 		for (int i = 0; i < 4; i++) {
+			m_product_state[i][j] = SALE;
 			m_Product[j][i]->Init();
 		}
-	}
+	}	 
 	m_Exit = new cButton(40, 600, "WndExit");
 	m_Exit->Init();
 }
 
 void cShopScene::Update()
 {
+
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 	m_Mouse->Update(MousePoint);
-	if (m_before_btn->Update() && m_state != eTOP) m_state--;
-	if (m_next_btn->Update() && m_state != eSHOES) m_state++;
+	for (int j = 0; j < 4; j++) {
+		for (int i = 0; i < 4; i++) {
+			if (bBuyList[j][i] == true) {//NO PROBLEM
+				m_product_state[j][i] = SOLD; 
+			}
+		}
+	}
+ 
+	if (m_before_btn->Update() && m_state != eTOP) {
+		m_state--;
+		DEBUG_LOG(m_state);
+	}
+	if (m_next_btn->Update() && m_state != eSHOES) {
+		m_state++;
+		DEBUG_LOG(m_state);
+	}
 	BuyDress();
 	if (m_Exit->Update()) {
 		SCENE->ChangeScene("InGame");
@@ -71,16 +86,18 @@ void cShopScene::BuyDress()//옷 구
 { 
 	for (int i = 0; i < 4; i++) {
 		if (m_Product[m_state][i]->Update()) {
-			m_bBuyBtn[m_state][i] = true;
-			DEBUG_LOG(m_state);
+			m_bBuyBtn[m_state][i] = true; 
 		}
 	}  
 	for (int i = 0; i < 4; i++) {
 		if (m_bBuyBtn[m_state][i] == true && bBuyList[m_state][i] == false) {
 			if (Money >= 1000 * (i + 1)) {
 				bBuyList[m_state][i] = true;
+				DEBUG_LOG("옷 구매");
+				DEBUG_LOG(m_state);
+				DEBUG_LOG(i);
 				Money -= 1000 * (i + 1);
-				CntBuyList(m_state, i);
+				CntBuyList(m_state, i); //순서대로 그려주는 함수
 			}
 			else {
 				m_bBuyBtn[m_state][i] = false;
@@ -119,11 +136,32 @@ void cShopScene::CntBuyList(int i, int j)
 void cShopScene::Render()
 {
 	IMAGE->Render(IMAGE->FindImage("ShopBg"), m_ShopBgPos, false);
+	//for (int i = 0; i < 4; i++) {
+	//	DEBUG_LOG("//////////");
+	//	DEBUG_LOG(i);
+	//	for (int j = 0; j < 4; j++) {
+	//		DEBUG_LOG(m_product_state[i][j]);
+	//	}
+	//} 
 	switch (m_state) {
-	case eTOP:		for (int i = 0; i < 4; i++) m_Product[eTOP][i]->Render();		break;
-	case eBOTTOM:   for (int i = 0; i < 4; i++) m_Product[eBOTTOM][i]->Render();	break;
-	case eACCESSORY:for (int i = 0; i < 4; i++) m_Product[eACCESSORY][i]->Render(); break;
-	case eSHOES:	for (int i = 0; i < 4; i++) m_Product[eSHOES][i]->Render();		break;
+	case eTOP:		
+		for (int i = 0; i < 4; i++) {   
+			m_Product[eTOP][i]->StateRender(m_product_state[eTOP][i]); //SALE
+		}break;
+	case eBOTTOM:
+		for (int i = 0; i < 4; i++) {
+			m_Product[eBOTTOM][i]->StateRender(m_product_state[eBOTTOM][i]);
+		}break;
+	case eACCESSORY: {
+		for (int i = 0; i < 4; i++) {
+			m_Product[eACCESSORY][i]->StateRender(m_product_state[eACCESSORY][i]);
+		}break;
+	}
+	case eSHOES: {
+		for (int i = 0; i < 4; i++) {
+			m_Product[eSHOES][i]->StateRender(m_product_state[eSHOES][i]);
+		}break;
+	}
 	}
 	m_next_btn->Render();
 	m_before_btn->Render();
