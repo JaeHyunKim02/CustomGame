@@ -178,7 +178,6 @@ void cLoadScene::Init()
 	Load("Order_2", "./Image/2.InGame/Orders/Order2.bmp");
 	Load("Order_3", "./Image/2.InGame/Orders/Order3.bmp");
 
-<<<<<<< HEAD
 	Load("Select", "./Image/3.MainGame/UI/Closet/select.bmp");
 
 
@@ -191,8 +190,6 @@ void cLoadScene::Init()
 
 
 
-=======
->>>>>>> 95477fd1fea1811c7559111f42f25256faf074d7
 	Load("Top_Product_1_Nomal", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_OnCursor", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_Click", "./Image/4.Shop/Product/Top_Product_1.bmp");

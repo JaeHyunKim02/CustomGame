@@ -16,6 +16,8 @@ cMainScene::~cMainScene()
 
 void cMainScene::Init()
 {
+	first = true;
+	sum = 0;
 	bChkSubmit = false;
 	isChangTime = false;
 	m_Mouse = new cMouseCursor();
@@ -64,7 +66,7 @@ void cMainScene::Update()
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 	m_Mouse->Update(MousePoint);
-	 
+
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
@@ -88,6 +90,8 @@ void cMainScene::Update()
 			case eBOTTOM_4: bottom_key = "Bottom_4"; break;
 			case eBOTTOM_5: bottom_key = "Bottom_5"; break;
 			case eBOTTOM_6: bottom_key = "Bottom_6"; break;
+			case eBOTTOM_7: bottom_key = "Bottom_7"; break;
+			case eBOTTOM_8: bottom_key = "Bottom_8"; break;
 			default:		bottom_key = "Null";     break;
 			}
 			break;
@@ -115,6 +119,9 @@ void cMainScene::Update()
 			case eACCESSORY_2: accessory_key = "Accessory_2"; break;
 			case eACCESSORY_3: accessory_key = "Accessory_3"; break;
 			case eACCESSORY_4: accessory_key = "Accessory_4"; break;
+			case eACCESSORY_5: accessory_key = "Accessory_5"; break;
+			case eACCESSORY_6: accessory_key = "Accessory_6"; break;
+			case eACCESSORY_7: accessory_key = "Accessory_7"; break;
 			default:		   accessory_key = "Null";		  break;
 			}
 			break;
@@ -135,6 +142,8 @@ void cMainScene::Update()
 		}
 	}
 	else {
+
+		EvalDress();
 		if (m_HomeBtn->Update()) {
 			SCENE->ChangeScene("InGame");
 			isOrder = true;
@@ -143,17 +152,56 @@ void cMainScene::Update()
 }
 int cMainScene::EvalDress()
 {
-	int cnt=0;
+	int cnt = 0;
 	int score;
 	for (int i = 0; i < 4; i++) {
-		if (m_EDress[i] == ) {
-			cnt++;
+		switch (i) {
+		case eTOP: {
+			if (m_EDress[eTOP] - 4 == nConcept)
+				cnt++;
+			break;
 		}
-	} 
+		case eBOTTOM: {
+			if (m_EDress[eBOTTOM] - 12 == nConcept)cnt++;
+			break;
+		}
+		case eACCESSORY: {
+			if (m_EDress[eACCESSORY] - 20 == nConcept)cnt++;
+			break;
+		}
+		case eSHOES: {
+			if (m_EDress[eSHOES] - 28 == nConcept)cnt++;
+			break;
+		}
+		}
+	}
 
+	if (first) {
+		for (int i = 0; i < 4; i++) {
+			switch (i) {
+			case eTOP: {
+				sum += DressPrice[eTOP][m_EDress[eTOP] - 4];
+				break;
+			}
+			case eBOTTOM: {
+				sum += DressPrice[eBOTTOM][m_EDress[eBOTTOM] - 12];
+				break;
+			}
+			case eACCESSORY: {
+				sum += DressPrice[eACCESSORY][m_EDress[eACCESSORY] - 20];
+				break;
+			}
+			case eSHOES: {
+				sum += DressPrice[eSHOES][m_EDress[eSHOES] - 28];
+				break;
+			}
+			}
+		}
+		Money -= sum;
+		first = false;
+	}
 	return cnt;
 }
- 
 
 void cMainScene::ClickRender()
 {
@@ -190,8 +238,6 @@ void cMainScene::Render()
 {
 	IMAGE->Render(IMAGE->FindImage("MainGameBg"), m_BackGroundPos, false);
 	IMAGE->Render(IMAGE->FindImage("Mannequin"), m_ClosetPos, true, RGB(255, 0, 255));
-
-	IMAGE->Render(IMAGE->FindImage("Select"), m_ClosetPos, true, RGB(255, 0, 255));
 	ClickRender();
 	m_Complete_btn->Render();
 	switch (m_EDress_State) {
@@ -206,10 +252,20 @@ void cMainScene::Render()
 	if (shoes_key != "Null")	IMAGE->Render(IMAGE->FindImage(shoes_key), m_ClosetPos, true, RGB(255, 0, 255));
 
 	if (bChkSubmit) {
-		IMAGE->Render(IMAGE->FindImage("ResultBg"), m_BackGroundPos, false, RGB(255, 0, 255));
 		m_HomeBtn->Render();
+		int i = EvalDress();
+		if (i > 2) {//만족
+			IMAGE->Render(IMAGE->FindImage("Good_ResultBg"), m_BackGroundPos, false, RGB(255, 0, 255));
+			IMAGE->PrintTexture("" + to_string(sum + (i * 1000)), { 300,500 });
+			Money += i * 1000;
+		}
+		else if (i <= 2) { //불만족 
+			IMAGE->Render(IMAGE->FindImage("Bad_ResultBg"), m_BackGroundPos, false, RGB(255, 0, 255));
+			IMAGE->PrintTexture("" + to_string(sum - (i * 1000)), { 300,500 });
+			Money -= i * 1000;
+		}
 	}
-	
+
 	m_Mouse->Render(MousePoint);
 }
 
@@ -228,4 +284,3 @@ void cMainScene::Release()
 
 	SAFE_DELETE(m_Complete_btn);
 }
- 

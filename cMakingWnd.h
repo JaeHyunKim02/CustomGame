@@ -20,7 +20,6 @@ private:
 	cButton * m_Making_btn;
 	cButton * m_Exit_btn;
 	Point m_OrderPos;
-	Point  m_OrderBackPos;
 public:
 	int CountOrder = 0;
 	string strOrder;
