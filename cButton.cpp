@@ -11,6 +11,19 @@ cButton::cButton(int x, int y, const string& key)
 	m_Pos.x = x;
 	m_Pos.y = y;
 } 
+cButton::cButton(int x, int y, const string& key, string& key2)
+{
+	m_Nomal = IMAGE->FindImage(key + "_Nomal");
+	m_OnCursor = IMAGE->FindImage(key + "_OnCursor");
+	m_Click = IMAGE->FindImage(key + "_Click");
+
+	m_Nomal2 = IMAGE->FindImage(key2 + "_Nomal");
+	m_OnCursor2 = IMAGE->FindImage(key2 + "_OnCursor");
+	m_Click2 = IMAGE->FindImage(key2 + "_Click");
+
+	m_Pos.x = x;
+	m_Pos.y = y;
+}
 cButton::~cButton()
 {
 }
@@ -37,6 +50,7 @@ void cButton::Init(bool ChkLock)
 	//	m_Pos.x + m_Nomal->m_info->bmWidth,
 	//	m_Pos.x + m_Nomal->m_info->bmHeight);
 	//중점이 가운데
+	bChkLock = true;
 	bChkLock = ChkLock;
 	SetRect(&m_rt,
 		m_Pos.x - m_Nomal->m_info->bmWidth  / 2,
@@ -71,7 +85,7 @@ bool cButton::Update()
 			b_OnCursor = true;
 			if (INPUT->MouseLPress()) {
 				b_Click = true;
-			}
+			}//도꼬데스까
 			else {
 				b_Click = false;
 			}
@@ -111,6 +125,36 @@ void cButton::ClickRender()
 {
 	if (bChkLock) { 
 		IMAGE->Render(m_Click, m_Pos, true, RGB(255, 0, 255));
+	}
+}
+
+void cButton::StateRender(_EPRODUCSTATE state)
+{
+	if (bChkLock) {
+	switch (state) {
+	case SOLD: {
+		if (b_Click) {
+			IMAGE->Render(m_Click2, m_Pos, true, RGB(255, 0, 255));
+		}
+		else if (b_OnCursor) {
+			IMAGE->Render(m_OnCursor2, m_Pos, true, RGB(255, 0, 255));
+		}
+		else
+			IMAGE->Render(m_Nomal2, m_Pos, true, RGB(255, 0, 255));
+		break;
+	}
+	case SALE: {
+		if (b_Click) {
+			IMAGE->Render(m_Click, m_Pos, true, RGB(255, 0, 255));
+		}
+		else if (b_OnCursor) {
+			IMAGE->Render(m_OnCursor, m_Pos, true, RGB(255, 0, 255));
+		}
+		else
+			IMAGE->Render(m_Nomal, m_Pos, true, RGB(255, 0, 255));
+		break;
+	}
+	}
 	}
 }
 void cButton::Release()
