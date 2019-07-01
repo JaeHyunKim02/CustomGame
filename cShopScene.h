@@ -20,7 +20,7 @@ private:
 	cButton * m_before_btn;
 private:
 	bool m_bBuyBtn[4][4];
-	_EPRODUCSTATE m_product_state[4][4];
+	_EPRODUCSTATE m_product_state[4][4] = {};
 	int m_state;
 public:
 	cShopScene();

@@ -56,13 +56,15 @@ void cShopScene::Init()
 
 void cShopScene::Update()
 {
+
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 	m_Mouse->Update(MousePoint);
 	for (int j = 0; j < 4; j++) {
 		for (int i = 0; i < 4; i++) {
-			if(bBuyList[j][i]==true)
-				m_product_state[i][j] = SOLD;
+			if (bBuyList[j][i] == true) {//NO PROBLEM
+				m_product_state[j][i] = SOLD; 
+			}
 		}
 	}
  
@@ -83,16 +85,18 @@ void cShopScene::BuyDress()//옷 구
 { 
 	for (int i = 0; i < 4; i++) {
 		if (m_Product[m_state][i]->Update()) {
-			m_bBuyBtn[m_state][i] = true;
-			DEBUG_LOG(m_state);
+			m_bBuyBtn[m_state][i] = true; 
 		}
 	}  
 	for (int i = 0; i < 4; i++) {
 		if (m_bBuyBtn[m_state][i] == true && bBuyList[m_state][i] == false) {
 			if (Money >= 1000 * (i + 1)) {
 				bBuyList[m_state][i] = true;
+				DEBUG_LOG("옷 구매");
+				DEBUG_LOG(m_state);
+				DEBUG_LOG(i);
 				Money -= 1000 * (i + 1);
-				CntBuyList(m_state, i);
+				CntBuyList(m_state, i); //순서대로 그려주는 함수
 			}
 			else {
 				m_bBuyBtn[m_state][i] = false;
@@ -131,20 +135,32 @@ void cShopScene::CntBuyList(int i, int j)
 void cShopScene::Render()
 {
 	IMAGE->Render(IMAGE->FindImage("ShopBg"), m_ShopBgPos, false);
+	//for (int i = 0; i < 4; i++) {
+	//	DEBUG_LOG("//////////");
+	//	DEBUG_LOG(i);
+	//	for (int j = 0; j < 4; j++) {
+	//		DEBUG_LOG(m_product_state[i][j]);
+	//	}
+	//} 
 	switch (m_state) {
 	case eTOP:		
-		for (int i = 0; i < 4; i++) { 
-			m_Product[eTOP][i]->StateRender(m_product_state[eTOP][i]); 
+		for (int i = 0; i < 4; i++) {   
+			m_Product[eTOP][i]->StateRender(m_product_state[eTOP][i]); //SALE
 		}break;
 	case eBOTTOM:
-		for (int i = 0; i < 4; i++)
-			m_Product[eBOTTOM][i]->StateRender(m_product_state[eBOTTOM][i]);	 break;
-	case eACCESSORY:
-		for (int i = 0; i < 4; i++)
-			m_Product[eACCESSORY][i]->StateRender(m_product_state[eACCESSORY][i]);  break;
-	case eSHOES:	
-		for (int i = 0; i < 4; i++)
-			m_Product[eSHOES][i]->StateRender(m_product_state[eSHOES][i]);		 break;
+		for (int i = 0; i < 4; i++) {
+			m_Product[eBOTTOM][i]->StateRender(m_product_state[eBOTTOM][i]);
+		}break;
+	case eACCESSORY: {
+		for (int i = 0; i < 4; i++) {
+			m_Product[eACCESSORY][i]->StateRender(m_product_state[eACCESSORY][i]);
+		}break;
+	}
+	case eSHOES: {
+		for (int i = 0; i < 4; i++) {
+			m_Product[eSHOES][i]->StateRender(m_product_state[eSHOES][i]);
+		}break;
+	}
 	}
 	m_next_btn->Render();
 	m_before_btn->Render();
