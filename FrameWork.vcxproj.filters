@@ -65,9 +65,6 @@
     <Filter Include="Scene\cShopScene">
       <UniqueIdentifier>{94828107-e68b-4b27-9bed-9e27f402bfa9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Window\Help">
-      <UniqueIdentifier>{1ad46b70-6ba3-499a-86a3-55e2f21b3aad}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -143,9 +140,6 @@
     <ClInclude Include="cShopScene.h">
       <Filter>Scene\cShopScene</Filter>
     </ClInclude>
-    <ClInclude Include="HelpWnd.h">
-      <Filter>Scene\Window\Help</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cInputManager.cpp">
@@ -213,9 +207,6 @@
     </ClCompile>
     <ClCompile Include="cShopScene.cpp">
       <Filter>Scene\cShopScene</Filter>
-    </ClCompile>
-    <ClCompile Include="HelpWnd.cpp">
-      <Filter>Scene\Window\Help</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

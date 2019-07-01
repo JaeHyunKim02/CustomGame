@@ -19,6 +19,9 @@ private:
 
 	cButton * m_BGMON;
 	cButton * m_BGMOFF;
+	cButton * m_SoundON;
+	cButton * m_SoundOFF;
+
 
 	cTexture * m_Window;
 

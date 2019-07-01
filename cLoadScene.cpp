@@ -65,6 +65,8 @@ void cLoadScene::Init()
 	Load("Making_OnCursor", "./Image/2.InGame/UI/Making_button(1).bmp");
 	Load("Making_Click", "./Image/2.InGame/UI/Making_button(2).bmp");
 
+	Load("order_Contents", "./Image/2.InGame/Ui/order_Contents.bmp");//ÁÖ¹®µé¾î°¡´Â Ã¢ ¹Ø¹Ù´Ú
+
 	Load("option_BGM_On_Nomal", "./Image/UI/option_sound_Down_Nomal.bmp");
 	Load("option_BGM_On_OnCursor", "./Image/UI/option_sound_Down_OnCursor.bmp");
 	Load("option_BGM_On_Click", "./Image/UI/option_sound_Down_Click.bmp");

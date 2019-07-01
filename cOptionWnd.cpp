@@ -21,6 +21,8 @@ void cOptionWnd::Init()
 	m_BGMOFF->Init();
 	m_BGMON = new cButton(360, 320, "option_BGM_Off");
 	m_BGMON->Init();
+	//m_SoundON = new cButton()
+
 	m_Exit_btn = new cButton(500, 200, "WndExit");
 	m_Exit_btn->Init();
 }

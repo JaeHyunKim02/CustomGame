@@ -155,7 +155,10 @@ void cIngameScene::Render()
 	
 	IMAGE->Render(IMAGE->FindImage("CommentWnd"), CommentPos, false, RGB(255, 0, 255));
 	IMAGE->Render(IMAGE->FindImage("CommentWnd"), CommentPos2, false, RGB(255, 0, 255));
-
+	m_Page_Button1->Render();
+	m_Page_Button2->Render();
+	m_Page_Button3->Render();
+	IMAGE->Render(IMAGE->FindImage("PageDown"), ShowPageButtonPos, true, RGB(255, 0, 255));
 	//IMAGE->Render(IMAGE->FindImage("money_icon"), m_MoneyIconPos, false);
 
 	//240³²¾ÒÀ½
@@ -170,11 +173,9 @@ void cIngameScene::Render()
 	m_GameExitButton->Render();
 	m_HowToPlay_button->Render();
 	m_Option_button->Render();
-	m_Page_Button1->Render();
-	m_Page_Button2->Render();
-	m_Page_Button3->Render();
+
 	IMAGE->PrintTexture("" + to_string(Money), { Pos.x-50 , Pos.y+15 });
-	IMAGE->Render(IMAGE->FindImage("PageDown"), ShowPageButtonPos, true, RGB(255, 0, 255));
+	
 	m_Mouse->Render(MousePoint);
 	
 	//Pos.x = 473;
