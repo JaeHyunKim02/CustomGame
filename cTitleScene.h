@@ -1,6 +1,6 @@
 #pragma once
 #include "cScene.h"
-
+class cWindow;
 class cButton;
 class cTitleScene : public cScene
 {
@@ -13,10 +13,12 @@ private:
 	bool isOver;
 	int WndState;
 
-
+	cWindow *  m_Window;
 	cButton * m_StartButton;
 	cButton * m_GameExitButton;
 	cButton * m_option_button;
+	cButton * m_HowToPlay_button;
+	//HowToPlay
 public:
 	//¸¶¿ì½º
 	cMouseCursor * m_Mouse;

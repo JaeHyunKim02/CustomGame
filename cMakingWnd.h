@@ -19,5 +19,11 @@ private:
 
 	cButton * m_Making_btn;
 	cButton * m_Exit_btn;
+	Point m_OrderPos;
+public:
+	int CountOrder = 0;
+	string strOrder;
+	unsigned int nSeed = (unsigned)time(NULL);
+	//int temp=0;
 };
 

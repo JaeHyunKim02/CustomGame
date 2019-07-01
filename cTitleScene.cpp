@@ -3,6 +3,7 @@
 #include"cButton.h"
 #include <windows.h> 
 #include"cMouseCursor.h"
+#include"cWindow.h"
 cTitleScene::cTitleScene()
 {
 }
@@ -23,6 +24,7 @@ void cTitleScene::Init()
 	m_Mouse = new cMouseCursor();
 	m_Mouse->Init();
 	
+	WndState = EMPTY_WND;
 
 	MCI_OPEN_PARMS mciOpen;
 	MCI_PLAY_PARMS mciPlay;
@@ -35,11 +37,15 @@ void cTitleScene::Init()
 	m_TitleBgPos.x = 0;
 	m_TitleBgPos.y = 0;
 	m_StartButton = new cButton(320, 550, "Start");
-	m_GameExitButton = new cButton(100, 700, "Exit");
-	m_option_button = new cButton(480, 700, "Option");
+	m_GameExitButton = new cButton(580, 40, "Exit");
+	m_option_button = new cButton(530, 40, "Option");
+	m_HowToPlay_button = new cButton(480, 40, "HowToPlay");
 	m_StartButton->Init();
 	m_GameExitButton->Init();
 	m_option_button->Init();
+	m_HowToPlay_button->Init();
+	m_Window = new cWindow(320, 480, "Making_Wnd");
+	m_Window->Init();
 
 
 }
@@ -63,10 +69,17 @@ void cTitleScene::Update()
 		SCENE->ChangeScene("InGame");
 	}
 	if (m_option_button->Update()) {
+		WndState = OPTION_WND;
+	}
+	else if (WndState != EMPTY_WND) {
+		m_Window->Update(WndState);
 	}
 	if (m_GameExitButton->Update()) {
-		//PostQuitMessage(0);
-		SCENE->ChangeScene("Comment");
+		PostQuitMessage(0);
+		//SCENE->ChangeScene("Comment");
+	}
+	if (m_HowToPlay_button->Update()) {
+
 	}
 	
 }
@@ -85,6 +98,10 @@ void cTitleScene::Render()
 	m_StartButton->Render();
 	m_GameExitButton->Render();
 	m_option_button->Render();
+	m_HowToPlay_button->Render();
+	if (WndState != EMPTY_WND) {
+		m_Window->Render(WndState);
+	}
 
 	m_Mouse->Render(MousePoint);
 }
@@ -96,4 +113,6 @@ void cTitleScene::Release()
 	SAFE_DELETE(m_StartButton);
 	SAFE_DELETE(m_GameExitButton);
 	SAFE_DELETE(m_option_button);
+	SAFE_DELETE(m_HowToPlay_button);
+	SAFE_DELETE(m_Window);
 }

@@ -34,9 +34,14 @@ void cLoadScene::Init()
 	Load("Exit_OnCursor", "./Image/1.Title/Ui/Exit_OnCursor.bmp");
 	Load("Exit_Click", "./Image/1.Title/Ui/Exit_Click.bmp");
 
-	Load("Option_Nomal", "./Image/2.InGame/Ui/setting.bmp");
-	Load("Option_OnCursor", "./Image/2.InGame/Ui/setting.bmp");
-	Load("Option_Click", "./Image/2.InGame/Ui/setting.bmp");
+	Load("Option_Nomal", "./Image/1.Title/UI/Option_button(0).bmp");
+	Load("Option_OnCursor", "./Image/1.Title/UI/Option_button(1).bmp");
+	Load("Option_Click", "./Image/1.Title/UI/Option_button(2).bmp");
+
+	Load("HowToPlay_Nomal", "./Image/1.Title/UI/how_to_play(0).bmp");
+	Load("HowToPlay_OnCursor", "./Image/1.Title/UI/how_to_play(1).bmp");
+	Load("HowToPlay_Click", "./Image/1.Title/UI/how_to_play(2).bmp");
+
 
 	//ingame
 	Load("Notice_Nomal", "./Image/2.InGame/UI/notice_icon.bmp");
@@ -102,9 +107,6 @@ void cLoadScene::Init()
 	Load("GameExit_Yes_OnCursor", "./Image/UI/Game_Exit_Yes_OnCursor.bmp");
 	Load("GameExit_Yes_Click", "./Image/UI/Game_Exit_Yes_Click.bmp");
 
-	Load("Upgrade_Nomal", "./Image/2.InGame/Upgrade_Nomal.bmp");
-	Load("Upgrade_OnCursor", "./Image/2.InGame/Upgrade_OnCursor.bmp");
-	Load("Upgrade_Click", "./Image/2.InGame/Upgrade_Click.bmp");
 
 	Load("Mannequin", "./Image/3.MainGame/UI/Mannequin.bmp");
 
@@ -158,7 +160,7 @@ void cLoadScene::Init()
 	Load("M_1", "./Image/2.InGame/BackGround/mannequinSet1.bmp");
 	Load("M_2", "./Image/2.InGame/BackGround/mannequinSet2.bmp");
 	Load("M_3", "./Image/2.InGame/BackGround/mannequinSet3.bmp");
-	Load("M_4", "./Image/2.InGame/BackGround/mannequinSet4.bmp");
+	//Load("M_4", "./Image/2.InGame/BackGround/mannequinSet4.bmp");
 
 	//사기버튼
 	Load("Buy_Nomal", "./Image/4.Shop/Buy.bmp");
@@ -170,7 +172,9 @@ void cLoadScene::Init()
 	Load("GoShop_OnCursor", "./Image/2.InGame/UI/GoShop(1).bmp");
 	Load("GoShop_Click", "./Image/2.InGame/UI/GoShop(2).bmp");
 
-
+	Load("Order_1", "./Image/2.InGame/Orders/Order1.bmp");
+	Load("Order_2", "./Image/2.InGame/Orders/Order2.bmp");
+	Load("Order_3", "./Image/2.InGame/Orders/Order3.bmp");
 
 	m_MaxLoad = m_Load.size();
 }

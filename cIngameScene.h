@@ -17,6 +17,7 @@ private:
 	cButton * m_Option_button;
 	cButton * m_Notice_button;
 
+
 	Point m_BackGroundPos;
 	Point m_MoneyIconPos;
 
