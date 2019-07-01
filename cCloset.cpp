@@ -174,7 +174,7 @@ void cCloset::ChangeDressLock(int j, int i) { //옷 미리보기 버튼 잠금해제
 		}
 	}
 		break;
-	case eBOTTOM: {
+	/*case eBOTTOM: {
 		switch (i + 13) { 
 		case eBOTTOM_1: m_next_bottom_1_btn->ChangeLock(true); break;
 		case eBOTTOM_2: m_next_bottom_2_btn->ChangeLock(true); break;
@@ -200,7 +200,7 @@ void cCloset::ChangeDressLock(int j, int i) { //옷 미리보기 버튼 잠금해제
 		case eSHOES_4: m_next_shoes_4_btn->ChangeLock(true); break;
 		}
 	}
-				 break;
+				 break;*/
 	}
 }
 void cCloset::NextClosetUpdate(_ClosetKind state)

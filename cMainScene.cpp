@@ -49,8 +49,6 @@ void cMainScene::Init()
 	m_Closet_Shoes_btn->Init();
 	m_Complete_btn = new cButton(540, 100, "Clear");
 	m_Complete_btn->Init();
-	m_HomeBtn = new cButton(500, 100, "Exit");
-	m_HomeBtn->Init();
 	m_EDress_State = eTOP;
 
 	top_key = "Null";
@@ -144,8 +142,9 @@ void cMainScene::Update()
 	else {
 
 		EvalDress();
-		if (m_HomeBtn->Update()) {
+		if (INPUT->MouseLUp()) {
 			SCENE->ChangeScene("InGame");
+			Money += sum2;
 			isOrder = true;
 		}
 	}
@@ -252,17 +251,16 @@ void cMainScene::Render()
 	if (shoes_key != "Null")	IMAGE->Render(IMAGE->FindImage(shoes_key), m_ClosetPos, true, RGB(255, 0, 255));
 
 	if (bChkSubmit) {
-		m_HomeBtn->Render();
 		int i = EvalDress();
 		if (i > 2) {//만족
 			IMAGE->Render(IMAGE->FindImage("Good_ResultBg"), m_BackGroundPos, false, RGB(255, 0, 255));
-			IMAGE->PrintTexture("" + to_string(sum + (i * 1000)), { 300,500 });
-			Money += i * 1000;
+			IMAGE->PrintTexture("+" + to_string(sum + (i * 1000)), { 300,500 });
+			sum2 = sum + i * 1000;
 		}
 		else if (i <= 2) { //불만족 
 			IMAGE->Render(IMAGE->FindImage("Bad_ResultBg"), m_BackGroundPos, false, RGB(255, 0, 255));
 			IMAGE->PrintTexture("" + to_string(sum - (i * 1000)), { 300,500 });
-			Money -= i * 1000;
+			sum2 = -sum - i * 1000;
 		}
 	}
 
@@ -280,7 +278,6 @@ void cMainScene::Release()
 	SAFE_DELETE(m_Closet_Bottom_btn);
 	SAFE_DELETE(m_Closet_Accessory_btn);
 	SAFE_DELETE(m_Closet_Shoes_btn);
-	SAFE_DELETE(m_HomeBtn);
 
 	SAFE_DELETE(m_Complete_btn);
 }

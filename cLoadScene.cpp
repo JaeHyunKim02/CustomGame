@@ -67,14 +67,13 @@ void cLoadScene::Init()
 
 	Load("order_Contents", "./Image/2.InGame/Ui/order_Contents.bmp");//주문들어가는 창 밑바닥
 
-	Load("option_BGM_On_Nomal", "./Image/UI/option_sound_Down_Nomal.bmp");
-	Load("option_BGM_On_OnCursor", "./Image/UI/option_sound_Down_OnCursor.bmp");
-	Load("option_BGM_On_Click", "./Image/UI/option_sound_Down_Click.bmp");
-
-	Load("option_BGM_Off_Nomal", "./Image/UI/option_sound_Up_Nomal.bmp");
-	Load("option_BGM_Off_OnCursor", "./Image/UI/option_sound_Up_OnCursor.bmp");
+	Load("option_BGM_Off_Nomal", "./Image/UI/option_sound_Up_Click.bmp");
+	Load("option_BGM_Off_OnCursor", "./Image/UI/option_sound_Up_Click.bmp");
 	Load("option_BGM_Off_Click", "./Image/UI/option_sound_Up_Click.bmp");
 
+	Load("option_BGM_On_Nomal", "./Image/UI/option_sound_Down_Click.bmp");
+	Load("option_BGM_On_OnCursor", "./Image/UI/option_sound_Down_Click.bmp");
+	Load("option_BGM_On_Click", "./Image/UI/option_sound_Down_Click.bmp"); 
 	//closet
 	//closet dress button
 	Load("Closet_Top_Nomal", "./Image/3.MainGame/UI/Closet/jacket_button(0).bmp");
@@ -179,6 +178,8 @@ void cLoadScene::Init()
 	Load("Order_3", "./Image/2.InGame/Orders/Order3.bmp");
 
 	Load("Select", "./Image/3.MainGame/UI/Closet/select.bmp");
+	Load("Order_List", "./Image/2.InGame/Orders/order_list.bmp");
+	Load("option_window", "./Image/UI/option_window.bmp");
 
 
 
@@ -190,13 +191,40 @@ void cLoadScene::Init()
 
 
 
-	Load("Top_Product_1_Nomal", "./Image/4.Shop/Product/Top_Product_1.bmp");
-	Load("Top_Product_1_OnCursor", "./Image/4.Shop/Product/Top_Product_1.bmp");
-	Load("Top_Product_1_Click", "./Image/4.Shop/Product/Top_Product_1.bmp");
+	Load("Product_1_Nomal",		"./Image/4.Shop/Product/box_cloth.bmp");
+	Load("Product_1_OnCursor",	"./Image/4.Shop/Product/box_cloth.bmp");
+	Load("Product_1_Click",		"./Image/4.Shop/Product/box_cloth.bmp");
+	Load("Product_1_UnLock_Nomal",		"./Image/4.Shop/Product/box_cloth_unlock.bmp");
+	Load("Product_1_UnLock_OnCursor",	"./Image/4.Shop/Product/box_cloth_unlock.bmp");
+	Load("Product_1_UnLock_Click",		"./Image/4.Shop/Product/box_cloth_unlock.bmp");
+
+	Load("Product_2_Nomal",				"./Image/4.Shop/Product/box_cloth2.bmp");
+	Load("Product_2_OnCursor",			"./Image/4.Shop/Product/box_cloth2.bmp");
+	Load("Product_2_Click",				"./Image/4.Shop/Product/box_cloth2.bmp");
+	Load("Product_2_UnLock_Nomal",		"./Image/4.Shop/Product/box_cloth2_unlock.bmp");
+	Load("Product_2_UnLock_OnCursor",	"./Image/4.Shop/Product/box_cloth2_unlock.bmp");
+	Load("Product_2_UnLock_Click",		"./Image/4.Shop/Product/box_cloth2_unlock.bmp");
+
+	Load("Product_3_Nomal",				"./Image/4.Shop/Product/box_cloth3.bmp");
+	Load("Product_3_OnCursor",			"./Image/4.Shop/Product/box_cloth3.bmp");
+	Load("Product_3_Click",				"./Image/4.Shop/Product/box_cloth3.bmp");
+	Load("Product_3_UnLock_Nomal",		"./Image/4.Shop/Product/box_cloth3_unlock.bmp");
+	Load("Product_3_UnLock_OnCursor",	"./Image/4.Shop/Product/box_cloth3_unlock.bmp");
+	Load("Product_3_UnLock_Click",		"./Image/4.Shop/Product/box_cloth3_unlock.bmp");
+
+	Load("Product_4_Nomal",				"./Image/4.Shop/Product/box_cloth5.bmp");
+	Load("Product_4_OnCursor",			"./Image/4.Shop/Product/box_cloth5.bmp");
+	Load("Product_4_Click",				"./Image/4.Shop/Product/box_cloth5.bmp");
+	Load("Product_4_UnLock_Nomal",		"./Image/4.Shop/Product/box_cloth5_unlock.bmp");
+	Load("Product_4_UnLock_OnCursor",	"./Image/4.Shop/Product/box_cloth5_unlock.bmp");
+	Load("Product_4_UnLock_Click",		"./Image/4.Shop/Product/box_cloth5_unlock.bmp");
 
 	Load("ResultBg", "./Image/6.Result/BackGround/ResultBg.bmp");
+	Load("Bad_ResultBg", "./Image/6.Result/BackGround/Bad_ResultBg.bmp");
+	Load("Good_ResultBg", "./Image/6.Result/BackGround/Good_ResultBg.bmp");
 	Load("MyMoney", "./Image/2.InGame/Ui/have_money.bmp");
 	Load("CommentWnd", "./Image/2.InGame/Ui/Comment/Comment_window.bmp");
+	Load("order_Contents", "./Image/2.InGame/Ui/Orders/order_Contents.bmp");
 
 	//메인화면 마네킹 넘기기 버튼
 

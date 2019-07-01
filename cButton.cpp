@@ -133,7 +133,7 @@ void cButton::StateRender(_EPRODUCSTATE state)
 {
 	if (bChkLock) {
 		switch (state) {
-		case SOLD: {
+		case SALE: {
 			if (b_Click) {
 				IMAGE->Render(m_Click2, m_Pos, true, RGB(255, 0, 255));
 			}
@@ -144,7 +144,7 @@ void cButton::StateRender(_EPRODUCSTATE state)
 				IMAGE->Render(m_Nomal2, m_Pos, true, RGB(255, 0, 255));
 			break;
 		}
-		case SALE: {
+		case SOLD: {
 			if (b_Click) {
 				IMAGE->Render(m_Click, m_Pos, true, RGB(255, 0, 255));
 			}

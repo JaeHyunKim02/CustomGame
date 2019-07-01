@@ -2,6 +2,9 @@
 #include "cIngameScene.h"
 #include "cWindow.h"
 #include "cButton.h"
+#include "cOptionWnd.h"
+#include "cMakingWnd.h"
+
 #include <stdlib.h>
 
 //bool first = true;
@@ -53,9 +56,10 @@ void cIngameScene::Init()
 	m_goshop = new cButton(50, 130, "GoShop");
 	m_goshop->Init();
 
-	m_Window = new cWindow(320, 480, "Making_Wnd");
-	m_Window->Init();
-
+	m_NoticeWnd = new cMakingWnd(320, 480, "Order_List");
+	m_NoticeWnd->Init();
+	m_OptionWnd = new cOptionWnd(320, 480, "option_window");
+	m_OptionWnd->Init();
 	m_Option_button = new cButton(520, 40, "Option");
 	m_Option_button->Init();
 
@@ -132,7 +136,10 @@ void cIngameScene::Update()
 	//}
 
 	else if (WndState != EMPTY_WND) {
-		m_Window->Update(WndState);
+		switch (WndState) {
+		case MAKING_WND: m_NoticeWnd->Update("InGame"); break;
+		case OPTION_WND: m_OptionWnd->Update("InGame"); break;
+		}
 	}
 	if (m_goshop->Update()) {
 		SCENE->ChangeScene("Shop");
@@ -156,12 +163,10 @@ void cIngameScene::Render()
 
 	//240남았음
 	//198
-	m_Notice_button->Render();	//알림버튼 그림
+	if(!isOrder)m_Notice_button->Render();	//알림버튼 그림
 	//m_Option_button->Render();	//옵션버튼 그림
 	m_goshop->Render();//상점가는 버튼
-	if (WndState != EMPTY_WND) {
-		m_Window->Render(WndState);
-	}
+ 
 
 	m_GameExitButton->Render();
 	m_HowToPlay_button->Render();
@@ -171,6 +176,14 @@ void cIngameScene::Render()
 	m_Page_Button3->Render();
 	IMAGE->PrintTexture("" + to_string(Money), { Pos.x - 50 , Pos.y + 15 });
 	IMAGE->Render(IMAGE->FindImage("PageDown"), ShowPageButtonPos, true, RGB(255, 0, 255));
+
+	if (WndState != EMPTY_WND) {
+		switch (WndState) {
+		case MAKING_WND: m_NoticeWnd->Render(); break;
+		case OPTION_WND: m_OptionWnd->Render(); break;
+		}
+	}
+
 	m_Mouse->Render(MousePoint);
 
 	//Pos.x = 473;
@@ -183,7 +196,8 @@ void cIngameScene::Release()
 	SAFE_DELETE(m_Mouse);
 	//SAFE_DELETE(m_Exit_Button);
 
-	SAFE_DELETE(m_Window);
+	SAFE_DELETE(m_NoticeWnd);
+	SAFE_DELETE(m_OptionWnd);
 	SAFE_DELETE(m_goshop);
 	SAFE_DELETE(m_Option_button);
 	SAFE_DELETE(m_Notice_button);
