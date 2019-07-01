@@ -94,6 +94,7 @@ void cIngameScene::Render()
 	//IMAGE->Render(IMAGE->FindImage("money_icon"), m_MoneyIconPos, false);
 
 	if (chkOrder)m_Notice_button->Render();	//알림버튼 그림 
+
 	m_Option_button->Render();	//옵션버튼 그림
 	m_goshop->Render();//상점가는 버튼
 	if (WndState != EMPTY_WND) m_Window->Render(WndState);

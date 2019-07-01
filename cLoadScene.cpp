@@ -176,6 +176,8 @@ void cLoadScene::Init()
 	Load("Order_2", "./Image/2.InGame/Orders/Order2.bmp");
 	Load("Order_3", "./Image/2.InGame/Orders/Order3.bmp");
 
+	Load("Select", "./Image/3.MainGame/UI/Closet/select.bmp");
+
 
 
 

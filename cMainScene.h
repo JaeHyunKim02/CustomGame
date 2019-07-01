@@ -9,6 +9,7 @@ private:
 	cTexture * m_BackGround;
 	Point m_BackGroundPos;
 	Point m_ClosetPos;
+	Point m_SelectPos[3];
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
 

@@ -141,18 +141,19 @@ void cMainScene::Update()
 		}
 	}
 }
-//int cMainScene::EvalDress()
-//{
-//	//int cnt=0;
-//	//int score;
-//	//for (int i = 0; i < 4; i++) {
-//	//	if (m_EDress[i] == ) {
-//	//		cnt++;
-//	//	}
-//	//} 
-//
-//	//return cnt;
-//}
+int cMainScene::EvalDress()
+{
+	int cnt=0;
+	int score;
+	for (int i = 0; i < 4; i++) {
+		if (m_EDress[i] == ) {
+			cnt++;
+		}
+	} 
+
+	return cnt;
+}
+ 
 
 void cMainScene::ClickRender()
 {
@@ -189,6 +190,8 @@ void cMainScene::Render()
 {
 	IMAGE->Render(IMAGE->FindImage("MainGameBg"), m_BackGroundPos, false);
 	IMAGE->Render(IMAGE->FindImage("Mannequin"), m_ClosetPos, true, RGB(255, 0, 255));
+
+	IMAGE->Render(IMAGE->FindImage("Select"), m_ClosetPos, true, RGB(255, 0, 255));
 	ClickRender();
 	m_Complete_btn->Render();
 	switch (m_EDress_State) {
