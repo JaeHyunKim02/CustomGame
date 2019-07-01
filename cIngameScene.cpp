@@ -64,13 +64,13 @@ void cIngameScene::Init()
 
 	m_GameExitButton = new cButton(590, 40, "Exit");
 	m_GameExitButton->Init();
-	
+
 	m_Page_Button1 = new cButton(280, 700, "PageUp");
 	m_Page_Button1->Init();
 
 	m_Page_Button2 = new cButton(320, 700, "PageUp");//40씩 차이남
 	m_Page_Button2->Init();
-	
+
 	m_Page_Button3 = new cButton(360, 700, "PageUp");
 	m_Page_Button3->Init();
 
@@ -81,10 +81,9 @@ void cIngameScene::Update()
 	MousePoint.x = INPUT->GetMousePos().x;
 	MousePoint.y = INPUT->GetMousePos().y;
 	m_Mouse->Update(MousePoint);
-	//isOrder;
-	//chkOrder;
+
 	char a[128];
-	if(m_Page_Button1->Update()){
+	if (m_Page_Button1->Update()) {
 		count = 1;
 		ShowPageButtonPos.x = 280;
 		sprintf_s(a, "M_%d", count);
@@ -102,21 +101,20 @@ void cIngameScene::Update()
 		sprintf_s(a, "M_%d", count);
 		kindC = a;
 	}
-
-		if (CKchangTime) {//배경에서 이미지 바뀌는 코드 넣어야 함
-			CKchangTime = false;
-			DEBUG_LOG("들어옴");
-			count += 1;
-			if (count > 3)
-				count = 1;
-			//char a[128];
-			sprintf_s(a, "M_%d", count);
-			//kindC = "M_" + count;
-			kindC = a;
-			ShowPageButtonPos.x += 40;
-			if (ShowPageButtonPos.x > 360) ShowPageButtonPos.x = 280;
-			//SCENE->ChangeScene("InGame");
-		}
+	if (CKchangTime) {//배경에서 이미지 바뀌는 코드 넣어야 함
+		CKchangTime = false;
+		DEBUG_LOG("들어옴");
+		count += 1;
+		if (count > 3)
+			count = 1;
+		//char a[128];
+		sprintf_s(a, "M_%d", count);
+		//kindC = "M_" + count;
+		kindC = a;
+		ShowPageButtonPos.x += 40;
+		if (ShowPageButtonPos.x > 360) ShowPageButtonPos.x = 280;
+		//SCENE->ChangeScene("InGame");
+	}
 
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
@@ -124,9 +122,7 @@ void cIngameScene::Update()
 	}
 	if (m_Notice_button->Update()) {//알림 버튼 클릭한 경우 
 		WndState = MAKING_WND;
-
 	}
-
 	else if (m_Option_button->Update()) {//옵션 버튼을 클릭  
 		WndState = OPTION_WND;
 		//SCENE->ChangeScene("Comment");
@@ -152,13 +148,10 @@ void cIngameScene::Render()
 	//IMAGE->Render(IMAGE->FindImage(a), m_BackGroundPos, false);
 	IMAGE->Render(IMAGE->FindImage(kindC), m_ChangePos, true);
 	IMAGE->Render(IMAGE->FindImage("MyMoney"), Pos, false, RGB(255, 0, 255));
-	
+
 	IMAGE->Render(IMAGE->FindImage("CommentWnd"), CommentPos, false, RGB(255, 0, 255));
 	IMAGE->Render(IMAGE->FindImage("CommentWnd"), CommentPos2, false, RGB(255, 0, 255));
-	m_Page_Button1->Render();
-	m_Page_Button2->Render();
-	m_Page_Button3->Render();
-	IMAGE->Render(IMAGE->FindImage("PageDown"), ShowPageButtonPos, true, RGB(255, 0, 255));
+
 	//IMAGE->Render(IMAGE->FindImage("money_icon"), m_MoneyIconPos, false);
 
 	//240남았음
@@ -173,11 +166,13 @@ void cIngameScene::Render()
 	m_GameExitButton->Render();
 	m_HowToPlay_button->Render();
 	m_Option_button->Render();
-
-	IMAGE->PrintTexture("" + to_string(Money), { Pos.x-50 , Pos.y+15 });
-	
+	m_Page_Button1->Render();
+	m_Page_Button2->Render();
+	m_Page_Button3->Render();
+	IMAGE->PrintTexture("" + to_string(Money), { Pos.x - 50 , Pos.y + 15 });
+	IMAGE->Render(IMAGE->FindImage("PageDown"), ShowPageButtonPos, true, RGB(255, 0, 255));
 	m_Mouse->Render(MousePoint);
-	
+
 	//Pos.x = 473;
 	//Pos.y = 106;
 }
