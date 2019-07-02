@@ -65,7 +65,7 @@ void cLoadScene::Init()
 	Load("Making_OnCursor", "./Image/2.InGame/UI/Making_button(1).bmp");
 	Load("Making_Click", "./Image/2.InGame/UI/Making_button(2).bmp");
 
-	Load("order_Contents", "./Image/2.InGame/Ui/order_Contents.bmp");//ÁÖ¹®µé¾î°¡´Â Ã¢ ¹Ø¹Ù´Ú
+	Load("order_Contents", "./Image/2.InGame/Ui/order_Contents.bmp");
 
 	Load("option_BGM_On_Nomal", "./Image/UI/option_sound_Down_Nomal.bmp");
 	Load("option_BGM_On_OnCursor", "./Image/UI/option_sound_Down_OnCursor.bmp");
@@ -98,8 +98,75 @@ void cLoadScene::Init()
 	Load("Clear_Click", "./Image/3.MainGame/UI/clear_button.bmp");
 	//closet kind button
 	Load("Top_1_Nomal", "./Image/3.MainGame/UI/Closet/top_1_btn(0).bmp");
-	Load("Top_1_OnCursor", "./Image/3.MainGame/UI/Closet/top_1_btn(1).bmp");
-	Load("Top_1_Click", "./Image/3.MainGame/UI/Closet/top_1_btn(2).bmp");
+	Load("Top_1_OnCursor", "./Image/3.MainGame/UI/Closet/top_1_btn(0).bmp");
+	Load("Top_1_Click", "./Image/3.MainGame/UI/Closet/top_1_btn(0).bmp");
+
+	Load("Top_2_Nomal", "./Image/3.MainGame/UI/Closet/top_2_btn(0).bmp");
+	Load("Top_2_OnCursor", "./Image/3.MainGame/UI/Closet/top_2_btn(0).bmp");
+	Load("Top_2_Click", "./Image/3.MainGame/UI/Closet/top_2_btn(0).bmp");
+
+	Load("Top_3_Nomal", "./Image/3.MainGame/UI/Closet/top_3_btn(0).bmp");
+	Load("Top_3_OnCursor", "./Image/3.MainGame/UI/Closet/top_3_btn(0).bmp");
+	Load("Top_3_Click", "./Image/3.MainGame/UI/Closet/top_3_btn(0).bmp");
+
+	Load("Top_4_Nomal", "./Image/3.MainGame/UI/Closet/top_4_btn(0).bmp");
+	Load("Top_4_OnCursor", "./Image/3.MainGame/UI/Closet/top_4_btn(0).bmp");
+	Load("Top_4_Click", "./Image/3.MainGame/UI/Closet/top_4_btn(0).bmp");
+
+
+
+	Load("Bottom_1_Nomal", "./Image/3.MainGame/UI/Closet/Bottom_1_btn(0).bmp");
+	Load("Bottom_1_OnCursor", "./Image/3.MainGame/UI/Closet/Bottom_1_btn(0).bmp");
+	Load("Bottom_1_Click", "./Image/3.MainGame/UI/Closet/Bottom_1_btn(0).bmp");
+
+	Load("Bottom_2_Nomal", "./Image/3.MainGame/UI/Closet/Bottom_2_btn(0).bmp");
+	Load("Bottom_2_OnCursor", "./Image/3.MainGame/UI/Closet/Bottom_2_btn(0).bmp");
+	Load("Bottom_2_Click", "./Image/3.MainGame/UI/Closet/Bottom_2_btn(0).bmp");
+
+	Load("Bottom_3_Nomal", "./Image/3.MainGame/UI/Closet/Bottom_3_btn(0).bmp");
+	Load("Bottom_3_OnCursor", "./Image/3.MainGame/UI/Closet/Bottom_3_btn(0).bmp");
+	Load("Bottom_3_Click", "./Image/3.MainGame/UI/Closet/Bottom_3_btn(0).bmp");
+
+	Load("Bottom_4_Nomal", "./Image/3.MainGame/UI/Closet/Bottom_4_btn(0).bmp");
+	Load("Bottom_4_OnCursor", "./Image/3.MainGame/UI/Closet/Bottom_4_btn(0).bmp");
+	Load("Bottom_4_Click", "./Image/3.MainGame/UI/Closet/Bottom_4_btn(0).bmp");
+
+
+
+	Load("accessory_1_Nomal", "./Image/3.MainGame/UI/Closet/accessory_1_btn(0).bmp");
+	Load("accessory_1_OnCursor", "./Image/3.MainGame/UI/Closet/accessory_1_btn(0).bmp");
+	Load("accessory_1_Click", "./Image/3.MainGame/UI/Closet/accessory_1_btn(0).bmp");
+
+	Load("accessory_2_Nomal", "./Image/3.MainGame/UI/Closet/accessory_2_btn(0).bmp");
+	Load("accessory_2_OnCursor", "./Image/3.MainGame/UI/Closet/accessory_2_btn(0).bmp");
+	Load("accessory_2_Click", "./Image/3.MainGame/UI/Closet/accessory_2_btn(0).bmp");
+
+	Load("accessory_3_Nomal", "./Image/3.MainGame/UI/Closet/accessory_3_btn(0).bmp");
+	Load("accessory_3_OnCursor", "./Image/3.MainGame/UI/Closet/accessory_3_btn(0).bmp");
+	Load("accessory_3_Click", "./Image/3.MainGame/UI/Closet/accessory_3_btn(0).bmp");
+
+	Load("accessory_4_Nomal", "./Image/3.MainGame/UI/Closet/accessory_4_btn(0).bmp");
+	Load("accessory_4_OnCursor", "./Image/3.MainGame/UI/Closet/accessory_4_btn(0).bmp");
+	Load("accessory_4_Click", "./Image/3.MainGame/UI/Closet/accessory_4_btn(0).bmp");
+
+
+
+	Load("shose_1_Nomal", "./Image/3.MainGame/UI/Closet/shose_1_btn(0).bmp");
+	Load("shose_1_OnCursor", "./Image/3.MainGame/UI/Closet/shose_1_btn(0).bmp");
+	Load("shose_1_Click", "./Image/3.MainGame/UI/Closet/shose_1_btn(0).bmp");
+
+	Load("shose_2_Nomal", "./Image/3.MainGame/UI/Closet/shose_2_btn(0).bmp");
+	Load("shose_2_OnCursor", "./Image/3.MainGame/UI/Closet/shose_2_btn(0).bmp");
+	Load("shose_2_Click", "./Image/3.MainGame/UI/Closet/shose_2_btn(0).bmp");
+
+	Load("shose_3_Nomal", "./Image/3.MainGame/UI/Closet/shose_3_btn(0).bmp");
+	Load("shose_3_OnCursor", "./Image/3.MainGame/UI/Closet/shose_3_btn(0).bmp");
+	Load("shose_3_Click", "./Image/3.MainGame/UI/Closet/shose_3_btn(0).bmp");
+
+	Load("shose_4_Nomal", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
+	Load("shose_4_OnCursor", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
+	Load("shose_4_Click", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
+
 
 	Load("GameExit_No_Nomal", "./Image/UI/Game_Exit_No_Nomal.bmp");
 	Load("GameExit_No_OnCursor", "./Image/UI/Game_Exit_No_OnCursor.bmp");
@@ -178,21 +245,6 @@ void cLoadScene::Init()
 	Load("Order_2", "./Image/2.InGame/Orders/Order2.bmp");
 	Load("Order_3", "./Image/2.InGame/Orders/Order3.bmp");
 
-<<<<<<< HEAD
-	Load("Select", "./Image/3.MainGame/UI/Closet/select.bmp");
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 95477fd1fea1811c7559111f42f25256faf074d7
 	Load("Top_Product_1_Nomal", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_OnCursor", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_Click", "./Image/4.Shop/Product/Top_Product_1.bmp");

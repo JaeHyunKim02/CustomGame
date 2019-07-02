@@ -16,8 +16,7 @@ cTitleScene::~cTitleScene()
 
 void cTitleScene::Init()
 {
-	BGM = true;
-	EFFECT = true;
+
 	isChangTime = false;
 	isOrder = false;
 
