@@ -67,14 +67,21 @@ void cLoadScene::Init()
 
 	Load("order_Contents", "./Image/2.InGame/Ui/order_Contents.bmp");
 
-	Load("option_BGM_On_Nomal", "./Image/UI/option_sound_Down_Nomal.bmp");
-	Load("option_BGM_On_OnCursor", "./Image/UI/option_sound_Down_OnCursor.bmp");
-	Load("option_BGM_On_Click", "./Image/UI/option_sound_Down_Click.bmp");
+	Load("option_BGM_On_Nomal", "./Image/UI/BGM_on2.bmp");
+	Load("option_BGM_On_OnCursor", "./Image/UI/BGM_on3.bmp");
+	Load("option_BGM_On_Click", "./Image/UI/BGM_on.bmp");
 
-	Load("option_BGM_Off_Nomal", "./Image/UI/option_sound_Up_Nomal.bmp");
-	Load("option_BGM_Off_OnCursor", "./Image/UI/option_sound_Up_OnCursor.bmp");
-	Load("option_BGM_Off_Click", "./Image/UI/option_sound_Up_Click.bmp");
+	Load("option_BGM_Off_Nomal", "./Image/UI/BGM_off2.bmp");
+	Load("option_BGM_Off_OnCursor", "./Image/UI/BGM_off3.bmp");
+	Load("option_BGM_Off_Click", "./Image/UI/BGM_off.bmp");
 
+	Load("option_Click_Off_Nomal",		"./Image/UI/sound_off2.bmp");
+	Load("option_Click_Off_OnCursor",	"./Image/UI/sound_off3.bmp");
+	Load("option_Click_Off_Click",		"./Image/UI/sound_off.bmp");
+
+	Load("option_Click_On_Nomal",	 "./Image/UI/sound_on2.bmp");
+	Load("option_Click_On_OnCursor", "./Image/UI/sound_on3.bmp");
+	Load("option_Click_On_Click",	 "./Image/UI/sound_on.bmp");
 	//closet
 	//closet dress button
 	Load("Closet_Top_Nomal", "./Image/3.MainGame/UI/Closet/jacket_button(0).bmp");
@@ -166,6 +173,7 @@ void cLoadScene::Init()
 	Load("shose_4_Nomal", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
 	Load("shose_4_OnCursor", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
 	Load("shose_4_Click", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
+
 
 
 	Load("GameExit_No_Nomal", "./Image/UI/Game_Exit_No_Nomal.bmp");

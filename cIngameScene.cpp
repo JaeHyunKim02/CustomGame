@@ -2,6 +2,8 @@
 #include "cIngameScene.h"
 #include "cWindow.h"
 #include "cButton.h"
+#include"cOptionWnd.h"
+#include"cMakingWnd.h"
 #include <stdlib.h>
 
 //bool first = true;
@@ -53,9 +55,10 @@ void cIngameScene::Init()
 	m_goshop = new cButton(50, 130, "GoShop");
 	m_goshop->Init();
 
-	m_Window = new cWindow(320, 480, "Making_Wnd");
-	m_Window->Init();
-
+	m_NoticeWnd = new cMakingWnd(320, 480, "Order_List");
+	m_NoticeWnd->Init();
+	m_OptionWnd = new cOptionWnd(320, 480, "option_window");
+	m_OptionWnd->Init();
 	m_Option_button = new cButton(520, 40, "Option");
 	m_Option_button->Init();
 
@@ -64,15 +67,16 @@ void cIngameScene::Init()
 
 	m_GameExitButton = new cButton(590, 40, "Exit");
 	m_GameExitButton->Init();
-	
+
 	m_Page_Button1 = new cButton(280, 700, "PageUp");
 	m_Page_Button1->Init();
 
 	m_Page_Button2 = new cButton(320, 700, "PageUp");//40씩 차이남
 	m_Page_Button2->Init();
-	
+
 	m_Page_Button3 = new cButton(360, 700, "PageUp");
 	m_Page_Button3->Init();
+
 
 }
 
@@ -135,8 +139,11 @@ void cIngameScene::Update()
 	//	
 	//}
 
-	else if (WndState != EMPTY_WND) {
-		m_Window->Update(WndState);
+	else if (WndState != EMPTY_WND) {//윈도우가 비어있지 않다면
+		switch (WndState) {
+		case MAKING_WND: m_NoticeWnd->Update("InGame"); break; //
+		case OPTION_WND: m_OptionWnd->Update("InGame"); break;
+		}
 	}
 	if (m_goshop->Update()) {
 		SCENE->ChangeScene("Shop");
@@ -163,16 +170,20 @@ void cIngameScene::Render()
 
 	//240남았음
 	//198
-	m_Notice_button->Render();	//알림버튼 그림
+	if (!isOrder)m_Notice_button->Render();
 	//m_Option_button->Render();	//옵션버튼 그림
 	m_goshop->Render();//상점가는 버튼
-	if (WndState != EMPTY_WND) {
-		m_Window->Render(WndState);
-	}
-
 	m_GameExitButton->Render();
 	m_HowToPlay_button->Render();
 	m_Option_button->Render();
+	if (WndState != EMPTY_WND) {
+		switch (WndState) {
+		case MAKING_WND: m_NoticeWnd->Render(); break;
+		case OPTION_WND: m_OptionWnd->Render(); break;
+		}
+	}
+
+
 
 	IMAGE->PrintTexture("" + to_string(Money), { Pos.x-50 , Pos.y+15 });
 	
@@ -188,7 +199,6 @@ void cIngameScene::Release()
 	SAFE_DELETE(m_Mouse);
 	//SAFE_DELETE(m_Exit_Button);
 
-	SAFE_DELETE(m_Window);
 	SAFE_DELETE(m_goshop);
 	SAFE_DELETE(m_Option_button);
 	SAFE_DELETE(m_Notice_button);
