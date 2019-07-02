@@ -1,14 +1,14 @@
 #pragma once
 #include "cScene.h"
 class cButton;
-class cMakingWnd : public cScene
+class cMakingWnd 
 {
 public:
 	cMakingWnd(int x, int y, const string & key);
 	~cMakingWnd();
 public:
 	void Init();
-	void Update();
+	void Update(const string& key);
 	void Render();
 	void Release();
 private:
@@ -16,11 +16,8 @@ private:
 private:
 	cTexture * m_Window;
 	Point m_Pos;
-
 	cButton * m_Making_btn;
-	cButton * m_Exit_btn;
 	Point m_OrderPos;
-	Point  m_OrderBackPos;
 public:
 	int CountOrder = 0;
 	string strOrder;

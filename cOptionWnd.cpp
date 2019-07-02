@@ -6,7 +6,7 @@ cOptionWnd::cOptionWnd(int x, int y, const string & key)
 {
 	m_Window = IMAGE->FindImage(key);
 	m_Pos.x = x;
-	m_Pos.y = y; 
+	m_Pos.y = y;
 }
 
 
@@ -17,38 +17,48 @@ cOptionWnd::~cOptionWnd()
 
 void cOptionWnd::Init()
 {
-	m_BGMOFF = new cButton(280, 320, "option_BGM_On");
+	m_BGMOFF = new cButton(320, 320, "option_BGM_Off");
 	m_BGMOFF->Init();
-	m_BGMON = new cButton(360, 320, "option_BGM_Off");
+	m_BGMON = new cButton(430, 320, "option_BGM_On");
 	m_BGMON->Init();
+	m_SoundOFF = new cButton(430, 405, "option_Click_Off");
+	m_SoundOFF->Init();
+	m_SoundON = new cButton(320, 405, "option_Click_On");
+	m_SoundON->Init();
 	//m_SoundON = new cButton()
 
-	m_Exit_btn = new cButton(500, 200, "WndExit");
-	m_Exit_btn->Init();
 }
 
-void cOptionWnd::Update()
+void cOptionWnd::Update(const string& key)
 {
 	if (bClickChk) {
 		Init();
 		bClickChk = false;
 	}
 	if (!bClickChk) {
+		/*if (INPUT->MouseLUp()) {
+			bClickChk = true;
+			SCENE->ChangeScene(key);
+		}*/
 		if (m_BGMOFF->Update()) {
 			mciSendCommand(1, MCI_STOP, MCI_DGV_PLAY_REPEAT, NULL);
-			BGM = false;
-			EFFECT = false;
+			BGM = true;
+			
 		}
 		if (m_BGMON->Update()) {
 			mciSendCommand(1, MCI_PLAY, MCI_DGV_PLAY_REPEAT, (DWORD)(LPVOID)&mciPlay);
-			BGM = true;
-			EFFECT = true;
+			BGM = false;
+			
 		}
-		if (m_Exit_btn->Update()) {
+		if (m_SoundOFF->Update()) {
 
-			bClickChk = true;
-			SCENE->ChangeScene("InGame");
+			EFFECT = false;
+
 		}
+		if (m_SoundON->Update()) {
+		EFFECT = true;
+		}
+		
 	}
 }
 
@@ -58,7 +68,8 @@ void cOptionWnd::Render()
 		IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
 		m_BGMOFF->Render();
 		m_BGMON->Render();
-		m_Exit_btn->Render();
+		m_SoundOFF->Render();
+		m_SoundON->Render();
 	}
 }
 
@@ -66,5 +77,7 @@ void cOptionWnd::Release()
 {
 	SAFE_DELETE(m_BGMOFF);
 	SAFE_DELETE(m_BGMON);
-	SAFE_DELETE(m_Exit_btn);
+	SAFE_DELETE(m_SoundOFF);
+	SAFE_DELETE(m_SoundON);
+
 }

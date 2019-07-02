@@ -3,6 +3,7 @@
 #include"cButton.h"
 #include <windows.h> 
 #include"cMouseCursor.h"
+#include"cOptionWnd.h"
 #include"cWindow.h"
 cTitleScene::cTitleScene()
 {
@@ -22,7 +23,8 @@ void cTitleScene::Init()
 
 	m_Mouse = new cMouseCursor();
 	m_Mouse->Init();
-	
+	m_OptionWnd = new cOptionWnd(320, 480, "option_window");
+	m_OptionWnd->Init();
 	WndState = EMPTY_WND;
 
 	MCI_OPEN_PARMS mciOpen;
@@ -44,10 +46,6 @@ void cTitleScene::Init()
 	m_GameExitButton->Init();
 	m_option_button->Init();
 	m_HowToPlay_button->Init();
-	m_Window = new cWindow(320, 480, "Making_Wnd");
-	m_Window->Init();
-
-
 }
  
 void cTitleScene::Update()
@@ -72,7 +70,9 @@ void cTitleScene::Update()
 		WndState = OPTION_WND;
 	}
 	else if (WndState != EMPTY_WND) {
-		m_Window->Update(WndState);
+		switch (WndState) {
+		case OPTION_WND:m_OptionWnd->Update("Title"); break;
+		}
 	}
 	if (m_GameExitButton->Update()) {
 		PostQuitMessage(0);
@@ -100,7 +100,9 @@ void cTitleScene::Render()
 	m_option_button->Render();
 	m_HowToPlay_button->Render();
 	if (WndState != EMPTY_WND) {
-		m_Window->Render(WndState);
+		switch (WndState) {
+		case OPTION_WND:m_OptionWnd->Render(); break;
+		}
 	}
 
 	m_Mouse->Render(MousePoint);
@@ -114,5 +116,5 @@ void cTitleScene::Release()
 	SAFE_DELETE(m_GameExitButton);
 	SAFE_DELETE(m_option_button);
 	SAFE_DELETE(m_HowToPlay_button);
-	SAFE_DELETE(m_Window);
+	SAFE_DELETE(m_OptionWnd);
 }

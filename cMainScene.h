@@ -9,10 +9,11 @@ private:
 	cTexture * m_BackGround;
 	Point m_BackGroundPos;
 	Point m_ClosetPos;
-	Point m_SelectPos[3];
 	cMouseCursor * m_Mouse;
 	Point MousePoint;
-
+	bool first;
+	int sum;
+	int sum2;
 private:
 	string top_key;
 	string bottom_key;
@@ -45,5 +46,5 @@ private:
 	_ClosetKind m_EDress_State;
 	_ClosetKind m_EDress[4];
 private:
-	bool bChkSubmit; 
+	bool bChkSubmit;
 };
