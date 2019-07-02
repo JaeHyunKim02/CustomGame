@@ -141,9 +141,9 @@ void cIngameScene::Update()
 		case OPTION_WND: m_OptionWnd->Update("InGame"); break;
 		}
 	}
-	if (m_goshop->Update()) {
-		SCENE->ChangeScene("Shop");
-	}
+	//if (m_goshop->Update()) {
+	//	SCENE->ChangeScene("Shop");
+	//}
 	if (m_GameExitButton->Update()) {
 		PostQuitMessage(0);
 	}

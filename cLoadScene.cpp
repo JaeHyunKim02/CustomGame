@@ -67,13 +67,21 @@ void cLoadScene::Init()
 
 	Load("order_Contents", "./Image/2.InGame/Ui/order_Contents.bmp");//ÁÖ¹®µé¾î°¡´Â Ã¢ ¹Ø¹Ù´Ú
 
-	Load("option_BGM_Off_Nomal", "./Image/UI/option_sound_Up_Click.bmp");
-	Load("option_BGM_Off_OnCursor", "./Image/UI/option_sound_Up_Click.bmp");
-	Load("option_BGM_Off_Click", "./Image/UI/option_sound_Up_Click.bmp");
+	Load("option_BGM_Off_Nomal", "./Image/UI/sound_off.bmp");
+	Load("option_BGM_Off_OnCursor", "./Image/UI/sound_off.bmp");
+	Load("option_BGM_Off_Click", "./Image/UI/sound_off.bmp");
 
-	Load("option_BGM_On_Nomal", "./Image/UI/option_sound_Down_Click.bmp");
-	Load("option_BGM_On_OnCursor", "./Image/UI/option_sound_Down_Click.bmp");
-	Load("option_BGM_On_Click", "./Image/UI/option_sound_Down_Click.bmp"); 
+	Load("option_BGM_On_Nomal", "./Image/UI/sound_on.bmp");
+	Load("option_BGM_On_OnCursor", "./Image/UI/sound_on.bmp");
+	Load("option_BGM_On_Click", "./Image/UI/sound_on.bmp"); 
+
+	Load("option_Click_Off_Nomal", "./Image/UI/option_sound_Down_Click.bmp");
+	Load("option_Click_Off_OnCursor", "./Image/UI/option_sound_Down_Click.bmp");
+	Load("option_Click_Off_Click", "./Image/UI/option_sound_Down_Click.bmp");
+
+	Load("option_Click_On_Nomal", "./Image/UI/option_sound_Up_Click.bmp");
+	Load("option_Click_On_OnCursor", "./Image/UI/option_sound_Up_Click.bmp");
+	Load("option_Click_On_Click", "./Image/UI/option_sound_Up_Click.bmp");
 	//closet
 	//closet dress button
 	Load("Closet_Top_Nomal", "./Image/3.MainGame/UI/Closet/jacket_button(0).bmp");

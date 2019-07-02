@@ -3,7 +3,7 @@
 #include "cCloset.h"
 #include "cButton.h"  
 #define DRESS_BTN_Y 888 
-
+SCORE score;
 cMainScene::cMainScene()
 {
 
@@ -256,11 +256,13 @@ void cMainScene::Render()
 			IMAGE->Render(IMAGE->FindImage("Good_ResultBg"), m_BackGroundPos, false, RGB(255, 0, 255));
 			IMAGE->PrintTexture("+" + to_string(sum + (i * 1000)), { 300,500 });
 			sum2 = sum + i * 1000;
+			score = GOOD;
 		}
 		else if (i <= 2) { //ºÒ¸¸Á· 
 			IMAGE->Render(IMAGE->FindImage("Bad_ResultBg"), m_BackGroundPos, false, RGB(255, 0, 255));
 			IMAGE->PrintTexture("" + to_string(sum - (i * 1000)), { 300,500 });
 			sum2 = -sum - i * 1000;
+			score = BAD;
 		}
 	}
 
