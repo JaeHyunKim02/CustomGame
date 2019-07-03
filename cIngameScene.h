@@ -37,6 +37,9 @@ private:
 	cButton * m_Page_Button3;
 	Point ShowPageButtonPos;
 
+	string m_Comment1 = "NULL";
+	string m_Comment2= "NULL";
+
 
 
 public:

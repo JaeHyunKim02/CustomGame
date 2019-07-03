@@ -168,6 +168,7 @@ void cLoadScene::Init()
 	Load("shose_4_Click", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
 
 
+
 	Load("GameExit_No_Nomal", "./Image/UI/Game_Exit_No_Nomal.bmp");
 	Load("GameExit_No_OnCursor", "./Image/UI/Game_Exit_No_OnCursor.bmp");
 	Load("GameExit_No_Click", "./Image/UI/Game_Exit_No_Click.bmp");
@@ -220,9 +221,15 @@ void cLoadScene::Init()
 	Load("MouseCursor_upclick", "./Image/Ui/MouseCursor/MouseCur(2).bmp");
 
 	//댓글들 로딩
-	Load("1", "./Image/5.Comment/Comment1.bmp");
-	Load("2", "./Image/5.Comment/Comment2.bmp");
-	Load("3", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_1", "./Image/5.Comment/Comment1.bmp");
+	Load("Comment_2", "./Image/5.Comment/Comment2.bmp");
+	Load("Comment_3", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_3", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_4", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_5", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_6", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_7", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_8", "./Image/5.Comment/Comment3.bmp");
 
 
 	//메인 화면 바뀌는 마네킹들

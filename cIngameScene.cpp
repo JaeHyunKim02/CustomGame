@@ -44,6 +44,7 @@ void cIngameScene::Init()
 	ShowPageButtonPos.y = 700;
 
 
+
 	WndState = EMPTY_WND;
 	//m_Exit_Button = new cButton(100, 500, "Exit");
 	//m_Exit_Button->Init();
@@ -53,8 +54,6 @@ void cIngameScene::Init()
 	m_goshop = new cButton(50, 130, "GoShop");
 	m_goshop->Init();
 
-	m_Window = new cWindow(320, 480, "Making_Wnd");
-	m_Window->Init();
 
 	m_Option_button = new cButton(520, 40, "Option");
 	m_Option_button->Init();
@@ -64,13 +63,13 @@ void cIngameScene::Init()
 
 	m_GameExitButton = new cButton(590, 40, "Exit");
 	m_GameExitButton->Init();
-	
+
 	m_Page_Button1 = new cButton(280, 700, "PageUp");
 	m_Page_Button1->Init();
 
 	m_Page_Button2 = new cButton(320, 700, "PageUp");//40씩 차이남
 	m_Page_Button2->Init();
-	
+
 	m_Page_Button3 = new cButton(360, 700, "PageUp");
 	m_Page_Button3->Init();
 
@@ -84,7 +83,7 @@ void cIngameScene::Update()
 	//isOrder;
 	//chkOrder;
 	char a[128];
-	if(m_Page_Button1->Update()){
+	if (m_Page_Button1->Update()) {
 		count = 1;
 		ShowPageButtonPos.x = 280;
 		sprintf_s(a, "M_%d", count);
@@ -103,20 +102,20 @@ void cIngameScene::Update()
 		kindC = a;
 	}
 
-		if (CKchangTime) {//배경에서 이미지 바뀌는 코드 넣어야 함
-			CKchangTime = false;
-			DEBUG_LOG("들어옴");
-			count += 1;
-			if (count > 3)
-				count = 1;
-			//char a[128];
-			sprintf_s(a, "M_%d", count);
-			//kindC = "M_" + count;
-			kindC = a;
-			ShowPageButtonPos.x += 40;
-			if (ShowPageButtonPos.x > 360) ShowPageButtonPos.x = 280;
-			//SCENE->ChangeScene("InGame");
-		}
+	if (CKchangTime) {//배경에서 이미지 바뀌는 코드 넣어야 함
+		CKchangTime = false;
+		DEBUG_LOG("들어옴");
+		count += 1;
+		if (count > 3)
+			count = 1;
+		//char a[128];
+		sprintf_s(a, "M_%d", count);
+		//kindC = "M_" + count;
+		kindC = a;
+		ShowPageButtonPos.x += 40;
+		if (ShowPageButtonPos.x > 360) ShowPageButtonPos.x = 280;
+		//SCENE->ChangeScene("InGame");
+	}
 
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
@@ -135,9 +134,6 @@ void cIngameScene::Update()
 	//	
 	//}
 
-	else if (WndState != EMPTY_WND) {
-		m_Window->Update(WndState);
-	}
 	if (m_goshop->Update()) {
 		SCENE->ChangeScene("Shop");
 	}
@@ -152,9 +148,18 @@ void cIngameScene::Render()
 	//IMAGE->Render(IMAGE->FindImage(a), m_BackGroundPos, false);
 	IMAGE->Render(IMAGE->FindImage(kindC), m_ChangePos, true);
 	IMAGE->Render(IMAGE->FindImage("MyMoney"), Pos, false, RGB(255, 0, 255));
-	
+
 	IMAGE->Render(IMAGE->FindImage("CommentWnd"), CommentPos, false, RGB(255, 0, 255));
-	IMAGE->Render(IMAGE->FindImage("CommentWnd"), CommentPos2, false, RGB(255, 0, 255));
+	IMAGE->Render(IMAGE->FindImage("CommentWnd"), CommentPos2, false, RGB(255, 0, 255));//여기에 댓글 올라옴
+
+	if (m_Comment1 != "NULL") {
+		IMAGE->Render(IMAGE->FindImage(m_Comment1), CommentPos, false, RGB(255, 0, 255));
+	}
+	if (m_Comment2 != "NULL") {
+		IMAGE->Render(IMAGE->FindImage(m_Comment2), CommentPos, false, RGB(255, 0, 255));
+	}
+
+
 	m_Page_Button1->Render();
 	m_Page_Button2->Render();
 	m_Page_Button3->Render();
@@ -166,18 +171,15 @@ void cIngameScene::Render()
 	m_Notice_button->Render();	//알림버튼 그림
 	//m_Option_button->Render();	//옵션버튼 그림
 	m_goshop->Render();//상점가는 버튼
-	if (WndState != EMPTY_WND) {
-		m_Window->Render(WndState);
-	}
 
 	m_GameExitButton->Render();
 	m_HowToPlay_button->Render();
 	m_Option_button->Render();
 
-	IMAGE->PrintTexture("" + to_string(Money), { Pos.x-50 , Pos.y+15 });
-	
+	IMAGE->PrintTexture("" + to_string(Money), { Pos.x - 50 , Pos.y + 15 });
+
 	m_Mouse->Render(MousePoint);
-	
+
 	//Pos.x = 473;
 	//Pos.y = 106;
 }
@@ -188,7 +190,6 @@ void cIngameScene::Release()
 	SAFE_DELETE(m_Mouse);
 	//SAFE_DELETE(m_Exit_Button);
 
-	SAFE_DELETE(m_Window);
 	SAFE_DELETE(m_goshop);
 	SAFE_DELETE(m_Option_button);
 	SAFE_DELETE(m_Notice_button);

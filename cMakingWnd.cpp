@@ -70,7 +70,7 @@ void cMakingWnd::Render()
 		
 		IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
 		IMAGE->Render(IMAGE->FindImage("order_Contents"), m_OrderPos, true,RGB(255,0,255));
-		IMAGE->Render(IMAGE->FindImage(strOrder), m_OrderPos, true);
+		IMAGE->Render(IMAGE->FindImage(strO	az	rder), m_OrderPos, true);
 		m_Making_btn->Render();
 	}
 	//Order_1
