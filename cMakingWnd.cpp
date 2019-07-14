@@ -17,7 +17,7 @@ cMakingWnd::~cMakingWnd()
 	Release();
 }
 
-void cMakingWnd::Init()
+void cMakingWnd::Init()//랜덤값으로 주문
 {
 	srand(nSeed);
 	CountOrder = rand() % 3 + 1;//주문지 늘어나면 여기서 추가시키면 됨

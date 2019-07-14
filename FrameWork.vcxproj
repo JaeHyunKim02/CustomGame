@@ -35,20 +35,20 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -151,14 +151,12 @@
     <ClInclude Include="cButton.h" />
     <ClInclude Include="cCloset.h" />
     <ClInclude Include="cFontManager.h" />
-    <ClInclude Include="cGameExitWnd.h" />
     <ClInclude Include="cImageManager.h" />
     <ClInclude Include="cIngameScene.h" />
     <ClInclude Include="cInputManager.h" />
     <ClInclude Include="cLoadScene.h" />
     <ClInclude Include="cMainGame.h" />
     <ClInclude Include="cMainScene.h" />
-    <ClInclude Include="cMakingWnd.h" />
     <ClInclude Include="cMouseCursor.h" />
     <ClInclude Include="cMultiTexture.h" />
     <ClInclude Include="Comment.h" />
@@ -168,9 +166,7 @@
     <ClInclude Include="cSingleTexture.h" />
     <ClInclude Include="cTexture.h" />
     <ClInclude Include="cTitleScene.h" />
-    <ClInclude Include="cWindow.h" />
     <ClInclude Include="FrameWork.h" />
-    <ClInclude Include="cOptionWnd.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="stdafx.h" />
@@ -180,14 +176,12 @@
     <ClCompile Include="cButton.cpp" />
     <ClCompile Include="cCloset.cpp" />
     <ClCompile Include="cFontManager.cpp" />
-    <ClCompile Include="cGameExitWnd.cpp" />
     <ClCompile Include="cImageManager.cpp" />
     <ClCompile Include="cIngameScene.cpp" />
     <ClCompile Include="cInputManager.cpp" />
     <ClCompile Include="cLoadScene.cpp" />
     <ClCompile Include="cMainGame.cpp" />
     <ClCompile Include="cMainScene.cpp" />
-    <ClCompile Include="cMakingWnd.cpp" />
     <ClCompile Include="cMouseCursor.cpp" />
     <ClCompile Include="cMultiTexture.cpp" />
     <ClCompile Include="Comment.cpp" />
@@ -197,9 +191,7 @@
     <ClCompile Include="cSingleTexture.cpp" />
     <ClCompile Include="cTexture.cpp" />
     <ClCompile Include="cTitleScene.cpp" />
-    <ClCompile Include="cWindow.cpp" />
     <ClCompile Include="FrameWork.cpp" />
-    <ClCompile Include="cOptionWnd.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

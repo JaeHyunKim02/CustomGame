@@ -52,6 +52,10 @@ void cLoadScene::Init()
 	Load("Info_OnCursor", "./Image/2.InGame/UI/Store_Information_button(1).bmp");
 	Load("Info_Click", "./Image/2.InGame/UI/Store_Information_button(2).bmp");
 
+	Load("OrderList_Nomal", "./Image/2.InGame/Orders/OrderList.bmp");
+	Load("OrderList_OnCursor", "./Image/2.InGame/Orders/OrderList.bmp");
+	Load("OrderList_Click", "./Image/2.InGame/Orders/OrderList.bmp");
+
 	//window
 	Load("Making_Wnd", "./Image/UI/Window.bmp");
 	Load("StoreInfo_Wnd", "./Image/UI/Window.bmp");
@@ -195,6 +199,8 @@ void cLoadScene::Init()
 	Load("Top_Product_1_Click", "./Image/4.Shop/Product/Top_Product_1.bmp");
 
 	Load("ResultBg", "./Image/6.Result/BackGround/ResultBg.bmp");
+	Load("Good_ResultBg", "./Image/6.Result/BackGround/Good_ResultBg.bmp");
+	Load("Bad_ResultBg", "./Image/6.Result/BackGround/Bad_ResultBg.bmp");
 	Load("MyMoney", "./Image/2.InGame/Ui/have_money.bmp");
 	Load("CommentWnd", "./Image/2.InGame/Ui/Comment/Comment_window.bmp");
 

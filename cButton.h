@@ -27,7 +27,9 @@ public:
 	void Init();
 	void Init(bool bChkLock);
 	bool Update();
+	bool _Update();
 	void Render();
+	void _Render();
 	void ClickRender();
 	void StateRender(_EPRODUCSTATE state);
 	void Release();

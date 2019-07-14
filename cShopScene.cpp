@@ -62,17 +62,17 @@ void cShopScene::Update()
 	m_Mouse->Update(MousePoint);
 	for (int j = 0; j < 4; j++) {
 		for (int i = 0; i < 4; i++) {
-			if (bBuyList[j][i] == true) {//NO PROBLEM
+			if (bBuyList[j][i] == true) {//ªÍ ø µÈ¿« ∏ÆΩ∫∆Æ∏¶ πﬁæ∆ø»
 				m_product_state[j][i] = SOLD; 
 			}
 		}
 	}
  
-	if (m_before_btn->Update() && m_state != eTOP) {
+	if (m_before_btn->Update() && m_state != eTOP) {//¿Ã¿¸ πˆ∆∞ 
 		m_state--;
 		DEBUG_LOG(m_state);
 	}
-	if (m_next_btn->Update() && m_state != eSHOES) {
+	if (m_next_btn->Update() && m_state != eSHOES) {//¥Ÿ¿Ω πˆ∆∞
 		m_state++;
 		DEBUG_LOG(m_state);
 	}
@@ -82,11 +82,11 @@ void cShopScene::Update()
 	}
 }
 
-void cShopScene::BuyDress()//ø  ±∏
+void cShopScene::BuyDress()//ø  ±∏¿‘
 { 
 	for (int i = 0; i < 4; i++) {
-		if (m_Product[m_state][i]->Update()) {
-			m_bBuyBtn[m_state][i] = true; 
+		if (m_Product[m_state][i]->Update()) { 
+			m_bBuyBtn[m_state][i] = true;		 
 		}
 	}  
 	for (int i = 0; i < 4; i++) {
@@ -106,7 +106,7 @@ void cShopScene::BuyDress()//ø  ±∏
 		}
 	}
 }
-void cShopScene::CntBuyList(int i, int j)
+void cShopScene::CntBuyList(int i, int j)//ø  ªÍ º¯º≠¥Î∑Œ ø ¿Âø° Ω◊¿”
 {
 	switch (i) {
 	case eTOP: {
@@ -133,7 +133,7 @@ void cShopScene::CntBuyList(int i, int j)
 }
 
 
-void cShopScene::Render()
+void cShopScene::Render()//ªÛ¡°ø° ø  ∑£¥ı
 {
 	IMAGE->Render(IMAGE->FindImage("ShopBg"), m_ShopBgPos, false);
 	//for (int i = 0; i < 4; i++) {

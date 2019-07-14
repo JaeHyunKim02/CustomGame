@@ -203,7 +203,7 @@ void cCloset::ChangeDressLock(int j, int i) { //옷 미리보기 버튼 잠금해제
 				 break;
 	}
 }
-void cCloset::NextClosetUpdate(_ClosetKind state)
+void cCloset::NextClosetUpdate(_ClosetKind state)//다음 옷장 버튼을 눌렀을 경우 업데이트
 {
 	for (int j = 0; j < 4; j++) {
 		if (bBuyList[state][j] == true) { 

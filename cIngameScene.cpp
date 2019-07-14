@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "cIngameScene.h"
-#include "cWindow.h"
 #include "cButton.h"
 #include <stdlib.h>
 
@@ -19,7 +18,7 @@ cIngameScene::~cIngameScene()
 void cIngameScene::Init()
 {
 	kindC = "M_1";
-
+	bClickOrder = false;
 	isChangTime = true;
 	m_ChangePos.x = 320;
 	m_ChangePos.y = 450;
@@ -53,9 +52,6 @@ void cIngameScene::Init()
 	m_goshop = new cButton(50, 130, "GoShop");
 	m_goshop->Init();
 
-	m_Window = new cWindow(320, 480, "Making_Wnd");
-	m_Window->Init();
-
 	m_Option_button = new cButton(520, 40, "Option");
 	m_Option_button->Init();
 
@@ -73,6 +69,11 @@ void cIngameScene::Init()
 
 	m_Page_Button3 = new cButton(360, 700, "PageUp");
 	m_Page_Button3->Init();
+
+	m_OrderList = new cButton(0, 0, "OrderList");
+	m_OrderList->Init();
+	m_Wnd_Exit_btn = new cButton(400, 200, "Exit");
+	m_Wnd_Exit_btn->Init();
 
 }
 
@@ -119,28 +120,17 @@ void cIngameScene::Update()
 	if (EFFECT) {
 		if (INPUT->MouseLDown())
 			PlaySound(TEXT("./Sound/Clickeffect.wav"), NULL, SND_ASYNC);//클릭 효과음
+	} 
+	if (bClickOrder&&m_Wnd_Exit_btn->Update()) {
+		bClickOrder = false;
 	}
-	if (m_Notice_button->Update()) {//알림 버튼 클릭한 경우 
-		WndState = MAKING_WND;
+	else if (bClickOrder&&m_OrderList->_Update()) {
 	}
+	else if (m_Notice_button->Update()) bClickOrder = true;
 	else if (m_Option_button->Update()) {//옵션 버튼을 클릭  
-		WndState = OPTION_WND;
-		//SCENE->ChangeScene("Comment");
 	}
-	//else if (m_HowToPlay_button->Update()) {
-	//	
-	//}
-
-	else if (WndState != EMPTY_WND) {
-		m_Window->Update(WndState);
-	}
-	if (m_goshop->Update()) {
-		SCENE->ChangeScene("Shop");
-	}
-	if (m_GameExitButton->Update()) {
-		PostQuitMessage(0);
-	}
-
+	else if (m_goshop->Update()) SCENE->ChangeScene("Shop");
+	else if (m_GameExitButton->Update()) PostQuitMessage(0);
 }
 void cIngameScene::Render()
 {
@@ -158,17 +148,15 @@ void cIngameScene::Render()
 	//198
 	m_Notice_button->Render();	//알림버튼 그림
 	//m_Option_button->Render();	//옵션버튼 그림
-	m_goshop->Render();//상점가는 버튼
-	if (WndState != EMPTY_WND) {
-		m_Window->Render(WndState);
-	}
-
+	m_goshop->Render();//상점가는 버튼 
 	m_GameExitButton->Render();
 	m_HowToPlay_button->Render();
 	m_Option_button->Render();
 	m_Page_Button1->Render();
 	m_Page_Button2->Render();
 	m_Page_Button3->Render();
+	if (bClickOrder) m_OrderList->_Render();
+	if (bClickOrder) m_Wnd_Exit_btn->Render();
 	IMAGE->PrintTexture("" + to_string(Money), { Pos.x - 50 , Pos.y + 15 });
 	IMAGE->Render(IMAGE->FindImage("PageDown"), ShowPageButtonPos, true, RGB(255, 0, 255));
 	m_Mouse->Render(MousePoint);
@@ -192,6 +180,7 @@ void cIngameScene::Release()
 	SAFE_DELETE(m_Page_Button1);
 	SAFE_DELETE(m_Page_Button2);
 	SAFE_DELETE(m_Page_Button3);
-
+	SAFE_DELETE(m_OrderList);
+	SAFE_DELETE(m_Wnd_Exit_btn);
 	//SAFE_DELETE()
 }

@@ -99,6 +99,18 @@ bool cButton::Update()
 	else
 		return false;
 }
+bool cButton::_Update()
+{
+	POINT pt;
+	GetCursorPos(&pt);
+	ScreenToClient(g_hWnd, &pt);
+
+	if (isOver()) {
+		return true;
+	}
+
+	return false;
+}
 /*
 bool cButton::isClickDown(int x, int y)
 {
@@ -123,6 +135,17 @@ void cButton::Render()
 		else
 			IMAGE->Render(m_Nomal, m_Pos, true, RGB(255, 0, 255));
 	}
+}
+void cButton::_Render()
+{
+	if (b_Click) {
+		IMAGE->Render(m_Click, m_Pos, false, RGB(255, 0, 255));
+	}
+	else if (b_OnCursor) {
+		IMAGE->Render(m_OnCursor, m_Pos, false, RGB(255, 0, 255));
+	}
+	else
+		IMAGE->Render(m_Nomal, m_Pos, false, RGB(255, 0, 255));
 }
 void cButton::ClickRender()
 {

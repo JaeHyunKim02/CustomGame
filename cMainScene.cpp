@@ -150,7 +150,7 @@ void cMainScene::Update()
 		}
 	}
 }
-int cMainScene::EvalDress()
+int cMainScene::EvalDress() //점수 계산
 {
 	int cnt = 0;
 	int score;
@@ -203,7 +203,7 @@ int cMainScene::EvalDress()
 	return cnt;
 }
 
-void cMainScene::ClickRender()
+void cMainScene::ClickRender()//누른 옷장 버튼의 기본 이미지 변경
 {
 	switch (m_EDress_State) {
 	case eTOP: {

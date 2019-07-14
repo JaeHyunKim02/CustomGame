@@ -11,12 +11,13 @@ private:
 	int WndState;
 	Point m_ChangePos;
 	cTexture * m_ChangMmannequin;
-
+	bool bClickOrder;
 
 	cButton * m_GameExitButton;
 	cButton * m_Notice_button;
 	cButton * m_Option_button;
 	cButton  * m_HowToPlay_button;
+	cButton  * m_Wnd_Exit_btn;
 
 	Point m_BackGroundPos;
 	Point m_MoneyIconPos;
@@ -35,7 +36,7 @@ private:
 	cButton * m_Page_Button3;
 	Point ShowPageButtonPos;
 
-
+	cButton * m_OrderList;
 
 public:
 	MCI_OPEN_PARMS mciOpen;

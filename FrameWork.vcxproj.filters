@@ -41,18 +41,6 @@
     <Filter Include="Scene\Ingame">
       <UniqueIdentifier>{98e744b6-1ee1-4667-9dc8-07aa68d4a3d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Window">
-      <UniqueIdentifier>{9d95e667-447c-4b61-8c96-26bf4b841d6e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Window\OptionWnd">
-      <UniqueIdentifier>{0315d21c-2e85-4f86-88d4-407a1b442b13}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Window\GameExitWnd">
-      <UniqueIdentifier>{a788f69c-8187-49c3-9792-7843c84ba224}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Window\MakingWnd">
-      <UniqueIdentifier>{6a29c7ad-723f-41db-848a-c07655c8a914}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object\Closet">
       <UniqueIdentifier>{225894d8-6275-42cc-b054-50bfb9fed2fa}</UniqueIdentifier>
     </Filter>
@@ -113,20 +101,8 @@
     <ClInclude Include="cButton.h">
       <Filter>Manager\Button</Filter>
     </ClInclude>
-    <ClInclude Include="cWindow.h">
-      <Filter>Scene\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="cMakingWnd.h">
-      <Filter>Scene\Window\MakingWnd</Filter>
-    </ClInclude>
-    <ClInclude Include="cOptionWnd.h">
-      <Filter>Scene\Window\OptionWnd</Filter>
-    </ClInclude>
     <ClInclude Include="cMainScene.h">
       <Filter>Scene\Ingame</Filter>
-    </ClInclude>
-    <ClInclude Include="cGameExitWnd.h">
-      <Filter>Scene\Window\GameExitWnd</Filter>
     </ClInclude>
     <ClInclude Include="cCloset.h">
       <Filter>Object\Closet</Filter>
@@ -181,20 +157,8 @@
     <ClCompile Include="cButton.cpp">
       <Filter>Manager\Button</Filter>
     </ClCompile>
-    <ClCompile Include="cWindow.cpp">
-      <Filter>Scene\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="cMakingWnd.cpp">
-      <Filter>Scene\Window\MakingWnd</Filter>
-    </ClCompile>
-    <ClCompile Include="cOptionWnd.cpp">
-      <Filter>Scene\Window\OptionWnd</Filter>
-    </ClCompile>
     <ClCompile Include="cMainScene.cpp">
       <Filter>Scene\Ingame</Filter>
-    </ClCompile>
-    <ClCompile Include="cGameExitWnd.cpp">
-      <Filter>Scene\Window\GameExitWnd</Filter>
     </ClCompile>
     <ClCompile Include="cCloset.cpp">
       <Filter>Object\Closet</Filter>
