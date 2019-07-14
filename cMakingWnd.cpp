@@ -32,7 +32,7 @@ void cMakingWnd::Init()//랜덤값으로 주문
 		}
 	}
 	temp = CountOrder;
-
+	DEBUG_LOG(nConcept);
 	//CountOrder = 1;
 	char buffer[128];
 	sprintf_s(buffer, "Order_%d", CountOrder);
@@ -43,11 +43,9 @@ void cMakingWnd::Init()//랜덤값으로 주문
 
 	m_Making_btn = new cButton(320, 480, "Making");
 	m_Making_btn->Init();
-	m_Exit_btn = new cButton(500, 200, "WndExit");
-	m_Exit_btn->Init();
 }
 
-void cMakingWnd::Update()
+void cMakingWnd::Update(const string& key)
 {
 	if (bClickChk) {
 		Init();
@@ -57,21 +55,23 @@ void cMakingWnd::Update()
 		chkOrder = false;
 		SCENE->ChangeScene("MainGame");
 	}
-	if (m_Exit_btn->Update()) {
+	else if (INPUT->MouseLUp()) {
 		Release();
 		bClickChk = true;
-		SCENE->ChangeScene("InGame");
+		SCENE->ChangeScene(key);
 	}
+	
 }
 
 void cMakingWnd::Render()
 {
 	if (!bClickChk) {
 
+		
 		IMAGE->Render(m_Window, m_Pos, true, RGB(255, 0, 255));
-		IMAGE->Render(IMAGE->FindImage(strOrder), m_OrderPos, true);
+		IMAGE->Render(IMAGE->FindImage("order_Contents"), m_OrderPos, true,RGB(255,0,255));
+		IMAGE->Render(IMAGE->FindImage(strO	az	rder), m_OrderPos, true);
 		m_Making_btn->Render();
-		m_Exit_btn->Render();
 	}
 	//Order_1
 
@@ -82,5 +82,4 @@ void cMakingWnd::Render()
 void cMakingWnd::Release()
 {
 	SAFE_DELETE(m_Making_btn);
-	SAFE_DELETE(m_Exit_btn);
 }

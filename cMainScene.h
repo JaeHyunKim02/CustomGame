@@ -13,6 +13,7 @@ private:
 	Point MousePoint;
 	bool first;
 	int sum;
+	int sum2;
 private:
 	string top_key;
 	string bottom_key;

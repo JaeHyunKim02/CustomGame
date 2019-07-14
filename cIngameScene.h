@@ -1,7 +1,9 @@
 #pragma once
 #include "cScene.h"
 class cButton;
-class cWindow;
+class cOptionWnd;
+class cMakingWnd;
+
 class cIngameScene : public cScene
 {
 private:
@@ -11,7 +13,12 @@ private:
 	int WndState;
 	Point m_ChangePos;
 	cTexture * m_ChangMmannequin;
+<<<<<<< HEAD
 	bool bClickOrder;
+=======
+	cMakingWnd * m_NoticeWnd;
+	cOptionWnd * m_OptionWnd;
+>>>>>>> 7122d28a4584dbe7e1610660024869274bfdb92e
 
 	cButton * m_GameExitButton;
 	cButton * m_Notice_button;
@@ -26,7 +33,6 @@ private:
 
 	//알림창 버튼
 	cButton * m_notice_exit_btn;
-	cWindow * m_Window;
 
 	Point CommentPos;
 	Point CommentPos2;
@@ -36,7 +42,14 @@ private:
 	cButton * m_Page_Button3;
 	Point ShowPageButtonPos;
 
+<<<<<<< HEAD
 	cButton * m_OrderList;
+=======
+	string m_Comment1 = "NULL";
+	string m_Comment2= "NULL";
+
+
+>>>>>>> 7122d28a4584dbe7e1610660024869274bfdb92e
 
 public:
 	MCI_OPEN_PARMS mciOpen;

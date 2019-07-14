@@ -1,7 +1,6 @@
 #pragma once
-
 class cButton;
-class cOptionWnd
+class cOptionWnd 
 {
 public:
 	cOptionWnd(int x, int y, const string & key);
@@ -9,7 +8,7 @@ public:
 
 public:
 	void Init();
-	void Update();
+	void Update(const string& key);
 	void Render();
 	void Release(); 
 public:

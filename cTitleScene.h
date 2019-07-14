@@ -1,12 +1,13 @@
 #pragma once
 #include "cScene.h"
 class cWindow;
+class cOptionWnd;
 class cButton;
 class cTitleScene : public cScene
 {
 private:
 	cTexture * m_BackGround;
-	cFrame * m_PlayerFrame;
+	cOptionWnd * m_OptionWnd;
 	Point Pos;
 	Point m_TitleBgPos;
 	bool b_Move;

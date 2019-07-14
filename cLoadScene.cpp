@@ -69,16 +69,23 @@ void cLoadScene::Init()
 	Load("Making_OnCursor", "./Image/2.InGame/UI/Making_button(1).bmp");
 	Load("Making_Click", "./Image/2.InGame/UI/Making_button(2).bmp");
 
-	Load("order_Contents", "./Image/2.InGame/Ui/order_Contents.bmp");//주문들어가는 창 밑바닥
+	Load("order_Contents", "./Image/2.InGame/Ui/order_Contents.bmp");
 
-	Load("option_BGM_On_Nomal", "./Image/UI/option_sound_Down_Nomal.bmp");
-	Load("option_BGM_On_OnCursor", "./Image/UI/option_sound_Down_OnCursor.bmp");
-	Load("option_BGM_On_Click", "./Image/UI/option_sound_Down_Click.bmp");
+	Load("option_BGM_On_Nomal", "./Image/UI/BGM_on2.bmp");
+	Load("option_BGM_On_OnCursor", "./Image/UI/BGM_on3.bmp");
+	Load("option_BGM_On_Click", "./Image/UI/BGM_on.bmp");
 
-	Load("option_BGM_Off_Nomal", "./Image/UI/option_sound_Up_Nomal.bmp");
-	Load("option_BGM_Off_OnCursor", "./Image/UI/option_sound_Up_OnCursor.bmp");
-	Load("option_BGM_Off_Click", "./Image/UI/option_sound_Up_Click.bmp");
+	Load("option_BGM_Off_Nomal", "./Image/UI/BGM_off2.bmp");
+	Load("option_BGM_Off_OnCursor", "./Image/UI/BGM_off3.bmp");
+	Load("option_BGM_Off_Click", "./Image/UI/BGM_off.bmp");
 
+	Load("option_Click_Off_Nomal",		"./Image/UI/sound_off2.bmp");
+	Load("option_Click_Off_OnCursor",	"./Image/UI/sound_off3.bmp");
+	Load("option_Click_Off_Click",		"./Image/UI/sound_off.bmp");
+
+	Load("option_Click_On_Nomal",	 "./Image/UI/sound_on2.bmp");
+	Load("option_Click_On_OnCursor", "./Image/UI/sound_on3.bmp");
+	Load("option_Click_On_Click",	 "./Image/UI/sound_on.bmp");
 	//closet
 	//closet dress button
 	Load("Closet_Top_Nomal", "./Image/3.MainGame/UI/Closet/jacket_button(0).bmp");
@@ -102,8 +109,76 @@ void cLoadScene::Init()
 	Load("Clear_Click", "./Image/3.MainGame/UI/clear_button.bmp");
 	//closet kind button
 	Load("Top_1_Nomal", "./Image/3.MainGame/UI/Closet/top_1_btn(0).bmp");
-	Load("Top_1_OnCursor", "./Image/3.MainGame/UI/Closet/top_1_btn(1).bmp");
-	Load("Top_1_Click", "./Image/3.MainGame/UI/Closet/top_1_btn(2).bmp");
+	Load("Top_1_OnCursor", "./Image/3.MainGame/UI/Closet/top_1_btn(0).bmp");
+	Load("Top_1_Click", "./Image/3.MainGame/UI/Closet/top_1_btn(0).bmp");
+
+	Load("Top_2_Nomal", "./Image/3.MainGame/UI/Closet/top_2_btn(0).bmp");
+	Load("Top_2_OnCursor", "./Image/3.MainGame/UI/Closet/top_2_btn(0).bmp");
+	Load("Top_2_Click", "./Image/3.MainGame/UI/Closet/top_2_btn(0).bmp");
+
+	Load("Top_3_Nomal", "./Image/3.MainGame/UI/Closet/top_3_btn(0).bmp");
+	Load("Top_3_OnCursor", "./Image/3.MainGame/UI/Closet/top_3_btn(0).bmp");
+	Load("Top_3_Click", "./Image/3.MainGame/UI/Closet/top_3_btn(0).bmp");
+
+	Load("Top_4_Nomal", "./Image/3.MainGame/UI/Closet/top_4_btn(0).bmp");
+	Load("Top_4_OnCursor", "./Image/3.MainGame/UI/Closet/top_4_btn(0).bmp");
+	Load("Top_4_Click", "./Image/3.MainGame/UI/Closet/top_4_btn(0).bmp");
+
+
+
+	Load("Bottom_1_Nomal", "./Image/3.MainGame/UI/Closet/Bottom_1_btn(0).bmp");
+	Load("Bottom_1_OnCursor", "./Image/3.MainGame/UI/Closet/Bottom_1_btn(0).bmp");
+	Load("Bottom_1_Click", "./Image/3.MainGame/UI/Closet/Bottom_1_btn(0).bmp");
+
+	Load("Bottom_2_Nomal", "./Image/3.MainGame/UI/Closet/Bottom_2_btn(0).bmp");
+	Load("Bottom_2_OnCursor", "./Image/3.MainGame/UI/Closet/Bottom_2_btn(0).bmp");
+	Load("Bottom_2_Click", "./Image/3.MainGame/UI/Closet/Bottom_2_btn(0).bmp");
+
+	Load("Bottom_3_Nomal", "./Image/3.MainGame/UI/Closet/Bottom_3_btn(0).bmp");
+	Load("Bottom_3_OnCursor", "./Image/3.MainGame/UI/Closet/Bottom_3_btn(0).bmp");
+	Load("Bottom_3_Click", "./Image/3.MainGame/UI/Closet/Bottom_3_btn(0).bmp");
+
+	Load("Bottom_4_Nomal", "./Image/3.MainGame/UI/Closet/Bottom_4_btn(0).bmp");
+	Load("Bottom_4_OnCursor", "./Image/3.MainGame/UI/Closet/Bottom_4_btn(0).bmp");
+	Load("Bottom_4_Click", "./Image/3.MainGame/UI/Closet/Bottom_4_btn(0).bmp");
+
+
+
+	Load("accessory_1_Nomal", "./Image/3.MainGame/UI/Closet/accessory_1_btn(0).bmp");
+	Load("accessory_1_OnCursor", "./Image/3.MainGame/UI/Closet/accessory_1_btn(0).bmp");
+	Load("accessory_1_Click", "./Image/3.MainGame/UI/Closet/accessory_1_btn(0).bmp");
+
+	Load("accessory_2_Nomal", "./Image/3.MainGame/UI/Closet/accessory_2_btn(0).bmp");
+	Load("accessory_2_OnCursor", "./Image/3.MainGame/UI/Closet/accessory_2_btn(0).bmp");
+	Load("accessory_2_Click", "./Image/3.MainGame/UI/Closet/accessory_2_btn(0).bmp");
+
+	Load("accessory_3_Nomal", "./Image/3.MainGame/UI/Closet/accessory_3_btn(0).bmp");
+	Load("accessory_3_OnCursor", "./Image/3.MainGame/UI/Closet/accessory_3_btn(0).bmp");
+	Load("accessory_3_Click", "./Image/3.MainGame/UI/Closet/accessory_3_btn(0).bmp");
+
+	Load("accessory_4_Nomal", "./Image/3.MainGame/UI/Closet/accessory_4_btn(0).bmp");
+	Load("accessory_4_OnCursor", "./Image/3.MainGame/UI/Closet/accessory_4_btn(0).bmp");
+	Load("accessory_4_Click", "./Image/3.MainGame/UI/Closet/accessory_4_btn(0).bmp");
+
+
+
+	Load("shose_1_Nomal", "./Image/3.MainGame/UI/Closet/shose_1_btn(0).bmp");
+	Load("shose_1_OnCursor", "./Image/3.MainGame/UI/Closet/shose_1_btn(0).bmp");
+	Load("shose_1_Click", "./Image/3.MainGame/UI/Closet/shose_1_btn(0).bmp");
+
+	Load("shose_2_Nomal", "./Image/3.MainGame/UI/Closet/shose_2_btn(0).bmp");
+	Load("shose_2_OnCursor", "./Image/3.MainGame/UI/Closet/shose_2_btn(0).bmp");
+	Load("shose_2_Click", "./Image/3.MainGame/UI/Closet/shose_2_btn(0).bmp");
+
+	Load("shose_3_Nomal", "./Image/3.MainGame/UI/Closet/shose_3_btn(0).bmp");
+	Load("shose_3_OnCursor", "./Image/3.MainGame/UI/Closet/shose_3_btn(0).bmp");
+	Load("shose_3_Click", "./Image/3.MainGame/UI/Closet/shose_3_btn(0).bmp");
+
+	Load("shose_4_Nomal", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
+	Load("shose_4_OnCursor", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
+	Load("shose_4_Click", "./Image/3.MainGame/UI/Closet/shose_4_btn(0).bmp");
+
+
 
 	Load("GameExit_No_Nomal", "./Image/UI/Game_Exit_No_Nomal.bmp");
 	Load("GameExit_No_OnCursor", "./Image/UI/Game_Exit_No_OnCursor.bmp");
@@ -157,9 +232,15 @@ void cLoadScene::Init()
 	Load("MouseCursor_upclick", "./Image/Ui/MouseCursor/MouseCur(2).bmp");
 
 	//댓글들 로딩
-	Load("1", "./Image/5.Comment/Comment1.bmp");
-	Load("2", "./Image/5.Comment/Comment2.bmp");
-	Load("3", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_1", "./Image/5.Comment/Comment1.bmp");
+	Load("Comment_2", "./Image/5.Comment/Comment2.bmp");
+	Load("Comment_3", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_3", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_4", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_5", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_6", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_7", "./Image/5.Comment/Comment3.bmp");
+	Load("Comment_8", "./Image/5.Comment/Comment3.bmp");
 
 
 	//메인 화면 바뀌는 마네킹들
@@ -181,18 +262,6 @@ void cLoadScene::Init()
 	Load("Order_1", "./Image/2.InGame/Orders/Order1.bmp");
 	Load("Order_2", "./Image/2.InGame/Orders/Order2.bmp");
 	Load("Order_3", "./Image/2.InGame/Orders/Order3.bmp");
-
-	Load("Select", "./Image/3.MainGame/UI/Closet/select.bmp");
-
-
-
-
-
-
-
-
-
-
 
 	Load("Top_Product_1_Nomal", "./Image/4.Shop/Product/Top_Product_1.bmp");
 	Load("Top_Product_1_OnCursor", "./Image/4.Shop/Product/Top_Product_1.bmp");

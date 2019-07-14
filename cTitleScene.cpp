@@ -3,6 +3,11 @@
 #include"cButton.h"
 #include <windows.h> 
 #include"cMouseCursor.h"
+<<<<<<< HEAD
+=======
+#include"cOptionWnd.h"
+#include"cWindow.h"
+>>>>>>> 7122d28a4584dbe7e1610660024869274bfdb92e
 cTitleScene::cTitleScene()
 {
 }
@@ -15,14 +20,14 @@ cTitleScene::~cTitleScene()
 
 void cTitleScene::Init()
 {
-	BGM = true;
-	EFFECT = true;
+
 	isChangTime = false;
 	isOrder = false;
 
 	m_Mouse = new cMouseCursor();
 	m_Mouse->Init();
-	
+	m_OptionWnd = new cOptionWnd(320, 480, "option_window");
+	m_OptionWnd->Init();
 	WndState = EMPTY_WND;
 
 	MCI_OPEN_PARMS mciOpen;
@@ -44,8 +49,11 @@ void cTitleScene::Init()
 	m_GameExitButton->Init();
 	m_option_button->Init();
 	m_HowToPlay_button->Init();
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7122d28a4584dbe7e1610660024869274bfdb92e
 }
  
 void cTitleScene::Update()
@@ -69,6 +77,14 @@ void cTitleScene::Update()
 	if (m_option_button->Update()) {
 		WndState = OPTION_WND;
 	}
+<<<<<<< HEAD
+=======
+	else if (WndState != EMPTY_WND) {
+		switch (WndState) {
+		case OPTION_WND:m_OptionWnd->Update("Title"); break;
+		}
+	}
+>>>>>>> 7122d28a4584dbe7e1610660024869274bfdb92e
 	if (m_GameExitButton->Update()) {
 		PostQuitMessage(0);
 		//SCENE->ChangeScene("Comment");
@@ -94,6 +110,14 @@ void cTitleScene::Render()
 	m_GameExitButton->Render();
 	m_option_button->Render();
 	m_HowToPlay_button->Render();
+<<<<<<< HEAD
+=======
+	if (WndState != EMPTY_WND) {
+		switch (WndState) {
+		case OPTION_WND:m_OptionWnd->Render(); break;
+		}
+	}
+>>>>>>> 7122d28a4584dbe7e1610660024869274bfdb92e
 
 	m_Mouse->Render(MousePoint);
 }
@@ -106,5 +130,5 @@ void cTitleScene::Release()
 	SAFE_DELETE(m_GameExitButton);
 	SAFE_DELETE(m_option_button);
 	SAFE_DELETE(m_HowToPlay_button);
-	SAFE_DELETE(m_Window);
+	SAFE_DELETE(m_OptionWnd);
 }
